@@ -1,0 +1,494 @@
+\begin{thebibliography}{}
+
+\bibitem[Alemayehu \ppgccciteauthorand{} Warner, 2004]{lifetime}
+\ppgccbibauthordoformat {Alemayehu, B. \ppgccbibauthorand{} Warner, K.}
+  (\ppgccyeardoformat {2004}).
+\newblock \ppgccbibtitledoformat {The lifetime distribution of health care
+  costs}.
+\newblock \ppgccbibjournaldoformat {Health Services Research},
+  \ppgccvolumedoformat {3}({\ppgccnumberdoformat {39}}):\ppgccpagedoformat
+  {627}-\ppgccpagedoformat {}-\ppgccpagedoformat {642}.
+
+\bibitem[Arantes et~al.\@, 2003]{ArantesVTT03}
+\ppgccbibauthordoformat {Arantes, A.~S.\ppgccbibauthorsep{} Vieira,
+  M.~R.\ppgccbibauthorsep{} Jr., C.~T.\ppgccbibauthorlastsep{}
+  \ppgccbibauthorand{} Traina, A. J.~M.} (\ppgccyeardoformat {2003}).
+\newblock \ppgccbibtitledoformat {{Operadores de Sele\c{c}{\~a}o por
+  Similaridade para Sistemas de Gerenciamento de Bases de Dados Relacionais}}.
+\newblock \ppgccbibinstring{} \ppgccbibbooktitledoformat {Proceedings of the
+  Brazilian Symposium on Databases (SBBD)}, \ppgccbibpagesstring{}
+  \ppgccpagedoformat {341}--\ppgccpagedoformat {355}.
+
+\bibitem[Barajas \ppgccciteauthorand{} Akella, 2015]{time-series}
+\ppgccbibauthordoformat {Barajas, K.~C. \ppgccbibauthorand{} Akella, R.}
+  (\ppgccyeardoformat {2015}).
+\newblock \ppgccbibtitledoformat {Dynamically modeling patient's health state
+  from electronic medical records: {A} time series approach}.
+\newblock \ppgccbibinstring{} \ppgccbibbooktitledoformat {Proc. of the 21st
+  {ACM} {SIGKDD}}, \ppgccbibpagesstring{} \ppgccpagedoformat
+  {69}-\ppgccpagedoformat {}-\ppgccpagedoformat {78}.
+
+\bibitem[Bera \ppgccciteauthorand{} Nayak, 2012]{bera}
+\ppgccbibauthordoformat {Bera, D. \ppgccbibauthorand{} Nayak, M.}
+  (\ppgccyeardoformat {2012}).
+\newblock \ppgccbibtitledoformat {Mortality risk assessment for {ICU} patients
+  using logistic regression}.
+\newblock \ppgccbibjournaldoformat {Computing in Cardiology},
+  \ppgccbibpagesstring{} \ppgccpagedoformat {493}-\ppgccpagedoformat
+  {}-\ppgccpagedoformat {496}.
+
+\bibitem[Bhattacharya et~al.\@, 2017]{imbalance}
+\ppgccbibauthordoformat {Bhattacharya, S.\ppgccbibauthorsep{} Rajan,
+  V.\ppgccbibauthorlastsep{} \ppgccbibauthorand{} Shrivastava, H.}
+  (\ppgccyeardoformat {2017}).
+\newblock \ppgccbibtitledoformat {{ICU} mortality prediction: {A}
+  classification algorithm for imbalanced datasets}.
+\newblock \ppgccbibinstring{} \ppgccbibbooktitledoformat {Proc. of the 31st
+  {AAAI}}, \ppgccbibpagesstring{} \ppgccpagedoformat {1288}-\ppgccpagedoformat
+  {}-\ppgccpagedoformat {1294}.
+
+\bibitem[Bonomi \ppgccciteauthorand{} Jiang, 2017]{icde}
+\ppgccbibauthordoformat {Bonomi, L. \ppgccbibauthorand{} Jiang, X.}
+  (\ppgccyeardoformat {2017}).
+\newblock \ppgccbibtitledoformat {A mortality study for {ICU} patients using
+  bursty medical events}.
+\newblock \ppgccbibinstring{} \ppgccbibbooktitledoformat {Proc. of the 33rd
+  {IEEE} {ICDE}}, \ppgccbibpagesstring{} \ppgccpagedoformat
+  {1533}-\ppgccpagedoformat {}-\ppgccpagedoformat {1540}.
+
+\bibitem[Booth et~al.\@, 2008]{BoothCW08}
+\ppgccbibauthordoformat {Booth, W.~C.\ppgccbibauthorsep{} Colomb,
+  G.~G.\ppgccbibauthorlastsep{} \ppgccbibauthorand{} Williams, J.~M.}
+  (\ppgccyeardoformat {2008}).
+\newblock \ppgccbibbtitledoformat {The Craft of Research}.
+\newblock University Of Chicago Press.
+
+\bibitem[Braganholo et~al.\@, 2005]{BraganholoDH05}
+\ppgccbibauthordoformat {Braganholo, V.~P.\ppgccbibauthorsep{} Davidson,
+  S.~B.\ppgccbibauthorsep{} Heuser, C.~A.\ppgccbibauthorsep{} bla
+  bla\ppgccbibauthorsep{} cla cla\ppgccbibauthorlastsep{} \ppgccbibauthorand{}
+  dal dal} (\ppgccyeardoformat {2005}).
+\newblock \ppgccbibtitledoformat {{Updating Relations through XML Views}}.
+\newblock \ppgccbibinstring{} \ppgccbibbooktitledoformat {Anais do Congresso da
+  Sociedade Brasileira de Computa\c{c}{\~a}o - Concurso de Teses e
+  Disserta\c{c}{\~o}es ({CTD})}, \ppgccbibpagesstring{} \ppgccpagedoformat
+  {95}--\ppgccpagedoformat {103}.
+
+\bibitem[Cai et~al.\@, 2016]{cai}
+\ppgccbibauthordoformat {Cai, X.\ppgccbibauthorsep{} Concha,
+  O.\ppgccbibauthorsep{} Coiera, E.\ppgccbibauthorsep{}
+  Mart{\'{\i}}n{-}S{\'{a}}nchez, F.\ppgccbibauthorsep{} Day,
+  R.\ppgccbibauthorsep{} Roffe, D.\ppgccbibauthorlastsep{} \ppgccbibauthorand{}
+  Gallego, B.} (\ppgccyeardoformat {2016}).
+\newblock \ppgccbibtitledoformat {Real-time prediction of mortality,
+  readmission, and length of stay using electronic health record data}.
+\newblock \ppgccbibjournaldoformat {{JAMIA}}, \ppgccvolumedoformat
+  {23}({\ppgccnumberdoformat {3}}):\ppgccpagedoformat {553}-\ppgccpagedoformat
+  {}-\ppgccpagedoformat {561}.
+
+\bibitem[Che et~al.\@, 2015]{kdd}
+\ppgccbibauthordoformat {Che, Z.\ppgccbibauthorsep{} Kale,
+  D.\ppgccbibauthorsep{} Li, W.\ppgccbibauthorsep{} Bahadori,
+  M.\ppgccbibauthorlastsep{} \ppgccbibauthorand{} Liu, Y.} (\ppgccyeardoformat
+  {2015}).
+\newblock \ppgccbibtitledoformat {Deep computational phenotyping}.
+\newblock \ppgccbibinstring{} \ppgccbibbooktitledoformat {Proc. of the 21st
+  {ACM} {SIGKDD}}, \ppgccbibpagesstring{} \ppgccpagedoformat
+  {507}-\ppgccpagedoformat {}-\ppgccpagedoformat {516}.
+
+\bibitem[Citi \ppgccciteauthorand{} Barbieri, 2012]{physionet}
+\ppgccbibauthordoformat {Citi, L. \ppgccbibauthorand{} Barbieri, R.}
+  (\ppgccyeardoformat {2012}).
+\newblock \ppgccbibtitledoformat {Physionet 2012 challenge: Predicting
+  mortality of {ICU} patients using a cascaded {SVM-GLM} paradigm}.
+\newblock \ppgccbibjournaldoformat {Computing in Cardiology},
+  \ppgccbibpagesstring{} \ppgccpagedoformat {257}-\ppgccpagedoformat
+  {}-\ppgccpagedoformat {260}.
+
+\bibitem[Cordeiro, 2011]{Cordeiro2011}
+\ppgccbibauthordoformat {Cordeiro, R. L.~F.} (\ppgccyeardoformat {2011}).
+\newblock \ppgccbibbtitledoformat {Data mining in large sets of complex data}.
+\newblock \ppgccbibphdstring{}, Programa de Pós-Graduação em Ciências de
+  Computação e Matemática Computacional. Instituto de Ciências Matemáticas e de
+  Computação, USP São Carlos.
+
+\bibitem[{da Camara Neto}, 2011]{CamaraNeto2011}
+\ppgccbibauthordoformat {{da Camara Neto}, V.} (\ppgccyeardoformat {2011}).
+\newblock \ppgccbibtitledoformat {A classe ppgccufmg}.
+\newblock http://vilarneto.com/ppgccufmg.
+
+\bibitem[dos Santos et~al.\@, 2006]{SantosMSV06}
+\ppgccbibauthordoformat {dos Santos, R.~O.\ppgccbibauthorsep{}
+  de~S{\'a}~Mesquita, F.\ppgccbibauthorsep{} da~Silva,
+  A.~S.\ppgccbibauthorlastsep{} \ppgccbibauthorand{} Vilarinho, E. C.~C.}
+  (\ppgccyeardoformat {2006}).
+\newblock \ppgccbibtitledoformat {{Extra\c{c}{\~a}o de Dados e Metadados em
+  Textos Semi-estruturados usando HMMs}}.
+\newblock \ppgccbibinstring{} \ppgccbibbooktitledoformat {Proceedings of the
+  Brazilian Symposium on Databases (SBBD)}, \ppgccbibpagesstring{}
+  \ppgccpagedoformat {117}--\ppgccpagedoformat {131}.
+
+\bibitem[Frankland \ppgccciteauthorand{} Weyuker, 1993]{FranklW93}
+\ppgccbibauthordoformat {Frankland, P. \ppgccbibauthorand{} Weyuker, E.}
+  (\ppgccyeardoformat {1993}).
+\newblock \ppgccbibtitledoformat {{Provable improvements on branch testing}}.
+\newblock \ppgccbibjournaldoformat {IEEE Transactions on Software Engineering
+  (TSE)}, \ppgccvolumedoformat {19}({\ppgccnumberdoformat
+  {10}}):\ppgccpagedoformat {962 }--\ppgccpagedoformat {975}.
+
+\bibitem[Gall et~al.\@, 1993]{saps}
+\ppgccbibauthordoformat {Gall, J.-R.~L.\ppgccbibauthorsep{} Lemeshow,
+  S.\ppgccbibauthorlastsep{} \ppgccbibauthorand{} Saulnier, F.}
+  (\ppgccyeardoformat {1993}).
+\newblock \ppgccbibtitledoformat {A new simplified acute physiology score
+  ({SAPS II}) based on a european/north american multicenter study}.
+\newblock \ppgccbibjournaldoformat {{JAMA}, Journal of the American Medical
+  Association}, \ppgccbibpagesstring{} \ppgccpagedoformat
+  {2957}-\ppgccpagedoformat {}-\ppgccpagedoformat {2963}.
+
+\bibitem[Ghassemi et~al.\@, 2014]{szolovits}
+\ppgccbibauthordoformat {Ghassemi, M.\ppgccbibauthorsep{} Naumann,
+  T.\ppgccbibauthorsep{} Doshi{-}Velez, F.\ppgccbibauthorsep{} Brimmer,
+  N.\ppgccbibauthorsep{} Joshi, R.\ppgccbibauthorsep{} Rumshisky,
+  A.\ppgccbibauthorlastsep{} \ppgccbibauthorand{} Szolovits, P.}
+  (\ppgccyeardoformat {2014}).
+\newblock \ppgccbibtitledoformat {Unfolding physiological state: mortality
+  modelling in intensive care units}.
+\newblock \ppgccbibinstring{} \ppgccbibbooktitledoformat {Proc. of the 20th
+  {ACM} {SIGKDD}}, \ppgccbibpagesstring{} \ppgccpagedoformat
+  {75}-\ppgccpagedoformat {}-\ppgccpagedoformat {84}.
+
+\bibitem[Ghassemi et~al.\@, 2015]{szolovits2}
+\ppgccbibauthordoformat {Ghassemi, M.\ppgccbibauthorsep{} Pimentel,
+  M.\ppgccbibauthorsep{} Naumann, T.\ppgccbibauthorsep{} Brennan,
+  T.\ppgccbibauthorsep{} Clifton, D.\ppgccbibauthorsep{} Szolovits,
+  P.\ppgccbibauthorlastsep{} \ppgccbibauthorand{} Feng, M.} (\ppgccyeardoformat
+  {2015}).
+\newblock \ppgccbibtitledoformat {A multivariate time-series modeling approach
+  to severity of illness assessment and forecasting in {ICU} with sparse,
+  heterogeneous clinical data}.
+\newblock \ppgccbibinstring{} \ppgccbibbooktitledoformat {Proc. of the 29th
+  {AAAI}}, \ppgccbibpagesstring{} \ppgccpagedoformat {446}-\ppgccpagedoformat
+  {}-\ppgccpagedoformat {453}.
+
+\bibitem[Gong et~al.\@, 2017]{gong}
+\ppgccbibauthordoformat {Gong, J.\ppgccbibauthorsep{} Naumann,
+  T.\ppgccbibauthorsep{} Szolovits, P.\ppgccbibauthorlastsep{}
+  \ppgccbibauthorand{} Guttag, J.} (\ppgccyeardoformat {2017}).
+\newblock \ppgccbibtitledoformat {Predicting clinical outcomes across changing
+  electronic health record systems}.
+\newblock \ppgccbibinstring{} \ppgccbibbooktitledoformat {Proc. of the 23rd
+  {ACM} {SIGKDD}}, \ppgccbibpagesstring{} \ppgccpagedoformat
+  {1497}-\ppgccpagedoformat {}-\ppgccpagedoformat {1505}.
+
+\bibitem[Gong et~al.\@, 2015]{kdd2}
+\ppgccbibauthordoformat {Gong, J.\ppgccbibauthorsep{} Sundt,
+  T.\ppgccbibauthorsep{} Rawn, J.\ppgccbibauthorlastsep{} \ppgccbibauthorand{}
+  Guttag, J.} (\ppgccyeardoformat {2015}).
+\newblock \ppgccbibtitledoformat {Instance weighting for patient-specific risk
+  stratification models}.
+\newblock \ppgccbibinstring{} \ppgccbibbooktitledoformat {Proc. of the 21st
+  {ACM} {SIGKDD}}, \ppgccbibpagesstring{} \ppgccpagedoformat
+  {369}-\ppgccpagedoformat {}-\ppgccpagedoformat {378}.
+
+\bibitem[Graff \ppgccciteauthorand{} Birkenstein, 2009]{GraffB09}
+\ppgccbibauthordoformat {Graff, G. \ppgccbibauthorand{} Birkenstein, C.}
+  (\ppgccyeardoformat {2009}).
+\newblock \ppgccbibbtitledoformat {"They Say / I Say": The Moves That Matter in
+  Academic Writing}.
+\newblock W. W. Norton \& Company.
+
+\bibitem[Hamilton \ppgccciteauthorand{} Hamilton, 2012]{hamilton}
+\ppgccbibauthordoformat {Hamilton, S. \ppgccbibauthorand{} Hamilton, J.}
+  (\ppgccyeardoformat {2012}).
+\newblock \ppgccbibtitledoformat {Predicting in-hospital death and mortality
+  percentage using logistic regression}.
+\newblock \ppgccbibjournaldoformat {Computing in Cardiology},
+  \ppgccbibpagesstring{} \ppgccpagedoformat {489}-\ppgccpagedoformat
+  {}-\ppgccpagedoformat {492}.
+
+\bibitem[Horn, 1986]{Horn86}
+\ppgccbibauthordoformat {Horn, B. K.~P.} (\ppgccyeardoformat {1986}).
+\newblock \ppgccbibbtitledoformat {Robot Vision}.
+\newblock McGraw-Hill Book Company, Cambridge, Massachusetts.
+\newblock MIT Electrical Engineering and Computer Science Series.
+
+\bibitem[Huddar et~al.\@, 2016]{het}
+\ppgccbibauthordoformat {Huddar, V.\ppgccbibauthorsep{} Desiraju,
+  B.~K.\ppgccbibauthorsep{} Rajan, V.\ppgccbibauthorsep{} Bhattacharya,
+  S.\ppgccbibauthorsep{} Roy, S.\ppgccbibauthorlastsep{} \ppgccbibauthorand{}
+  Reddy, C.} (\ppgccyeardoformat {2016}).
+\newblock \ppgccbibtitledoformat {Predicting complications in critical care
+  using heterogeneous clinical data}.
+\newblock \ppgccbibjournaldoformat {{IEEE} Access}, \ppgccvolumedoformat
+  {4}:\ppgccpagedoformat {7988}-\ppgccpagedoformat {}-\ppgccpagedoformat
+  {8001}.
+
+\bibitem[Johnson et~al.\@, 2012]{bayes}
+\ppgccbibauthordoformat {Johnson, A.\ppgccbibauthorsep{} Dunkley,
+  N.\ppgccbibauthorsep{} Mayaud, L.\ppgccbibauthorsep{} Tsanas,
+  A.\ppgccbibauthorsep{} Kramer, A.\ppgccbibauthorlastsep{}
+  \ppgccbibauthorand{} Clifford, G.} (\ppgccyeardoformat {2012}).
+\newblock \ppgccbibtitledoformat {Patient specific predictions in the intensive
+  care unit using bayesian ensemble}.
+\newblock \ppgccbibjournaldoformat {Computing in Cardiology},
+  \ppgccbibpagesstring{} \ppgccpagedoformat {249}-\ppgccpagedoformat
+  {}-\ppgccpagedoformat {252}.
+
+\bibitem[Johnson et~al.\@, 2016]{decision}
+\ppgccbibauthordoformat {Johnson, A.\ppgccbibauthorsep{} Ghassemi,
+  M.\ppgccbibauthorsep{} Nemati, S.\ppgccbibauthorsep{} Niehaus,
+  K.\ppgccbibauthorsep{} Clifton, D.\ppgccbibauthorlastsep{}
+  \ppgccbibauthorand{} Clifford, G.} (\ppgccyeardoformat {2016}).
+\newblock \ppgccbibtitledoformat {Machine learning and decision support in
+  critical care}.
+\newblock \ppgccbibjournaldoformat {Proc. of the {IEEE}}, \ppgccvolumedoformat
+  {104}({\ppgccnumberdoformat {2}}):\ppgccpagedoformat {444}-\ppgccpagedoformat
+  {}-\ppgccpagedoformat {466}.
+
+\bibitem[Johnson et~al.\@, 2014]{revisited}
+\ppgccbibauthordoformat {Johnson, A.\ppgccbibauthorsep{} Kramer,
+  A.\ppgccbibauthorlastsep{} \ppgccbibauthorand{} Clifford, G.}
+  (\ppgccyeardoformat {2014}).
+\newblock \ppgccbibtitledoformat {Data preprocessing and mortality prediction:
+  the physionet/cinc 2012 challenge revisited}.
+\newblock \ppgccbibjournaldoformat {Computing in Cardiology},
+  \ppgccbibpagesstring{} \ppgccpagedoformat {157}-\ppgccpagedoformat
+  {}-\ppgccpagedoformat {160}.
+
+\bibitem[Krajnak et~al.\@, 2012]{krajnak}
+\ppgccbibauthordoformat {Krajnak, M.\ppgccbibauthorsep{} Xue,
+  J.\ppgccbibauthorsep{} Kaiser, W.\ppgccbibauthorlastsep{}
+  \ppgccbibauthorand{} Balloni, W.} (\ppgccyeardoformat {2012}).
+\newblock \ppgccbibtitledoformat {Combining machine learning and clinical rules
+  to build an algorithm for predicting {ICU} mortality risk}.
+\newblock \ppgccbibjournaldoformat {Computing in Cardiology},
+  \ppgccbibpagesstring{} \ppgccpagedoformat {401}-\ppgccpagedoformat
+  {}-\ppgccpagedoformat {404}.
+
+\bibitem[Krizhevsky et~al.\@, 2012]{nips}
+\ppgccbibauthordoformat {Krizhevsky, A.\ppgccbibauthorsep{} Sutskever,
+  I.\ppgccbibauthorlastsep{} \ppgccbibauthorand{} Hinton, G.}
+  (\ppgccyeardoformat {2012}).
+\newblock \ppgccbibtitledoformat {Imagenet classification with deep
+  convolutional neural networks}.
+\newblock \ppgccbibinstring{} \ppgccbibbooktitledoformat {Proc. of the 26th
+  {NIPS}}, \ppgccbibpagesstring{} \ppgccpagedoformat {1106}-\ppgccpagedoformat
+  {}-\ppgccpagedoformat {1114}.
+
+\bibitem[Lee \ppgccciteauthorand{} Horvitz, 2017]{hyun}
+\ppgccbibauthordoformat {Lee, D.~H. \ppgccbibauthorand{} Horvitz, E.}
+  (\ppgccyeardoformat {2017}).
+\newblock \ppgccbibtitledoformat {Predicting mortality of intensive care
+  patients via learning about hazard}.
+\newblock \ppgccbibinstring{} \ppgccbibbooktitledoformat {Proc. of the 31st
+  {AAAI}}, \ppgccbibpagesstring{} \ppgccpagedoformat {4953}-\ppgccpagedoformat
+  {}-\ppgccpagedoformat {4954}.
+
+\bibitem[Lorensen \ppgccciteauthorand{} Cline, 1987]{LorensenC87}
+\ppgccbibauthordoformat {Lorensen, W.~E. \ppgccbibauthorand{} Cline, H.~E.}
+  (\ppgccyeardoformat {1987}).
+\newblock \ppgccbibtitledoformat {{Marching cubes: A high resolution 3D surface
+  construction algorithm}}.
+\newblock \ppgccbibinstring{} \ppgccbibbooktitledoformat {Proceedings of the
+  Annual Conference on Computer Graphics and Interactive Techniques
+  (SIGGRAPH)}, \ppgccbibpagesstring{} \ppgccpagedoformat
+  {163}-\ppgccpagedoformat {}-\ppgccpagedoformat {169}.
+
+\bibitem[Luo et~al.\@, 2016]{luo}
+\ppgccbibauthordoformat {Luo, Y.\ppgccbibauthorsep{} Xin,
+  Y.\ppgccbibauthorsep{} Joshi, R.\ppgccbibauthorsep{} Celi,
+  L.\ppgccbibauthorlastsep{} \ppgccbibauthorand{} Szolovits, P.}
+  (\ppgccyeardoformat {2016}).
+\newblock \ppgccbibtitledoformat {Predicting {ICU} mortality risk by grouping
+  temporal trends from a multivariate panel of physiologic measurements}.
+\newblock \ppgccbibinstring{} \ppgccbibbooktitledoformat {Proc. of the 30th
+  {AAAI}}, \ppgccbibpagesstring{} \ppgccpagedoformat {42}-\ppgccpagedoformat
+  {}-\ppgccpagedoformat {50}.
+
+\bibitem[McMillan et~al.\@, 2012]{mcmillan}
+\ppgccbibauthordoformat {McMillan, S.\ppgccbibauthorsep{} Chia,
+  C.\ppgccbibauthorsep{} Esbroeck, A.\ppgccbibauthorsep{} Rubinfeld,
+  I.\ppgccbibauthorlastsep{} \ppgccbibauthorand{} Syed, Z.} (\ppgccyeardoformat
+  {2012}).
+\newblock \ppgccbibtitledoformat {{ICU} mortality prediction using time series
+  motifs}.
+\newblock \ppgccbibjournaldoformat {Computing in Cardiology},
+  \ppgccbibpagesstring{} \ppgccpagedoformat {265}-\ppgccpagedoformat
+  {}-\ppgccpagedoformat {268}.
+
+\bibitem[Moro et~al.\@, 2007]{MoroBT07}
+\ppgccbibauthordoformat {Moro, M.~M.\ppgccbibauthorsep{} Bakalov,
+  P.\ppgccbibauthorlastsep{} \ppgccbibauthorand{} Tsotras, V.~J.}
+  (\ppgccyeardoformat {2007}).
+\newblock \ppgccbibtitledoformat {{Early Profile Pruning on XML-aware
+  Publish/Subscribe Systems}}.
+\newblock \ppgccbibinstring{} \ppgccbibbooktitledoformat {Proceedings of the
+  International Conference on Very Large Data Bases}, \ppgccbibpagesstring{}
+  \ppgccpagedoformat {866}--\ppgccpagedoformat {877}.
+
+\bibitem[Nori et~al.\@, 2017]{nori}
+\ppgccbibauthordoformat {Nori, N.\ppgccbibauthorsep{} Kashima,
+  H.\ppgccbibauthorsep{} Yamashita, K.\ppgccbibauthorsep{} Kunisawa,
+  S.\ppgccbibauthorlastsep{} \ppgccbibauthorand{} Imanaka, Y.}
+  (\ppgccyeardoformat {2017}).
+\newblock \ppgccbibtitledoformat {Learning implicit tasks for patient-specific
+  risk modeling in {ICU}}.
+\newblock \ppgccbibinstring{} \ppgccbibbooktitledoformat {Proc. of the 31st
+  {AAAI}}, \ppgccbibpagesstring{} \ppgccpagedoformat {1481}-\ppgccpagedoformat
+  {}-\ppgccpagedoformat {1487}.
+
+\bibitem[{Odon de Alencar}, 2011]{Odon2011}
+\ppgccbibauthordoformat {{Odon de Alencar}, R.} (\ppgccyeardoformat {2011}).
+\newblock \ppgccbibtitledoformat {Utilizando evidência da wikipedia para
+  relacionar textos a lugares}.
+\newblock \ppgccbibmscstring{}, Programa de Pós-Graduação em Ciência da
+  Computação. Universidade Federal de Minas Gerais.
+
+\bibitem[Patel et~al.\@, 2009]{ai}
+\ppgccbibauthordoformat {Patel, V.\ppgccbibauthorsep{} Shortliffe,
+  E.\ppgccbibauthorsep{} Stefanelli, M.\ppgccbibauthorsep{} Szolovits,
+  P.\ppgccbibauthorsep{} Berthold, M.\ppgccbibauthorsep{} Bellazzi,
+  R.\ppgccbibauthorlastsep{} \ppgccbibauthorand{} Abu{-}Hanna, A.}
+  (\ppgccyeardoformat {2009}).
+\newblock \ppgccbibtitledoformat {The coming of age of artificial intelligence
+  in medicine}.
+\newblock \ppgccbibjournaldoformat {Artificial Intelligence in Medicine},
+  \ppgccvolumedoformat {46}({\ppgccnumberdoformat {1}}):\ppgccpagedoformat
+  {5}-\ppgccpagedoformat {}-\ppgccpagedoformat {17}.
+
+\bibitem[Raghavan et~al.\@, 2007]{RaghavanVRYS07}
+\ppgccbibauthordoformat {Raghavan, B.\ppgccbibauthorsep{} Vishwanath,
+  K.\ppgccbibauthorsep{} Ramabhadran, S.\ppgccbibauthorsep{} Yocum,
+  K.\ppgccbibauthorlastsep{} \ppgccbibauthorand{} Snoeren, A.}
+  (\ppgccyeardoformat {2007}).
+\newblock \ppgccbibtitledoformat {{Cloud Control with Distributed Rate
+  Limiting}}.
+\newblock \ppgccbibinstring{} \ppgccbibbooktitledoformat {Proceedings of the
+  {ACM SIGCOMM} Conference}.
+
+\bibitem[Sakai, 2014]{t-test}
+\ppgccbibauthordoformat {Sakai, T.} (\ppgccyeardoformat {2014}).
+\newblock \ppgccbibtitledoformat {Statistical reform in information retrieval?}
+\newblock \ppgccbibjournaldoformat {{SIGIR} Forum}, \ppgccvolumedoformat
+  {48}({\ppgccnumberdoformat {1}}):\ppgccpagedoformat {3}-\ppgccpagedoformat
+  {}-\ppgccpagedoformat {12}.
+
+\bibitem[Seshamani \ppgccciteauthorand{} Gray, 2004]{longi}
+\ppgccbibauthordoformat {Seshamani, M. \ppgccbibauthorand{} Gray, A.}
+  (\ppgccyeardoformat {2004}).
+\newblock \ppgccbibtitledoformat {A longitudinal study of the effects of age
+  and time to death}.
+\newblock \ppgccbibjournaldoformat {Journal of Health Economics},
+  \ppgccvolumedoformat {2}({\ppgccnumberdoformat {23}}):\ppgccpagedoformat
+  {217}-\ppgccpagedoformat {}-\ppgccpagedoformat {235}.
+
+\bibitem[Shashua, 1997]{Shashua97}
+\ppgccbibauthordoformat {Shashua, A.} (\ppgccyeardoformat {1997}).
+\newblock \ppgccbibtitledoformat {On photometric issues in {3D} visual
+  recognition from a single {2D} image}.
+\newblock \ppgccbibjournaldoformat {International Journal of Computer Vision
+  ({IJCV})}, \ppgccvolumedoformat {21}({\ppgccnumberdoformat
+  {1/2}}):\ppgccpagedoformat {99}-\ppgccpagedoformat {}-\ppgccpagedoformat
+  {122}.
+
+\bibitem[Silva et~al.\@, 2012]{silva}
+\ppgccbibauthordoformat {Silva, I.\ppgccbibauthorsep{} Scott, G.
+  M.~D.\ppgccbibauthorsep{} Celi, L.\ppgccbibauthorlastsep{}
+  \ppgccbibauthorand{} Mark1, R.} (\ppgccyeardoformat {2012}).
+\newblock \ppgccbibtitledoformat {Predicting in-hospital mortality of {ICU}
+  patients: The physionet/computing in cardiology challenge}.
+\newblock \ppgccbibjournaldoformat {Computing in Cardiology},
+  \ppgccbibpagesstring{} \ppgccpagedoformat {245}-\ppgccpagedoformat
+  {}-\ppgccpagedoformat {248}.
+
+\bibitem[Tabak et~al.\@, 2014]{sun}
+\ppgccbibauthordoformat {Tabak, Y.\ppgccbibauthorsep{} Sun,
+  X.\ppgccbibauthorsep{} Nunez, C.\ppgccbibauthorlastsep{} \ppgccbibauthorand{}
+  Johannes, R.} (\ppgccyeardoformat {2014}).
+\newblock \ppgccbibtitledoformat {Using electronic health record data to
+  develop inpatient mortality predictive model: Acute laboratory risk of
+  mortality score (alarms)}.
+\newblock \ppgccbibjournaldoformat {{JAMIA}}, \ppgccvolumedoformat
+  {21}({\ppgccnumberdoformat {3}}):\ppgccpagedoformat {455}-\ppgccpagedoformat
+  {}-\ppgccpagedoformat {463}.
+
+\bibitem[Traina \ppgccciteauthorand{} {Traina Jr.}, 2009]{TrainaT2009}
+\ppgccbibauthordoformat {Traina, A. J.~M. \ppgccbibauthorand{} {Traina Jr.},
+  C.} (\ppgccyeardoformat {2009}).
+\newblock \ppgccbibtitledoformat {Como fazer pesquisa bibliogr\'afica}.
+\newblock \ppgccbibjournaldoformat {SBC Horizontes}, \ppgccvolumedoformat
+  {2}({\ppgccnumberdoformat {2}}):\ppgccpagedoformat {30}--\ppgccpagedoformat
+  {35}.
+
+\bibitem[Turabian, 2007]{Turabian07}
+\ppgccbibauthordoformat {Turabian, K.~L.} (\ppgccyeardoformat {2007}).
+\newblock \ppgccbibbtitledoformat {A Manual for Writers of Research Papers,
+  Theses, and Dissertations}.
+\newblock University Of Chicago Press.
+
+\bibitem[Vairavan et~al.\@, 2012]{vairavan}
+\ppgccbibauthordoformat {Vairavan, A.\ppgccbibauthorsep{} Eshelman,
+  L.\ppgccbibauthorsep{} Haider, S.\ppgccbibauthorsep{} Flower,
+  A.\ppgccbibauthorlastsep{} \ppgccbibauthorand{} Seiver, A.}
+  (\ppgccyeardoformat {2012}).
+\newblock \ppgccbibtitledoformat {Prediction of mortality in an intensive care
+  unit using logistic regression and hidden markov model}.
+\newblock \ppgccbibjournaldoformat {Computing in Cardiology},
+  \ppgccbibpagesstring{} \ppgccpagedoformat {393}-\ppgccpagedoformat
+  {}-\ppgccpagedoformat {396}.
+
+\bibitem[Wazlawick, 2009]{Wazlawick09}
+\ppgccbibauthordoformat {Wazlawick, R.~S.} (\ppgccyeardoformat {2009}).
+\newblock \ppgccbibbtitledoformat {Metodologia de Pesquisa para Ciência da
+  Computação}.
+\newblock Elsevier.
+
+\bibitem[Wu et~al.\@, 2017]{wu}
+\ppgccbibauthordoformat {Wu, M.\ppgccbibauthorsep{} Ghassemi,
+  M.\ppgccbibauthorsep{} Feng, M.\ppgccbibauthorsep{} Celi,
+  L.\ppgccbibauthorsep{} Szolovits, P.\ppgccbibauthorlastsep{}
+  \ppgccbibauthorand{} Doshi{-}Velez, F.} (\ppgccyeardoformat {2017}).
+\newblock \ppgccbibtitledoformat {Understanding vasopressor intervention and
+  weaning: risk prediction in a public heterogeneous clinical time series
+  database}.
+\newblock \ppgccbibjournaldoformat {{JAMIA}}, \ppgccvolumedoformat
+  {24}({\ppgccnumberdoformat {3}}):\ppgccpagedoformat {488}-\ppgccpagedoformat
+  {}-\ppgccpagedoformat {495}.
+
+\bibitem[Xia et~al.\@, 2012]{xia}
+\ppgccbibauthordoformat {Xia, H.\ppgccbibauthorsep{} Daley,
+  B.\ppgccbibauthorsep{} Petrie, A.\ppgccbibauthorlastsep{}
+  \ppgccbibauthorand{} Zhao, X.} (\ppgccyeardoformat {2012}).
+\newblock \ppgccbibtitledoformat {A neural network model for mortality
+  prediction in {ICU}}.
+\newblock \ppgccbibjournaldoformat {Computing in Cardiology},
+  \ppgccbibpagesstring{} \ppgccpagedoformat {261}-\ppgccpagedoformat
+  {}-\ppgccpagedoformat {264}.
+
+\bibitem[Yosinski et~al.\@, 2014]{bengio2}
+\ppgccbibauthordoformat {Yosinski, J.\ppgccbibauthorsep{} Clune,
+  J.\ppgccbibauthorsep{} Bengio, Y.\ppgccbibauthorlastsep{}
+  \ppgccbibauthorand{} Lipson, H.} (\ppgccyeardoformat {2014}).
+\newblock \ppgccbibtitledoformat {How transferable are features in deep neural
+  networks?}
+\newblock \ppgccbibinstring{} \ppgccbibbooktitledoformat {Proc. of the 28th
+  {NIPS}}, \ppgccbibpagesstring{} \ppgccpagedoformat {3320}-\ppgccpagedoformat
+  {}-\ppgccpagedoformat {3328}.
+
+\bibitem[Zhang et~al.\@, 1996]{ZhangRL96}
+\ppgccbibauthordoformat {Zhang, T.\ppgccbibauthorsep{} Ramakrishnan,
+  R.\ppgccbibauthorlastsep{} \ppgccbibauthorand{} Livny, M.}
+  (\ppgccyeardoformat {1996}).
+\newblock \ppgccbibtitledoformat {{BIRCH: An Efficient Data Clustering Method
+  for Very Large Databases}}.
+\newblock \ppgccbibinstring{} \ppgccbibbooktitledoformat {Proceedings of the
+  {ACM SIGMOD} International Conference on Management of Data},
+  \ppgccbibpagesstring{} \ppgccpagedoformat {103}--\ppgccpagedoformat {114}.
+
+\bibitem[Zobel, 2004]{Zobel04}
+\ppgccbibauthordoformat {Zobel, J.} (\ppgccyeardoformat {2004}).
+\newblock \ppgccbibbtitledoformat {Writing for Computer Science}.
+\newblock Springer.
+
+\end{thebibliography}

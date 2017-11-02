@@ -1,0 +1,171 @@
+\chapter{Outros Pontos}\label{outros}
+
+É absolutamente impossível cobrir todo o material necessário para se escrever uma boa monografia em um único documento. A melhor prática é consultar material específico (por exemplo, livros de gramática e de metodologia científica) e praticar a escrita \citep{BoothCW08,GraffB09,Turabian07,Wazlawick09,Zobel04}.
+De qualquer modo, esta seção apresenta alguns pontos extra que podem auxiliar nessa difícil tarefa. Eles não seguem nenhuma ordem de importância.
+
+\section{Estilo, Conteúdo e Afins}
+
+\ponto{Figuras e Tabelas}  
+Lembre-se de sempre referenciar figuras e tabelas no seu texto. Por exemplo, a Figura \ref{fig:exemplo1} apresenta um exemplo de como fica uma figura qualquer, e a Tabela \ref{tab:exemplo1} como é uma tabela simples em tex. %Veja o código tex para saber como referenciar tabelas e figuras usando \verb|\label| e \verb|\ref|. 
+
+
+\begin{figure}[tb]
+    \centering
+    \includegraphics{img/exemplo}
+    %\includegraphics[scale=.5]{exemplo-x} % caso queira mudar o tamanho da figura
+    \caption{Uma figura de exemplo.}
+    \label{fig:exemplo1}
+\end{figure}
+
+
+\begin{table}[tb]
+    \caption{Uma tabela de exemplo.}
+    \label{tab:exemplo1}
+    {\centering
+    \begin{tabular}{lcr} \toprule
+    \emph{Left-aligned} & \emph{Centered} & \emph{Right-aligned} \\ \midrule
+    Lorem ipsum & dolor sit & amet \\
+    consectetur adipisicing & elit, sed do eiusmod & tempor \\
+    incididunt ut & labore et dolore & magna aliqua. \\ \bottomrule
+    \end{tabular}\par
+    }
+\end{table}
+
+
+
+\dica{Por questão de estilo, figuras e tabelas ficam mais legíveis no começo ou no final da página. Veja o código tex para saber como fazê-lo utilizando a opção [tb].}
+
+
+\ponto{Revisão Final} 
+Lembre-se de realizar uma revisão bem apurada antes de passar seu trabalho adiante. Verifique os seguintes pontos:
+
+\begin{itemize}
+	\item Ortografia: título, nomes dos autores e filiação; 
+	\item Ortografia: passe um corretor ortográfico (\textit{spell checker}) em todo o trabalho;
+	\item Legibilidade: imprima o trabalho (no formato final de submissão);
+	\item MS Word: numeração das seções e subseções, numeração no texto concorda com a numeração usada em figuras e tabelas, referências cruzadas não foram perdidas dentro do editor.  
+\end{itemize}
+
+\ponto{Sete Pecados Capitais} 
+Estilo é de cada um, mas cuidado com o seguinte:
+
+\begin{enumerate}
+	\item Frases longas (repletas de vírgulas ou não!); 
+	\item Erros ortográficos; 
+	\item Tradução literal (\textit{tea with me}) e \textit{imbromation} (escrever em inglês palavras que não existem);
+	\item Imagens/tabelas ilegíveis; 
+	\item Erros gramaticais (paralelismo, concordância, conjugação, crase);  
+	\item Cópia literal; 
+	\item Blablabla (encher linguiça). 
+\end{enumerate}
+
+\ponto{Divisão do texto} 
+Cada parágrafo deve ter frases de abertura e encerramento indicando o propósito do parágrafo. Uma seção formada apenas por \textit{bullets} (como algumas deste documento) não \textbf{(NÃO!)} é aceitável em um trabalho científico. De mesmo modo, evite subseções que contêm apenas um parágrafo. Via de regra, uma seção (um capítulo) é formada por mais de um parágrafo, o qual é formado por várias frases. Uma seção apenas com uma lista de itens não é uma seção, e sim uma lista de itens.
+
+A Figura \ref{fig:paragrafos}a apresenta um exemplo fictício para a \textit{má} divisão de seções. Veja que o texto desse exemplo contém inúmeros outros problemas, entre eles: 
+
+\begin{figure}[bt]
+    \centering
+    \includegraphics[scale=.8]{img/paragrafo} % caso queira mudar o tamanho da figura
+    \caption{\textit{Mau} exemplo de divisão de seções e sua correção}
+    \label{fig:paragrafos}
+\end{figure}
+
+
+
+\begin{itemize}
+	\item Frases longas, incompreensíveis e que enchem linguiça sem dizem absolutamente nada de útil (primeira frase); 
+	\item Seção começa direto com uma subseção. Cada seção deveria começar com pelo menos um parágrafo (para introduzir o conteúdo das subseções);
+	\item Erro de crase (tolerante à falhas: ou é ``às falhas'', o qual não faz o menor sentido, ou é ``à falha'' ou ``a falhas'');
+	\item Utilização de primeira pessoa (apresentamos)  pode ser trocada pelo impessoal: ``Essa seção apresenta o Índice Preguiçoso.''
+	\item Evitar ``abaixo'' e ``acima'', pois não se pode garantir que essas informações estarão apresentadas na mesma página. Se for estritamente necessário, utilize ``a seguir'' e ``anterior'';
+	\item Toda a figura DEVE ser referenciada pelo seu  número, bem como devidamente explicada no texto;
+	\item SQL, Sql ou sql? Como é uma sigla, utilize sempre a primeira opção (tudo em maiúsculo). Mais importante, utilize sempre da mesma forma em 
+todo o texto;
+	\item Evite termos em inglês quando existe um termo técnico em português (\textit{performance} é desempenho). De mesmo modo, evite traduzir pessoalmente conceitos que só existem em inglês. Se for inevitável, coloque o termo original em inglês entre parênteses e itálico.
+\end{itemize}
+
+Uma versão muito melhor do mesmo texto é apresentada na Figura \ref{fig:paragrafos}b. 
+
+\ponto{Cópia Literal} Via de regra, em Computação, cópia literal \textit{não} é aceita. Quando referenciar outros trabalhos, resuma suas ideias principais. Resista à tentação de copiar literalmente colocando o texto entre ``...'', pois apesar desse tipo de citação ser muito comum em textos de Literatura e outras áreas, em Computação não é. 
+
+\ponto{Figura ou Tabela} Geralmente, se os dados mostram uma tendência, criando uma ilustração interessante, faça uma figura. Se os números apenas estão lá, sem qualquer tendência interessante em evidência, uma tabela deveria ser suficiente. Lembre-se que tabelas também são preferíveis para apresentar números exatos. Tanto figuras quanto tabelas devem ser mencionadas no texto sendo que: figuras possuem explicação detalhada no texto  e tabelas podem ser autossuficientes. Lembre-se que uma imagem vale mil palavras. Desse modo, se o trabalho apresenta um processo complicado ou uma nova arquitetura, cheio de fases, entradas e saídas, fluxos de dados, etc, tente resumir tudo em uma imagem.  
+
+\ponto{Qualidade do Texto} A qualidade do texto científico é garantida por vários fatores. Especificamente, gírias são inadmissíveis, assim como ironias, brincadeiras e referências pessoais ao leitor. Deve também existir consistência na utilização do tempo verbal (deve-se evitar utilizar passado, presente e futuro indiscriminadamente). Palavras no estrangeiro devem ser grifadas em itálico. Todas as siglas esclarecidas, pois pode existir sobreposição de termos. Por exemplo, ``... conforme definido pela W3C (\textit{World Wide Web Consortium})''.
+
+
+\ponto{Tempo verbal}
+ Via de regra, o tempo verbal do seu trabalho é o tempo presente (tanto para textos em português quanto inglês). Exceções: pode-se utilizar o tempo passado ao mencionar trabalhos realizados anteriormente pelos mesmos autores ou outros (ex: Ragavhan mostrou que...), pode-se utiliza o passado nas seções finais de cada capítulo (ex: Este capítulo apresentou as definições...) e nas conclusões (ex: Este trabalho apresentou uma nova forma de ...); pode-se utilizar o tempo futuro apenas ao referenciar trabalhos que serão realizados, por exemplo, na conclusão ao mencionar trabalhos futuros (ex: Como trabalhos futuros, serão definidas novas formas para ...). 
+
+\ponto{Linhas e Palavras Órfãs}
+É muito comum que o próprio editor divida parágrafos e linhas nas páginas.
+Igualmente comum é que o editor deixe linhas e palavrás órfãs nas páginas e parágrafos.
+Ou seja: dividir as palavras no parágrafo e deixar uma ou duas palavras órfãs na última linha do mesmo, ou dividir os parágrafos e deixar uma linha órfã no início da página seguinte. 
+Nesses casos, é de bom estilo reduzir ou expandir o parágrafo para evitar a palavra/linha extra.
+
+
+
+\ponto{Backup! Backup! Backup! Backup! Backup!} Seguro morreu de velho. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Referências Bibliográficas}\label{intro:referencia}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TEXTO ORIGINAL:
+O pacote \verb|natbib| permite uma série de formas diferentes para fazer referências bibliográficas. O comando padrão \verb|\cite| realiza a citação comum, como por exemplo \cite{BoothCW08,Zobel04}. Outros comandos permitem  citar somente o autor --- por exemplo, citar o trabalho de \citeauthor{Wazlawick09} --- ou colocar automaticamente todas as citações entre um único par de colchetes \citep{GraffB09,Turabian07}. Os comandos usados foram, respectivamente, \verb|\citeauthor| e \verb|\citep|. Veja a documentação do \verb|natbib|  para conhecer outros comandos e exemplos de uso.
+
+%Citações aleatórias para fazer com que as referências bibliográficas ocupem mais de uma página: \cite{bichsel92simple, dror01statistics, guisser92new}.
+
+% POR MIRELLA M. MORO
+
+As referências são muito importantes para qualquer trabalho científico. Elas fornecem o embasamento necessário para entendê-lo bem como bibliografia complementar ao seu conteúdo. Considere as seguintes observações para as 
+referências: 
+\begin{itemize}
+	\item São corretas, completas, específicas; 
+	\item Possuem informações obrigatórias: autores, título, nome do 
+evento ou periódico (editora), volume e número se 
+necessário, ano; 
+	\item Incluem referências relevantes:
+		\begin{itemize}
+		\item Do mesmo ano  (ou ano anterior) para ilustrar que o 
+tópico é atual e de interesse da comunidade; 
+		\item Artigos de  conferências,  periódicos,  livros (não 
+apenas sites da Internet!);  
+		\item Todas as obras listadas no conjunto de referências 
+devem ser mencionadas no texto, e vice-versa. 
+		\end{itemize}
+\end{itemize}
+
+Veja o exemplo a seguir. \textit{Segundo \cite{Horn86}, todo triângulo equilátero tem os lados iguais. Já segundo \cite{Shashua97}, todo quadrado também tem.}
+
+Um ponto final é como mencionar as referências no texto. Por exemplo, qual é a melhor maneira de referenciar o trabalho [1]?
+
+\vspace{6pt}
+{\sffamily
+\noindent a. [1] informa que ... \\
+b. [1] informou que ... \\
+c. Moro et al informam que ... [1]. \\
+d. Os autores em [1] informam/informaram que ... \\
+e. Uma frase com a definição ou informação completa [1]. \\
+f. Uma frase com a definição ou informação completa, conforme definido por [1].
+}\vspace{6pt}
+
+
+Claramente, as opções \textit{a} e \textit{b} são estranhas porque a referência por si só não informa nada (é uma questão de estilo). O mais apropriado seria referenciar os autores que realizaram o trabalhando informando algo útil, conforme as opções \textit{c} e \textit{d}. Outras formas mais comuns são apresentadas em \textit{e} e \textit{f}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{LaTeX}\label{intro:latex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Caso o autor não estiver familiarizado com LaTeX e precisar usá-lo, sugere-se o seguinte.
+
+\textbf{LaTeX no Windows}: vários alunos resistem à utilização do LaTeX porque adoram usar o MS Word ou BrOffice no Windows. É possível continuar usando Windows com o LaTeX. Especificamente, pode-se utilizar um editor LaTeX online (exemplos incluem \url{http://www.sharelatex.com} e \url{http://www.overleaf.com}) ou instalá-lo através de três passos simples:
+
+\begin{enumerate}
+	\item Instalar o LaTeX. Ir ao site do Miktex Project: http://miktex.org\footnote{\textit{About MiKTeX: MiKTeX (pronounced mick-tech) is an up-to-date implementation of TeX and related programs for Windows (all current variants). TeX is a typesetting system written by Donald E. Knuth, who says that it is ``intended for the creation of beautiful books - and especially for books that contain a lot of mathematics''.}} 
+	\item No site do Miktex, fazer download MiKTeX versão atual \textit{Net Installer}. Rodar o programa \textbf{duas vezes}: primeiro para fazer DOWNLOAD e depois para INSTALAR o programa. Instalar a versão completa do miktex para evitar problemas futuros de falta de arquivos. \textbf{Importante}: a instalação do miktex geralmente leva hooooras, sugere-se ter paciência  e evitar interromper a instalação.
+	\item Instalar interface gráfica para o LaTeX. Pode-se utilizar o TeXnicCenter\footnote{TeXnicCenter: \url{http://www.texniccenter.org} -- Este é um exemplo de como referenciar páginas Web: simplesmente coloque-as como nota de rodapé (muito melhor do que ficar enchendo a seção de Referências com websites).}, o qual foi utilizado para construir este documento.
+\end{enumerate}
+
+Além disso, a leitura do Anexo \ref{anexo:latex} é praticamente obrigatória nesse caso.

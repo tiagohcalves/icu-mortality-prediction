@@ -1,0 +1,43 @@
+\chapter{Introduction}
+\label{chap:introducao}
+
+
+% CONTEXTO
+The Intensive Care Unit (ICU) is a department of a hospital in which patients who are dangerously ill are kept under constant observation. Usually, those units have a single specialization, such as cardiac surgery or pediatric diseases, and deal with patients who have high mortality risk, and therefore need to be constantly monitorated, by applying equipments that can generate patient status on real time (e.g., a heart beat monitor), or by exam results requested by ICU doctors, also called intensivists.
+
+According to \citet{gruenberg2006factors}, the estimated ICU length of stay on the United States is of 3.8 days, and the leading causes of death in the ICU are multi-organ failure, cardiovascular failure, and sepsis \cite{wunsch2010three}. Multi-organ failure has a mortality rate of up to 15-28\%, and severe respiratory failure has a mortality rate ranging from 20\% to 50\%, while sepsis, has a mortality rate of up to 45\%. Overall, mortality rates in patients admitted to adult ICUs average 10\% to 29\%, depending on age and severity of illness.
+
+% PROBLEMA
+Data from patients in the Intensive Care Unit are extensive, complex, and often produced at a rate far greater than intensivists can absorb. As a consequence, monitoring ICU patients is becoming increasingly complicated, and systems that learn from ICU data in order to alert clinicians to the current and future risks of a patient are playing a significant role in the decision making process~\citep{mcneill}. However, one of the main barriers in the deployment of these learning systems is the lack of generalization of results, i.e., the learning performance achieved in controlled environments often drops when the models are tested with different patient populations and conditions~\citep{lifetime,longi}. 
+
+This behaviour could be explained by the difference between patient data and the reasons that eventually leads to death, observed not only in different hospital domains, but also inside the same hospital, from an ICU to another, and even inside a single ICU. Each patient is different, and although there might be some similarity between them, other factors contribute to the outcome variance, such as the designated professional staff, treatments applied and the ICU enviroment.
+
+% SOLUCAO
+In this work, we explore domain adaptation to improve the performance of systems evaluated with mismatched training and testing conditions. We propose deep models that extract the domain-shared and the domain-specific latent features. This enables us to learn multiple models that are specific to each ICU domain, improving prediction accuracy over diverse patient populations. For this, we discuss several domain adaptation approaches that differ in terms of the choice of which layers to freeze or tune.
+
+The proposed models are composed of convolutional and recurrent components. They capture local physiological interactions (e.g., heart rate, creatinine, systolic blood pressure) at the lower level using a Convolutional Neural Network (CNN) and extracts the long range dependencies based on convoluted physiological signals at the higher level using a Long Short-Term Memory network (LSTM). Thus, our model exploits spatial and temporal information within vital signals and laboratorial findings to dynamically predict patient outcomes, i.e., the CNN component extracts spatial features of varying abstract levels and the LSTM component ingests a sequence of spatial features to generate temporally dynamic predictions for patient mortality. As a result, our models perform predictions that are based on information continuously collected over time and that can be updated (dynamically) as soon as new information becomes available.
+
+We also propose a novel neural network layer, which we called Swich. This layer is able to create internal dense representations of the patient's features, and then use those representations to modify the features themselves. With this modifications, our layer is able to find different distributions along the dataset, identify which distribution the patient belongs to, and use that information to improve the prediction.
+
+As a consequence, the learned representations along with the predictions for a specific patient during the ICU stay form the corresponding patient trajectory, and thus a mortality risk space can be  obtained from a set of past patient trajectories. The fundamental benefit of analyzing future patient trajectories in the mortality risk space is the focus on dynamics, emphasizing the proximity to risky regions of the space and the speed in which the patient condition changes. Therefore, the mortality risk space enables clinicians to track risky trends and to gain more insight into their treatment decisions or interventions.
+
+The data used to validate our hypothesis was drawn from the PhysioNet 2012 dataset~\citep{silva}, an open competition that aimed to create new methods for patient-specific prediction of in-hospital mortality. The dataset is made by the records of 4000 patients who have stayed at least 48 hours on one of four ICU, being those Coronary Care Unit, Cardiac Surgery Recovery Unit, Medical ICU and Surgical ICU.
+
+
+% \vspace{0.1in}
+% \section{Contributions and Findings} 
+% \label{sec:contributions_and_findings}
+
+In this work we elucidate the extent to which ICU mortality prediction may benefit from domain adaptation. In summary, our main contributions are:
+\begin{itemize}
+	\item While the combination of convolutional and recurrent structures has been investigated in prior work other than mortality prediction~\citep{wang}, this architecture is a proper choice here because it offers a complementary spatial-temporal perspective of the patient condition. As a result, predictions based on information that are continuously collected over time can be dynamically updated as soon as new information becomes available.
+	\item We propose deep models for ICU mortality prediction. Our models are composed of convolutional and recurrent layers, thus offering a complementary spatial-temporal perspective of the patient condition. As a result, our models perform predictions that are based on information continuously collected over time and that can be updated (dynamically) as soon as new information becomes available.
+	\item We propose a novel type of layer that not only improved the results of mortality prediction on ICU, but can also be used in many other domains, since it fits on any neural network architecture.
+	\item We show that patients within different ICU domains form sub-populations with different marginal distributions over their feature spaces. Therefore, we propose to learn specific models for different ICU domains that are trained using different feature transference approaches, instead of learning a single model for different ICU domains. We show that the effectiveness of different feature transference approaches varies greatly depending on the factors that define the target domain.
+	\item We conducted rigorous experiments using the PhysioNet 2012 dataset which comprises data from four different ICU domains. We show that multi-domain ICU data used for adaptation can significantly improve the effectiveness of the final model. Gains in terms of AUC range from 4\% to 8\% for early predictions, i.e., predictions based on data acquired during the first $5-20$ hours after admission. Gains range from 2\% to 4\% for predictions within the first 48 hours after admission.
+	\item We show that the patient representations along with the predictions provided by our models are meaningful in the sense that they form trajectories in a mortality risk space. Dynamics within this space can be very discriminative, enabling clinicians to track risky trends and to gain more insight into their treatment decisions or interventions.
+\end{itemize}
+
+%Patient care happens in bursts, build sequences from these and use as input to deep learning models (LSTMs)
+
+Furthermore, this work presents a range of published works about ICU mortality prediction techniques and neural networks on Chapter \ref{chap:related_work}, a detailed description of our proceedings to develop the architecture, layers and visualization, and any other relevant experiments on Chapter \ref{chap:methodology}, and all results obtained on Chapter \ref{chap:results}. Finally, Chapter \ref{chap:conclusion} brings our discussion of the subject and final considerations. 

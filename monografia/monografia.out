@@ -1,0 +1,25 @@
+\BOOKMARK [0][-]{chapter*.1}{Acknowledgments}{}% 1
+\BOOKMARK [0][-]{chapter*.2}{Resumo}{}% 2
+\BOOKMARK [0][-]{chapter*.3}{Abstract}{}% 3
+\BOOKMARK [0][-]{chapter*.4}{Resumo Estendido}{}% 4
+\BOOKMARK [0][-]{section*.5}{List of Figures}{}% 5
+\BOOKMARK [0][-]{section*.6}{List of Tables}{}% 6
+\BOOKMARK [0][-]{chapter.1}{1 Introduction}{}% 7
+\BOOKMARK [0][-]{chapter.2}{2 Related Work}{}% 8
+\BOOKMARK [1][-]{section.2.1}{2.1 Mortality Prediction}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.2}{2.2 ICU Domains and Sub-Populations}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.3}{2.3 Distribution-Aware Neural Network}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.4}{2.4 Present Work}{chapter.2}% 12
+\BOOKMARK [0][-]{chapter.3}{3 Methodology}{}% 13
+\BOOKMARK [1][-]{section.3.1}{3.1 Mortality Prediction}{chapter.3}% 14
+\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Data and Domains}{section.3.1}% 15
+\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Network Architecture}{section.3.1}% 16
+\BOOKMARK [2][-]{subsection.3.1.3}{3.1.3 Switch Layer}{section.3.1}% 17
+\BOOKMARK [2][-]{subsection.3.1.4}{3.1.4 Feature Transferability}{section.3.1}% 18
+\BOOKMARK [1][-]{section.3.2}{3.2 Application}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.3}{3.3 Experiments}{chapter.3}% 20
+\BOOKMARK [2][-]{subsection.3.3.1}{3.3.1 Baselines}{section.3.3}% 21
+\BOOKMARK [2][-]{subsection.3.3.2}{3.3.2 Setup}{section.3.3}% 22
+\BOOKMARK [0][-]{chapter.4}{4 Results}{}% 23
+\BOOKMARK [0][-]{chapter.5}{5 Conclusion}{}% 24
+\BOOKMARK [0][-]{section*.8}{Bibliography}{}% 25

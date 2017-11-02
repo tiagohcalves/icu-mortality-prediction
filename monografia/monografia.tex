@@ -1,0 +1,157 @@
+% INFORMAÇÃO SOBRE A VERSÃO DESSE DOCUMENTO
+% VERSÃO DA CLASSE ppgccufmg 1.44 (de 2011-04-25) - http://vilarneto.com/ppgccufmg
+% VERSÃO ORIGINAL: http://www.dcc.ufmg.br/pos/alunos/modelodisstese.php
+% VERSÃO COMENTADA e EXEMPLIFICADA: http://www.dcc.ufmg.br/~mirella @ janeiro/2012
+
+\documentclass[msc]{ppgccufmg}  % [phd] se for doutorado
+                                % [phd,project] para proposta de tese 
+ 				                        % [msc] se for mestrado
+
+%\usepackage[brazil]{babel}      % se o documento for em português, OU
+\usepackage[english]{babel}    % se o documento for em inglês
+\usepackage[latin1]{inputenc}   % Dá suporte para caracteres especiais como acentos e cedilha
+\usepackage[T1]{fontenc}        % Lê a codificação de fonte T1 (font encoding default é 0T1).
+\usepackage{type1ec}
+\usepackage{graphicx}						% define o comando \includegraphics para a inclusão de figuras
+\usepackage[a4paper,
+  portuguese,
+  bookmarks=true,
+  bookmarksnumbered=true,
+  linktocpage,
+  colorlinks,
+  citecolor=black,
+  urlcolor=black,
+  linkcolor=black,
+  filecolor=black,
+  ]{hyperref}
+\usepackage[square]{natbib}    % permite citações naturalmente
+                               % integradas ao texto
+\usepackage{multirow}					 % permite fazer tabelas com múltiplas linhas
+
+\hyphenation{re-qui-si-to % para separar corretamente 
+   }
+
+\usepackage[usenames,dvipsnames]{xcolor}  % para poder usar os nomes das cores
+%cria um novo comando para comentários em vermelho no meio do texto
+\newcommand{\redcomment}[1]{\textcolor{red}{\textbf{\textit{#1}}}} %M
+%cria um novo comando para Dica I: em azul itálico
+\newcounter{dicas}
+\renewcommand{\equation}{\Roman{dicas}}
+\setcounter{dicas}{1}
+\newcommand{\dica}[1]{\noindent\textcolor{blue}{\textbf{\textit{Dica \Roman{dicas}: #1}}}\addtocounter{dicas}{1}} %M
+%cria um novo comando para Português I: em verde itálico
+\newcounter{portugues}
+\renewcommand{\equation}{\Roman{dicas}}
+\setcounter{portugues}{1}
+\newcommand{\portugues}[1]{\noindent\textcolor{Maroon}{\textbf{\textit{Português \Roman{portugues}:}} #1}\addtocounter{portugues}{1}} %M
+
+% novo ambiente para o exemplo
+\newenvironment{Exemplo}
+{%before  
+   \def\FrameCommand{
+      \hspace{30pt}                   % horizontal distance from left margin
+      {\color{Gray}\vrule width 2pt}  % color of left rule
+      {\color{White}\vrule width 6pt} % color of space between rule and text
+      % \colorbox{Gray}								% background color
+   }%
+   \MakeFramed{\advance\hsize-\width\FrameRestore}%
+   \noindent 
+   \begin{adjustwidth}{}{7pt}%
+   \vspace{6pt}% 
+   \setstretch{.9} % "altura" de cada linha
+}
+{%after
+   \vspace{6pt}
+   \end{adjustwidth}
+   \endMakeFramed
+}
+
+%cria um novo comando para um formato diferente de texto
+\newcommand{\ponto}[1]{\vspace{.3cm}\noindent\textbf{#1}.} %M
+
+\usepackage{pstricks-add}
+
+\sloppy %M
+
+\begin{document}
+
+% O comando a seguir, \ppgccufmg, provê todas as informações relevantes para a
+% classe ppgccufmg. Por favor, consulte a documentação para a descrição de
+% cada chave.
+
+% Um exemplo para documentos em português é apresentado a seguir:
+\ppgccufmg{
+  title={Dynamically Prediction of ICU Mortality Risk Using Domain Adaptation},
+  authorrev={Alves, Tiago},
+  cutter={M1234x}, % INFORMAÇÃO QUE VAI NA FICHA CATALOGRÁFICA
+  cdu={100.0*01.10},  % Define o identificador CDU do documento, fornecido pela Secretaria do Curso.
+  university={Universidade Federal de Minas Gerais},
+  course={Computer Science},
+  portuguesetitle={Predição Dinâmica de Risco de Mortalidade em UTI Usando Adaptação de Domínio},
+  portugueseuniversity={Universidade Federal de Minas Gerais},
+  portuguesecourse={Ciência da Computação},
+  address={Belo Horizonte},
+  date={2017-10}, % ANO-MÊS  DA DEFESA
+  keywords={Machine Learning, Deep Learning, ICU, Mortality Prediction, Domain Adaptation}, %Define as palavras-chave que deverão constar na Ficha Catalográfica,
+%   separadas por vírgulas.
+  advisor={Alberto H. F. Laender},
+%  approval={img/approvalsheet.eps},
+  abstract=[brazil]{Resumo}{resumo}, %resumo.tex
+  abstract=[english]{Abstract}{abstract}, %abstract.tex
+  abstract=[brazil]{Resumo Estendido}{resumoest}, %resumoest.tex
+  dedication={dedicatoria},
+  ack={agradecimentos},
+%  ack=[Acknowledgments]{ack},
+  epigraphtext={Abandon all hope, ye who enter here}{Dante Alighieri},
+ }
+ %OUTRAS SUGESTÕES DE EPIGRAPH:
+  %{Escolhe um trabalho de que gostes \\e não terás que trabalhar nem um dia na tua vida.}{Confúcio}
+  %{O único modo de escapar da corrupção causada pelo sucesso é continuar trabalhando.}{Albert Einstein},
+  %{Que ninguém se engane, só se consegue a simplicidade através de muito trabalho.}{Clarice Lispector},
+  %{Um sonho sonhado sozinho é um sonho. Um sonho sonhado junto é realidade.}{Raul Seixas},
+  %{Para o trabalho que gostamos levantamo-nos cedo e fazemo-lo com alegria.}{William Shakespeare},
+  %{Pensar é o trabalho mais difícil que existe. Talvez por isso tão poucos se dediquem a ele.}{Henry Ford},
+  %{O prazer no trabalho aperfeiçoa a obra.}{Aristóteles},
+  %{O caminho batido não leva a novas pastagens}{Indira Ghandi},
+  %{Uma jornada de mil milhas começa com um único passo.}{Lao-Tzu},
+  %{É sempre o aventuroso que consegue grandes coisas}{Montesquieu},
+  
+
+% Um exemplo para documentos em inglês é apresentado a seguir (lembre-se de
+% usar \usepackage[english]{babel}):
+%\ppgccufmg{
+% title={Dynamically Prediction of ICU Mortality Risk Using Domain Adaptation},
+% authorrev={Alves, Tiago},
+% cutter={D1234p},
+% cdu={519.6*82.10},
+% university={Federal University of Minas Gerais},
+% course={Computer Science},
+% % portuguesetitle={Predição Dinâmica de Risco de Mortalidade em UTI Usando Adaptação de Domínio},
+% % portugueseuniversity={Universidade Federal de Minas Gerais},
+% % portuguesecourse={Ciência da Computação},
+% address={Belo Horizonte},
+% date={2017-10},
+% advisor={Alberto H. F. Laender},
+% % approval={img/approvalsheet.eps},
+% abstract=[brazil]{Resumo}{resumo},
+% abstract=[english]{Abstract}{abstract},
+% dedication={dedicatoria},
+% ack=[Acknowledgments]{ack},
+% epigraphtext={Abandon all hope, ye who enter here}{Dante Alighieri},
+%}
+
+% VOCÊ PODE DIVIDIR O SEU TEXTO EM VÁRIOS ARQUIVOS, por exemplo, um para cada seção principal do seu trabalho: introducao.tex, relacionados.tex, metodologia.tex, experimentos.tex, conclusao.tex
+\input{introducao}
+\input{related_work}
+\input{methodology}
+\input{results}
+\input{conclusao}
+
+% Aqui vem a parte da bibliografia: use o comando \ufmgbibliography indicando
+% apenas o nome do arquivo .bib (sem a extensão).
+\ppgccbibliography{bibfile} % ARQUIVO CONTENDO A BIBLIOGRAFIA
+
+% \input{apendice} % ARQUIVO CONTENDO OS APÊNDICES : OPCIONAL
+% \input{anexo} % ARQUIVO CONTENDO OS ANEXOS: OPCIONAL
+
+\end{document}

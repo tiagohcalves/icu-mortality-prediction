@@ -1,0 +1,30 @@
+Using Theano backend.
+WARNING (theano.sandbox.cuda): The cuda backend is deprecated and will be removed in the next release (v0.10).  Please switch to the gpuarray backend. You can get more information about how to switch at this URL:
+ https://github.com/Theano/Theano/wiki/Converting-to-the-new-gpu-back-end%28gpuarray%29
+
+Using gpu device 0: GeForce GTX 1060 6GB (CNMeM is disabled, cuDNN 5005)
+32,5,64,5,3,576,120,200 --- linear
+ERRO!!!
+32,5,64,5,3,576,120,200 --- elu
+ERRO!!!
+32,5,64,5,3,576,120,200 --- relu
+ERRO!!!
+64,10,128,10,3,768,300,200 --- linear
+ERRO!!!
+64,10,128,10,3,768,300,200 --- elu
+ERRO!!!
+64,10,128,10,3,768,300,200 --- relu
+ERRO!!!
+128,3,256,5,5,1536,500,300 --- linear
+ERRO!!!
+128,3,256,5,5,1536,500,300 --- elu
+ERRO!!!
+128,3,256,5,5,1536,500,300 --- relu
+ERRO!!!
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home_backup/tiagohca/anaconda3/lib/python3.6/site-packages/theano/gof/cmodule.py", line 943, in refresh
+    open(entry).close()
+  File "/home_backup/tiagohca/anaconda3/lib/python3.6/_bootlocale.py", line 23, in getpreferredencoding
+    def getpreferredencoding(do_setlocale=True):
+KeyboardInterrupt

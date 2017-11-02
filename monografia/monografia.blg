@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: monografia.aux
+The style file: ppgccufmg.bst
+Database file #1: bibfile.bib
+You've used 52 entries,
+            1998 wiz_defined-function locations,
+            776 strings with 13080 characters,
+and the built_in function-call counts, 25589 in all, are:
+= -- 2555
+> -- 1037
+< -- 51
++ -- 376
+- -- 356
+* -- 2223
+:= -- 4082
+add.period$ -- 157
+call.type$ -- 52
+change.case$ -- 431
+chr.to.int$ -- 52
+cite$ -- 52
+duplicate$ -- 1027
+empty$ -- 1762
+format.name$ -- 432
+if$ -- 5275
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 55
+newline$ -- 264
+num.names$ -- 156
+pop$ -- 487
+preamble$ -- 1
+purify$ -- 438
+quote$ -- 0
+skip$ -- 883
+stack$ -- 0
+substring$ -- 1893
+swap$ -- 278
+text.length$ -- 30
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 300
+warning$ -- 0
+while$ -- 211
+width$ -- 0
+write$ -- 672

@@ -1,0 +1,28 @@
+1. Introduction
+
+2. Related Work
+2.1 Mortality Prediction
+2.2 ICU Domains and Sub-populations
+2.3 Distribution-Aware Neural Network
+2.4 Present Work
+
+3 Methodology
+3.1 Mortality Prediction
+3.1.1 Data and Domains
+3.1.2 Evaluation
+3.1.3 Network Achitecture
+3.1.4 Switch Layer
+3.1.5 Feature Transferability
+3.2 Application
+3.2.1 Real-time prediction
+3.2.2 Death heatmap
+3.3 Experiments
+3.3.1 Baselines
+3.3.2 Setup
+
+4 Results
+4.1 Model comparison
+4.2 Applicablility
+
+5 Conclusion
+5.1 Future Work

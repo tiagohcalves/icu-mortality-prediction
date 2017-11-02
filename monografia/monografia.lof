@@ -1,0 +1,15 @@
+\select@language {english}
+\addvspace {10pt}
+\addvspace {10pt}
+\addvspace {10pt}
+\addvspace {10pt}
+\addvspace {10pt}
+\addvspace {10pt}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces (Color online) Relative frequency in which physiological parameters are measured in different ICU domains.}}{13}{figure.3.1}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces (Color online) CNN$-$LSTM AUC numbers for predictions performed using information within the first $y$ hours after the patient admission ($5\le y\le 48$).}}{22}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces (Color online) Gains over~\citep {kdd} at different prediction times ($5\le y\le 48$).}}{22}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces (Color online) Mortality risk space for different ICU domains. Regions in red are risky.}}{23}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces (Color online) Dynamics of 48-hour trajectories in different ICU domains. Red curves are computed from trajectories associated with patients that have died. Blue curves are computed from trajectories associated with patients that survived.}}{23}{figure.4.4}
+\addvspace {10pt}

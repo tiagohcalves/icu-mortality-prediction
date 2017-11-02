@@ -1,0 +1,219 @@
+\chapter{Desenvolvimento}\label{desenvolvimento}
+
+Este capítulo discute as partes principais do desenvolvimento do trabalho. É importante notar que em momento algum é discutida a metodologia científica a ser utilizada (como informa, por exemplo, o livro \citep{Wazlawick09}). Em vez disso, este capítulo foca na apresentação do desenvolvimento do trabalho no texto da monografia, dissertação ou tese. Especificamente, a Seção \ref{desenv:divisao} apresenta diferentes maneiras de organizar o texto em partes, a Seção \ref{desenv:parte} especifica melhor cada uma dessas partes,\footnote{\portugues{\textbf{Sujeito e Vírgula}. Sujeitos diferentes na mesma frase são separados por vírgula, tal como nesta parte do texto.}} e a Seção \ref{desenv:final} finaliza este capítulo com algumas considerações gerais. 
+
+\dica{Excelente exemplo de boa organização: cada capítulo começa com uma introdução própria especificando o que será abordado no mesmo.} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Partes do Desenvolvimento}\label{desenv:divisao}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{figure}[tb]
+    \centering
+    \includegraphics[scale=.35]{img/desenvolvimento} % caso queira mudar o tamanho da figura
+    \caption{Duas opções para o desenvolvimento do texto}
+    \label{fig:desenvolvimento}
+\end{figure}
+
+
+
+Existem muitas maneiras de apresentar o corpo do trabalho. De modo geral, essas organizações diferentes apresentam o mesmo conteúdo: introdução, o que já existe, o que é novo, a validação e a conclusão. Esse conteúdo é instanciado em ordem diferente em capítulos com nomes distintos. Por exemplo, a Figura \ref{fig:desenvolvimento} mostra exemplos diferentes para o mesmo estilo de esqueleto. 
+
+\dica{Rascunhar com ordens diferentes e revisá-las com o orientador.} 
+
+
+
+Alguns exemplos reais de organização de artigos  científicos são apresentados na Tabela \ref{tab:desenvolvimento2} e de dissertação e tese na Tabela \ref{tab:desenvolvimento}. Três pontos importantes devem ser notados: (1) cada um apresenta nomes próprios para o mesmo tipo de esqueleto mencionado na Figura \ref{fig:desenvolvimento}; (2) os exemplos de organização de artigos também se aplicam diretamente às monografias; e (3) o tamanho da fonte utilizada dentro da tabela foi alterado através do comando \verb|\footnotesize| (veja o arquivo .tex).
+
+\begin{table}[tb] %TOP ou BOTTOM
+    \caption{Exemplos de organização do desenvolvimento do trabalho.}
+    \label{tab:desenvolvimento2}
+    {\centering
+\footnotesize{ % MUDA O TAMANHO DA FONTE PARA MENOR    
+    \begin{tabular}{cl} \toprule
+    \emph{Referência} & \emph{Seções} \\ \midrule
+\multirow{7}{*}{\cite{Odon2011}} & 1. Introduction \\
+                                     & 2. Related Work \\
+                                     & 3. Using Evidence from Wikipedia to Automatically Related  \\
+                                     & Texts to Places \\
+                                     & 4. Experimental Evaluation \\
+                                     & os Novos Algoritmos \\
+                                     & 5. Conclusions and Future Work \\
+                                     & 6. References \\ \hline
+\multirow{8}{*}{\cite{Cordeiro2011}} & 1. Introduction \\ 
+                                     & 2. Related Work and Concepts\\
+                                     & 3. Clustering Methods for Moderate-to-High Dimensionality Data \\
+                                     & 4. Halite \\
+                                     & 5. BoW \\
+                                     & 6. QMAS \\
+                                     & 7. Conclusion \\
+                                     & Bibliography\\ \bottomrule    \end{tabular}}\par
+    }
+\end{table}
+
+
+\begin{table}[tb] %TOP ou BOTTOM
+    \caption{Mais exemplos de organização do desenvolvimento do trabalho.}
+    \label{tab:desenvolvimento}
+    {\centering
+\footnotesize{ % MUDA O TAMANHO DA FONTE PARA MENOR    
+    \begin{tabular}{cl} \toprule
+    \emph{Referência} & \emph{Seções} \\ \midrule
+\multirow{6}{*}{\cite{ArantesVTT03}} & 1. Introdução \\
+                                     & 2. Trabalhos Relacionados \\
+                                     & 3. Motivação e Conceitos Fundamentais \\
+                                     & 4. Composição de Operadores por Similaridade: \\
+                                     & os Novos Algoritmos \\
+                                     & 5. Experimentos Realizados \\
+                                     & 6. Conclusões e Trabalhos Futuros \\ \hline
+\multirow{6}{*}{\cite{BraganholoDH05}} & 1. Introduction \\ 
+                                     & 2. Related Work \\
+                                     & 3. Query Trees \\
+                                     & 4. Update Language \\
+                                     & 5. Mapping \\
+                                     & 6. Summary and Concluding Remarks \\ \hline
+\multirow{5}{*}{\cite{FranklW93}} & 1. Introduction  \\
+                                     & 2. Definitions  \\
+                                     & 3. Complexity Measures  \\
+                                     & 4. Desired Properties of Complexisty Measures  \\
+                                     & 5. Conclusions, Summary, and Future Directions  \\ \hline
+\multirow{8}{*}{\cite{LorensenC87}} & 1. Introduction  \\
+                                     & 2. Information flow for 3D medical algorithms \\ 
+                                     & 3. Related work  \\
+                                     & 4. Marching cube algorithm  \\
+                                     & 5. Enhancements of the basic algorithm  \\
+                                     & 6. Implementation  \\
+                                     & 7. Results  \\
+                                     & 8. Conclusions  \\ \hline
+\multirow{7}{*}{\cite{RaghavanVRYS07}} & 1. Introduction  \\
+                                     & 2. Classes of Clouds  \\
+                                     & 3. Limiter Design  \\
+                                     & 4. Evaluation Methodology  \\
+                                     & 5. Evaluation  \\
+                                     & 6. Related Work  \\
+                                     & 7. Conclusion \\ \hline
+\multirow{7}{*}{\cite{ZhangRL96}} & 1. Introduction  \\
+                                     & 2. Summary of Relevant Research  \\
+                                     & 3. Background  \\
+                                     & 4. Clustering Feature and CF Tree  \\
+                                     & 5. The BIRCH Clustering Algorithm  \\
+                                     & 6. Performance Studies  \\
+                                     & 7. Summary and Future Research  \\ \bottomrule    \end{tabular}}\par
+    }
+\end{table}
+
+
+
+A seguir, cada um dos itens principais do desenvolvimento, conforme ilustrado na Figura \ref{fig:desenvolvimento}, é discutido individualmente. 
+
+\dica{Não vale à pena ter apenas UMA subseção; geralmente, decide-se dividir o texto em mais de uma seção (senão não é necessário dividir).}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Desenvolvimento Parte por Parte}\label{desenv:parte}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Independente da sugestão utilizada, esta seção apresenta os principais pontos a serem abordados (independente de ordem) no desenvolvimento do trabalho. 
+
+%%%%%%%%%%%
+\subsection{Desenvolvimento: O que já existe}
+%%%%%%%%%%%
+
+A parte de \textit{o que já existe} é composta de conceitos básicos e trabalhos relacionados. Essas seções podem ser apresentadas juntas ou não, mas os conceitos básicos (referencial teórico, base conceitual...) são discutidos antes da contribuição principal. Já os trabalhos relacionados podem ser discutidos no início ou fim. 
+  
+Nesta seção são introduzidos, discutidos ou simplesmente mencionados todos os tópicos necessários para entender o seu trabalho. Entre eles, citam-se: definições, notações, modelos, arquiteturas, linguagens, cenários e padrões. Todos incluem referências para trabalhos onde os conceitos são introduzidos ou melhor detalhados. 
+
+Os trabalhos relacionados (\textit{related work}) fazem parte do que já existe e devem considerar os trabalhos anteriores com temas relacionados ao seu, incluindo trabalhos cujos detalhes ajudam a mostrar onde o seu trabalho é melhor. Deve-se procurar mencionar os trabalhos nos quais as desvantagens ou pontos fracos são aprimorados no seu trabalho. Finalmente, é também importante notar condições e limitações do seu trabalho em comparação aos demais. 
+Sobre como realizar uma pesquisa bibliográfica, pode-se consultar este artigo \cite{TrainaT2009}, publicado na Revista Eletrônica SBC Horizontes\footnote{SBC Horizontes: \url{http://www.sbc.org.br/horizontes}}. 
+
+%%%%%%%%%%%
+\subsection{Desenvolvimento: Novidade}
+%%%%%%%%%%%
+
+Essa é a parte \textit{principal} do trabalho e tem de estar claríssima. Uma boa sugestão de organização é a seguinte:
+
+\begin{itemize}
+	\item Escrever um parágrafo com ideia geral da proposta; 
+	\item Esclarecer novas definições (escreva claramente que são definições \textit{novas} -- ou seja, não existiam antes do seu trabalho que está sendo descrito na monografia);  
+	\item Adicionar quantos parágrafos necessários para  apresentar:  
+		\begin{itemize}
+			\item o que é o trabalho; 
+			\item como funciona a proposta; 
+			\item o que é novidade, por que ou como é novo; 
+			\item detalhes e explicações sobre partes principais do funcionamento da proposta.
+		\end{itemize}
+\end{itemize}
+
+\dica{Veja que até aqui, esta subseção é um excelente exemplo de como {\upshape NÃO deve ser} uma subseção: uma frase seguida de itens. Resista a essa tentação, organize melhor suas seções e as preencha com pa.rá.gra.fos.}
+
+%%%%%%%%%%%
+\subsection{Desenvolvimento: Validação}
+%%%%%%%%%%%
+
+Esta parte tem o objetivo de mostrar que a solução proposta funciona e, principalmente, os seus benefícios.
+Via de regra, deve ser definida de acordo com o tipo específico do seu trabalho e incluir: análise, estudo de caso ou experimentos.
+
+\textbf{Análise.} Mostra que a proposta é correta através de demonstração e provas. Inclua conforme o necessário: um parágrafo com o resumo do que é provado nessa seção, um parágrafo com definições específicas usadas na análise (i.e. estruturas usadas nas provas),  provas e análises, e comentários finais sobre o significado das provas de um modo intuitivo ou num nível mais prático 
+
+\textbf{Estudo de Caso.} Mostra que proposta é aplicável, implementável. Inclua conforme o necessário: contexto geral, regras ou condições específicas necessárias  nesse caso, modelagem / implementação, funcionamento, vantagens e desvantagens de usar o modelo proposto.
+
+\textbf{Experimentos.} Mostra que a proposta funciona e tem desempenho bom ou superior. Lembre-se que essa parte deve ser autocontida\footnote{\portugues{\textbf{Hífen.} Atenção para as novas regras da utilização do hífen. Não se emprega o hífen na formação de palavras: (i) com os seguintes prefixos: ante, anti, circum, co, contra, entre, extra, hiper, infra, intra, pós, pré, sobrem, sub, super, supra, ultra; (ii) para os prefixos de origem grega e latina como por exemplo aero e semi; e (iii) que sejam locuções como por exemplo fim de semana e café com leite. Continua-se usando em outros casos como por exemplo: guarda-chuva, primeiro-ministro, erva-do-chá, recém-nascido.}}, ou seja: legendas legíveis, compreensíveis  e suficientes para entender o gráfico. Inclua conforme necessário: 
+
+\begin{itemize}
+	\item Contexto: o que é medido, o que não é, por quê\footnote{\portugues{\textbf{Os Porquês.}
+	\textit{Por que} = preposição mais pronome ``por qual razão'' ou ``por qual motivo''; ``pelo qual'' (macete: Por que = Why anything?). 
+	\textit{Por quê} = igual ao anterior quando vier antes de um ponto (macete: por quê = Why?).
+	\textit{Porque} = conjunção causal ou explicativa  ``pois'', ``uma vez que'', ``para que''. (macete: porque = because). 
+	\textit{Porquê} = substantivo. Exemplo: Eu não entendo por que estudar os porquês é tão difícil. Por quê? Porque é mais simples do que parece.}}; 
+	\item Modelo de simulação ou infraestrutura das medições: configuração do sistema, tipo de máquinas usadas, linguagens, etc;
+	\item Resultados dos experimentos: descrição de resultados; 
+	\item Subtítulo (em negrito): para diferenciar experimentos (ex: avaliando tamanho da entrada, variando a quantidade de consultas, 
+usando dados sintéticos, usando dados reais, ...); 
+	\item Motivação: razão clara para cada gráfico que aparece (ex: conforme o tamanho dos arquivos de entrada aumenta, o \textit{throughput} diminui, ...); 
+	\item Explicação completa: os eixos (\textit{x}, \textit{y} e \textit{z}), o que o gráfico mostra, a tendência, por que da tendência, por que um algoritmo é melhor/pior que outro, etc; e 
+	\item Comentários finais, discussões, explicações adicionais.
+\end{itemize}
+
+Por exemplo, considere a organização da seção de experimentos do artigo \citep{ZhangRL96}:
+
+\begin{Exemplo}
+6. Performance studies  \\
+\indent 6.1 Analysis \\
+\indent 6.2 Synthetic Dataset Generator \\
+\indent 6.3 Parameters and Default Setting\\
+\indent 6.4 Base Workload Performance \\
+\indent 6.5 Sensitivity to Parameters \\
+\indent 6.6 Time Scalability \\
+\indent 6.7 Comparison of BIRCH and CLARANS \\
+\indent 6.8 Application to Real Datasets
+\end{Exemplo}
+
+
+%%%%%%%%%%%
+\subsection{Desenvolvimento: Discussão}
+%%%%%%%%%%%
+
+Esta parte pode ser incluída como subseção final de Experimentos ou na Conclusão.
+Alguns pontos que podem ser abordados:
+
+\begin{itemize}
+	\item Relacionamentos entre os fatos e resultados observados; 
+	\item Princípios, relações, generalizações mostrados nos Experimentos; 
+	\item Exceção ou falta de relação, pontos incertos;  
+	\item Discordâncias (mostrar que resultados e interpretações discordam/concordam com trabalhos previamente publicados); 
+	\item Implicações teóricas e possíveis aplicações práticas; 
+	\item Evidências para cada conclusão (não assuma que o  leitor é super capaz de juntar todos os pontos  sozinho).  
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Considerações Finais}\label{desenv:final}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\dica{Esta seção é opcional, mas também é um excelente exemplo de organização. Nela, o autor pode fazer considerações gerais sobre o capítulo inteiro, enfatizar novamente quais os pontos relevantes discutidos e indicar a sua relação com o próximo capítulo (ou seja, conectar este ao próximo).}
+
+Este capítulo apresentou diferentes maneiras de organizar o corpo principal do texto. Dois pontos relevantes são: independente da organização escolhida, é importante manter o texto conexo; e embora seja esperado que uma monografia tenha novidade, não é esperado que a organização do texto seja inovadora e completamente fora do padrão (ou seja, não invente moda... siga uma das organizações apresentadas neste capítulo com poucas variações). 
+

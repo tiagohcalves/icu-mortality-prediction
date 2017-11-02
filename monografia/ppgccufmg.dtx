@@ -1,0 +1,3107 @@
+% \iffalse meta-comment
+%
+% Copyright (C) 2004,2005,2006,2007,2008,2009,2010,2011 by Vilar Fiuza da
+% Camara Neto and Eduardo Freire Nakamura.
+%
+% This file may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either
+% version 1.2 of this license or (at your option) any later
+% version.  The latest version of this license is in:
+%
+%     http://www.latex-project.org/lppl.txt
+%
+% and version 1.2 or later is part of all distributions of
+% LaTeX version 1999/12/01 or later.
+%
+% Currently this work has the LPPL maintenance status "maintained".
+%
+% The Current Maintainer of this work is Vilar Fiuza da Camara Neto.
+%
+% This work consists of the files ppgccufmg.dtx and
+% ppgccufmg.ins and the derived file ppgccufmg.cls.
+%
+% \fi
+%
+% \iffalse
+%<*driver>
+\ProvidesFile{ppgccufmg.dtx}
+%</driver>
+%<class>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+%<class>\ProvidesClass{ppgccufmg}
+%<*class>
+  [2011/04/25 v1.44 Classe para dissertacoes, teses e propostas de tese no
+  formato PPGCC/ICEx/UFMG]
+%</class>
+%<*driver>
+\documentclass{ltxdoc}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+
+\EnableCrossrefs
+\CodelineIndex
+\RecordChanges
+
+\begin{document}
+\DocInput{ppgccufmg.dtx}
+\end{document}
+%</driver>
+% \fi
+
+% \CheckSum{2112}
+
+
+% \CharacterTable
+%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%   Digits        \0\1\2\3\4\5\6\7\8\9
+%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%   Dollar        \$     Percent       \%     Ampersand     \&
+%   Acute accent  \'     Left paren    \(     Right paren   \)
+%   Asterisk      \*     Plus          \+     Comma         \,
+%   Minus         \-     Point         \.     Solidus       \/
+%   Colon         \:     Semicolon     \;     Less than     \<
+%   Equals        \=     Greater than  \>     Question mark \?
+%   Commercial at \@     Left bracket  \[     Backslash     \\
+%   Right bracket \]     Circumflex    \^     Underscore    \_
+%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%   Right brace   \}     Tilde         \~}
+%
+% \changes{v1.44}{2011-04-25}{Correção de bugs no formato BibTeX;
+%   flexibilização da formatação de valores numéricos; configuração manual das
+%   chaves para indexação da Ficha Catalográfica; correção da Folha de Aprovação}
+% \changes{v1.43}{2011-01-31}{Tradução de alguns termos do estilo do BibTeX;
+%   correção de página em branco no fim do documento e de contagem do número de
+%   páginas do frontmatter; correção de bugs}
+% \changes{v1.42}{2010-04-22}{Correção no timing de interpretação da data do
+%   documento}
+% \changes{v1.41}{2009-06-30}{Correção de timing para a construção correta do
+%   Sumário, no que diz respeito ao título de apêndices e anexos}
+% \changes{v1.40}{2009-04-22}{Alteração da posição do Sumário; opção para a
+%   inserção de material antes do Sumário}
+% \changes{v1.31}{2009-04-07}{Retirada de régua do cabeçalho no modo `oneside'}
+% \changes{v1.30}{2009-03-12}{Ajuste de alguns detalhes de formatação}
+% \changes{v1.21}{2008-10-20}{\string\cleardoublepage antes de
+%   \string\tableof...}
+% \changes{v1.20}{2008-10-16}{Criação do comando \string\keywords; opção
+%   `abstract' permite especificar a linguagem do resumo; descrição do
+%   documento inclui ``Instituto de Ciências Exatas''; mudança na posição do
+%   nome do orientador na Folha de Rosto}
+% \changes{v1.10}{2008-10-02}{Ficha Catalográfica condicional (não é criada
+%   para projetos e propostas); comando \string\sloppy é disparado
+%   automaticamente; o pacote não compõe mais a Folha de Aprovação; mudança na
+%   contagem das páginas introdutórias; inclusão da página de epígrafe; estilo
+%   de bibliografia alterado de ufmg.bst para ppgccufmg.bst}
+% \changes{v1.0}{2008-05-09}{Nome da classe alterada de `ufmgthesis' para
+%   `ppgccufmg'; mudança na contagem das páginas introdutórias; inclusão da
+%   Ficha Catalográfica}
+% \changes{v0.31}{2008-02-26}{Correção da contra-capa, em que aparecia o nome
+%   do autor duplicado}
+% \changes{v0.30}{2007-12-13}{Mudança na especificação de dedicatórias e
+%   agradecimentos; cabeçalho da página de título agora apresenta nome do autor
+%   e do orientador}
+% \changes{v0.20}{2007-11-09}{Mudança na especificação de resumos e
+%   \emph{abstracts}; término da tradução da documentação para o português}
+% \changes{v0.14}{2006-11-05}{Documentação traduzida para o português.
+%   Eliminados brokentitle e similares. Corrigidos bugs de formatação.
+%   Corrigido cabeçalho quando apêndices são postos após as Referências
+%   Bibliográficas}
+% \changes{v0.13}{2005-07-24}{The approval sheet now shows the broken title}
+% \changes{v0.12}{2005-07-21}{Bugs: arabic numbering in front matter (with
+%   ``easy way'') and no header in main matter (with command
+%   \string\ufmgthesis)}
+% \changes{v0.11}{2005-06-21}{Typo: \string\ufmgthesis was previously named
+%   \string\ufmghesis; Front matter header/footer reformat; page numbering
+%   starts right after cover/title pages; \string\mainmatter is now automatic
+%   (see `nomainmatter' class option)}
+% \changes{v0.10}{2005-03-12}{Cover/title page reformat; added `centertitles'
+%   class option}
+% \changes{v0.09}{2005-03-10}{Extended the Portuguese/non-Portuguese
+%   integration}
+% \changes{v0.08}{2005-03-09}{Changed date format and document structure,
+%   especially to provide more integration between Portuguese and
+%   non-Portuguese parts}
+% \changes{v0.07}{2005-03-09}{Changed ``Thesis proposal'' to ``Thesis
+%   project''}
+% \changes{v0.06}{2005-03-07}{Corrected the bibliography header placement}
+% \changes{v0.05}{2005-02-22}{Added bibliography support}
+% \changes{v0.04}{2005-01-15}{Added `memhfixc' package auto-loading}
+% \changes{v0.03}{2005-01-15}{`twoside' option is working now}
+% \changes{v0.02}{2005-01-13}{Corrected small formatting bugs}
+% \changes{v0.01}{2004-12-09}{Initial version (first draft)}
+%
+% \GetFileInfo{ppgccufmg.dtx}
+%
+% \newcommand\cls{\textsf}
+% \newcommand\pkg{\textsf}
+% \newcommand\bst{\textsf}
+%
+% \title{A classe \cls{ppgccufmg}\thanks{Este documento corresponde à versão
+% \fileversion{} da classe \cls{ppgccufmg}, lançada em~\filedate.}}
+% \author{Vilar Fiuza da Camara Neto\qquad\qquad Eduardo Freire Nakamura \\
+% \texttt{\{neto,nakamura\}@dcc.ufmg.br}} \date{25 de abril de 2011}
+%
+% \sloppy
+% \maketitle
+%
+% \StopEventually
+%
+% \tableofcontents
+%
+%
+% \section{Introdução}
+%
+% Este arquivo descreve a classe \LaTeX{} \cls{ppgccufmg} --- uma classe para
+% formatar dissertações de mestrado, teses de doutorado e propostas de tese
+% para o Programa de Pós-Graduação em Ciência da Computação da Universidade
+% Federal de Minas Gerais (PPGCC/UFMG). Durante um bom tempo esta classe se
+% chamou \pkg{ufmgthesis} e foi utilizada por vários alunos em caráter
+% extra-oficial, embora incorporando sugestões tanto da Secretaria quanto da
+% Coordenação do Curso. Por sua vez, a \pkg{ufmgthesis} é baseada na classe
+% original \pkg{ufmgthes} criada pelo estudante Eduardo Freire Nakamura.
+%
+% A versão atual da classe está em conformidade com a padronização oficial
+% estabelecida pelo PPGCC/UFMG.
+%
+%
+% \section{Como usar a classe}
+%
+% Esta seção descreve como usar a classe \cls{ppgccufmg}.
+%
+% As subseções mais importantes são a \ref{sec:classoptions} (opções da classe,
+% ou seja, as opções para o comando |\documentclass|) e a \ref{sec:ppgccufmg}
+% (como usar o comando |\ppgccufmg|, que monta o documento automaticamente).
+% Para usuários de versões anteriores desta classe (ou da classe
+% \pkg{ufmgthesis}), cheque também a subseção \ref{sec:pastusers}, para checar
+% se houve alguma mudança na sintaxe dos comandos ou na forma de prover as
+% informações do documento.
+%
+% Note que a classe \cls{ppgccufmg} é baseada na classe \cls{memoir}, que é uma
+% classe altamente configurável. Você deve tê-la instalada no seu sistema
+% \LaTeX. Alguns sistemas já vêm com essa classe (incluindo a distribuição mais
+% comum do Windows, o MiK\TeX). A Subseção~\ref{sec:memoirtips} contém uma
+% descrição rápida sobre a instalação do \cls{memoir}.
+%
+%
+% \subsection{Para os impacientes}
+% \label{sec:quickintro}
+%
+% Esta é a estrutura de um arquivo \LaTeX{} baseado no estilo \cls{ppgccufmg},
+% já com alguns pacotes recomendados:
+%
+% \begin{quote}
+% \begin{verbatim}
+% \documentclass[phd]{ppgccufmg}    % ou [msc] para dissertações
+%                                   % de mestrado
+%
+% \usepackage[brazil]{babel}        % ajusta vários detalhes para
+%                                   % documentos escritos em português,
+%                                   % principalmente hifenização
+% \usepackage[T1]{fontenc}          % permite a hifenização de
+%                                   % palavras acentuadas
+% \usepackage[latin1]{inputenc}     % ou [utf8x] para quem prefere
+%                                   % usar a codificação UTF-8
+% \usepackage{graphicx}             % define o comando \includegraphics
+%                                   % para a inclusão de figuras
+% \usepackage[square]{natbib}       % permite citações naturalmente
+%                                   % integradas ao texto
+%
+% \begin{document}
+%
+% \ppgccufmg{
+%   % inserir aqui as informações para o comando \ppgccufmg
+% }
+%
+% \chapter{Introdução}
+%
+% % a partir daqui vem o texto do seu documento
+%
+% % bibliografia:
+% \ppgccbibliography{nome do arquivo BibTeX, sem a extensão}
+%
+% % apêndices, se houver
+% \begin{appendices}
+%
+% \chapter{Um apêndice}
+% ...conteúdo do apêndice...
+%
+% \chapter{Outro apêndice}
+% ...conteúdo do apêndice...
+%
+% \end{appendices}
+%
+% % anexos, se houver
+% \begin{attachments}
+%
+% \chapter{Um anexo}
+% ...conteúdo do anexo...
+%
+% \chapter{Outro anexo}
+% ...conteúdo do anexo...
+%
+% \end{attachments}
+%
+% \end{document}
+%\end{verbatim}
+% \end{quote}
+%
+% A descrição do comando |\ppgccufmg| é vista na Subseção~\ref{sec:ppgccufmg}.
+%
+% Para quem quiser usar outras listas (Lista de Algoritmos, de Símbolos, etc.),
+% siga os seguintes passos:
+%
+% \begin{enumerate}
+%
+% \item \emph{Não altere o arquivo} |ppgccufmg.cls|;
+%
+% \item Use a opção |beforetoc| do comando |\ppgccufmg| para incluir os
+% comandos que devem ser executados antes do Sumário:
+% \begin{quote}
+% \begin{verbatim}
+% \ppgccufmg{...,beforetoc={\listofalgorithms}}
+%\end{verbatim}
+% \end{quote}
+%
+% Todos os comandos indicados como parâmetro para a opção |beforetoc| são
+% executados imediatamente antes da criação do Sumário. Se a seqüência de
+% comandos for mais extensa (por exemplo, se você compõe manualmente uma tabela
+% para a Lista de Símbolos), então o melhor é colocar esses comandos em um
+% arquivo separado --- digamos, |listadesimbolos.tex| --- e usar a opção
+% |beforetoc| da seguinte maneira:
+% \begin{quote}
+% \begin{verbatim}
+% \ppgccufmg{...,beforetoc={\input{listadesimbolos.tex}}}
+%\end{verbatim}
+% \end{quote}
+%
+% \end{enumerate}
+%
+%
+% \subsection{Informações importantes para usuários de versões anteriores}
+% \label{sec:pastusers}
+%
+% Se você estava usando uma versão anterior da classe \cls{ppgccufmg} e está
+% atualizando-a para a versão atual, algumas mudanças estruturais (por exemplo,
+% na sintaxe dos comandos) podem ter ocorrido. Dê uma olhada nas subseções a
+% seguir para ver se essas mudanças afetam o seu documento.
+%
+% Naturalmente, se você está usando o \cls{ppgccufmg} pela primeira vez,
+% esta seção não é importante.
+%
+% \subsubsection{Mudanças introduzidas na versão 1.40}
+%
+% O comando |\ppgccufmg| possui uma nova opção: |beforetoc|. Esse comando deve
+% ser usado para listar os comandos que são executados antes do Sumário, em
+% particular para a geração de listas extras, como a Lista de Algoritmos ou de
+% Símbolos.
+%
+% \subsubsection{Mudanças introduzidas na versão 1.20}
+%
+% O comando \cmd{\keywords} foi criado para automatizar a especificação das
+% palavras-chave em resumos e \emph{abstracts}. O antigo comando
+% \cmd{\keywords} foi alterado para \cmd{\fckeywords}, para separar a
+% funcionalidade específica da Ficha Catalográfica.
+%
+% A opção |abstract| permite especificar a linguagem do resumo em questão.
+% Recomenda-se usar |abstract=[english]{Abstract}{arquivo}| para o
+% \emph{abstract} (resumo em inglês) --- assim o comando \cmd{\keywords} gera o
+% termo em inglês ``Keywords''.
+%
+% Foram criados os ambientes |appendices| e |attachments| para facilitar a
+% criação de apêndices e anexos.
+%
+% \subsubsection{Mudanças introduzidas na versão 1.10}
+%
+% O comando |\ufmgbibliography| foi alterado para |\ppgccbibliography|, para
+% refletir o fato de que o estilo não é adotado pela UFMG como um todo (somente
+% pelo PPGCC).
+%
+% O padrão para o tamanho da fonte foi mudado para 12pt, ao invés de 11pt.
+%
+% Como a Folha de Aprovação é um documento fornecido pela Secretaria do Curso,
+% não faz sentido que esta classe gere essa página. Assim, as seguintes
+% mudanças foram feitas:
+%
+% \begin{itemize}
+% \item A sintaxe da opção |advisor| mudou. Agora é necessário informar somente
+%   o nome do orientador, não mais o seu título e instituição. A mesma mudança
+%   se aplica ao comando |\advisor|;
+% \item Todas as opções de |\ppgccufmg| e comandos para especificar as
+%   informações da Folha de Aprovação foram suprimidas. Assim, as opções
+%   |coadvisor|, |member| e |logo| não são mais reconhecidas, assim como os
+%   comandos |\coadvisor|, |\addtocomitee| e |\logo|;
+% \item A Folha de Aprovação deve ser digitalizada após a emissão pela
+%   Secretaria (preferencialmente em formato |png| se você estiver usando o
+%   |pdflatex| ou em |eps| se estiver usando o |latex|). O nome do arquivo
+%   correspondente deve ser informado pela opção |approval| (ou pelo comando
+%   |\approval|).
+% \end{itemize}
+%
+% Fora isso, a numeração das páginas mudou novamente: a falsa folha de rosto
+% (antes chamada de ``capa'') não conta na numeração.
+%
+% \subsubsection{Mudanças introduzidas na versão 1.0}
+%
+% Esta é a primeira versão oficial da classe. As principais mudanças são as
+% seguintes:
+%
+% \begin{itemize}
+% \item o nome da classe foi mudado de \pkg{ufmgthesis} para
+%   \cls{ppgccufmg} (e o comando |\ufmgthesis| também foi mudado para
+%   |\ppgccufmg|);
+% \item recomanda-se usar a chave |authorrev| ao invés de |author|;
+% \item das opções de classe |a4paper,11pt,twoside| são adotadas por padrão
+%   (não é necessário citá-las no |\documentclass|);
+% \item foi criada a Ficha Catalográfica;
+% \item foi alterada a numeração das páginas introdutórias (a página `i' é a
+%   capa).
+% \end{itemize}
+%
+% \subsubsection{Mudanças introduzidas na versão 0.30}
+%
+% Por sugestão da Secretaria do nosso curso, decidimos (e achei melhor) colocar
+% a Dedicatória e os Agradecimentos antes dos resumos. Além disso, mudou o
+% cabeçalho da página de título: ao invés do nome da instituição, passa a
+% aparecer os nomes do autor e o orientador.
+%
+% \subsubsection{Mudanças introduzidas na versão 0.20}
+%
+% A definição de resumos e \emph{abstracts} mudou: os diversos comandos
+% |\abstract|, |\englishabstract| e |\portugueseabstract| foram centralizados
+% em um único comando |\abstract|. A sintaxe deste comando é
+% |\abstract|\marg{título}\marg{arquivo} (note que especificar o título é
+% obrigatório, como ``Resumo'', ``Abstract'' ou ``Resumo Estendido''). É
+% possível definir qualquer número de resumos e \emph{abstracts}.
+%
+% A mesma observação se aplica às opções |abstract|, |englishabstract| e
+% |portugueseabstract| do comando |\ufmgthesis|, substituídas pela opção
+% |abstract|.
+%
+% \subsubsection{Mudanças introduzidas na versão 0.14}
+%
+% As opções |brokentitle| e |portuguesebrokentitle| e os comandos
+% |\brokentitle| e |\portuguesebrokentitle| foram eliminados. Sem dó nem
+% piedade. Caso você queira definir manualmente as quebras de linha para
+% balancear melhor o título na capa e na folha de título, introduza as quebras
+% de linha (|\\|) na própria opção |title| ou no comando |\title|.
+%
+% O comando |\backmatter| não é mais chamado automaticamente. Isso resolve
+% o problema da numeração inexistente dos apêndices, para quem prefere
+% colocá-los após as Referências Bibliográficas. (Entretanto, alguns recomendam
+% que as Referências Bibliográficas sejam colocadas \emph{após} os apêndices.)
+%
+% \subsubsection{Mudanças introduzidas na versão 0.11}
+%
+% \textbf{Importante!} Versões anteriores tinham um erro de grafia no comando
+% |\ufmgthesis|: seu nome era definido como |\ufmghesis| (ou seja, sem o
+% \textbf{t}). Esse erro foi corrigido a partir da versão 0.11. Se você estiver
+% atualizando de uma versão anterior, por favor altere o seu documento para
+% chamar o comando com a grafia correta.
+%
+% O comando |\mainmatter| agora é chamado automaticamente, a não ser que a
+% opção de classe |nomainmatter| seja especificada.
+%
+% A formatação dos cabeçalhos e rodapés mudou: o título da seção não aparece
+% mais, porque muitas vezes o cabeçalho ficava sobrecarregado com muito texto
+% (especialmente no caso de seções com títulos compridos).
+%
+% Além disso, a numeração das páginas começa logo após a folha de título. (Nas
+% versões anteriores, a numeração começava somente após o Sumário.)
+%
+% \subsubsection{Mudanças introduzidas na versão 0.10}
+%
+% A formatação da capa e da página de título mudou. Na nova versão, a posição
+% do nome do autor do documento é diferente.
+%
+% \subsubsection{Mudanças introduzidas na versão 0.09}
+%
+% Foram criadas as opções |portuguesetitle|, |portuguesebrokentitle|,
+% |portugueseuniversity| e |portuguesecourse|. Elas só são importantes se você
+% estiver escrevendo o documento em uma língua diferente do português. Além
+% disso, a opção |department| desapareceu, pois essa informação não era usada.
+%
+% \subsubsection{Mudanças introduzidas na versão 0.08}
+%
+% O formato da data fornecido pela opção |date=|\meta{data} (para o comando
+% |\ufmgthesis|) ou pelo comando |\date|\marg{data} mudou. Ao invés de fornecer
+% a data de forma textual (ou seja, ``10 de janeiro de 2005'' ou ``January 10,
+% 2005''), você deve agora fornecer a data no formato |aaaa-mm-dd| ou
+% |aaaa-mm|. Veja a Seção~\ref{sec:ppgccufmg} para mais detalhes.
+%
+%
+% \subsection{Opções da classe}
+% \label{sec:classoptions}
+%
+% \newcommand{\defmark}{$\triangleright$}
+% \newcommand{\sep}{$\mid$}
+%
+% Ao usar o comando |\documentclass|, você pode fornecer algumas opções para
+% configurar a aparência do documento.
+%
+% \emph{Para os impacientes:} o mais comum é usar somente o seguinte (para
+% teses de doutorado):
+% \begin{quote}
+% |\documentclass[phd]{ppgccufmg}|
+% \end{quote}
+% Para dissertações de mestrado, basta colocar |msc| no lugar de |phd|. No caso
+% de documento de proposta ou projeto, usar também a opção |proposal| ou
+% |project|, ou seja:
+% \begin{quote}
+% |\documentclass[phd,project]{ppgccufmg}|
+% \end{quote}
+% para o projeto de tese.
+%
+% As opções disponíveis são listadas a seguir. A opção padrão em cada caso é
+% identificada pelo símbolo \defmark.
+%
+% \begin{itemize}
+%
+% \item |msc| \sep{} \defmark|phd|
+%
+%   Define se este documento é uma dissertação de mestrado ou uma tese de
+%   doutorado.
+%
+% \item |proposal| ou |project|
+%
+%   Se qualquer uma dessas opções for fornecida, o documento torna-se uma
+%   proposta de dissertação ou um projeto de tese. O efeito é o mesmo para
+%   qualquer uma das duas opções.
+%
+% \item |single| \sep{} \defmark|onehalf| \sep{} |double|
+%
+%   Define o espaçamento padrão entre as linhas: simples, 1\,\textonehalf{} ou
+%   duplo.
+%
+% \item |centertitles|
+%
+%   Por padrão, o texto-título das páginas introdutórias (resumos,
+%   Agradecimentos, Sumário, Lista de Figuras e Lista de Tabelas) é alinhado à
+%   esquerda. Com esta opção, os títulos passam a ser centralizados. Também é
+%   afetado o título das ``Referências Bibliográficas''. Esta opção não altera
+%   o alinhamento do título dos capítulos ao longo do documento.
+%
+% \item \defmark|a4paper| \sep{} |letterpaper|
+%
+%   Define o tamanho da página: A4 ou carta (``letter''). O tamanho normatizado
+%   no Brasil é A4.
+%
+% \item |9pt| \sep{} |10pt| \sep{} |11pt| \sep{} \defmark|12pt| \sep{} |14pt|
+%   \sep{} |17pt|
+%
+%   Define o tamanho da fonte. 12 pontos é o padrão. As demais alternativas
+%   devem ser ignoradas na versão final.
+%
+% \item |oneside| \sep{} \defmark|twoside|
+%
+%   Define se a impressão será feita apenas em um lado da folha (|oneside|) ou
+%   em ambos (|twoside|). A impressão em dupla face deve ser adotada sempre que
+%   possível, já que reduz o consumo de papel.
+%
+% \item \defmark|showcover| \sep{} |hidecover|
+%
+%   Habilita ou desabilita a geração da falsa folha de rosto.
+%
+% \item \defmark|showtitle| \sep{} |hidetitle|
+%
+%   Habilita ou desabilita a geração da folha de rosto.
+%
+% \item \defmark|showfc| \sep{} |hidefc|
+%
+%   Habilita ou desabilita a geração da Ficha Catalográfica. (Se uma das opções
+%   |proposal| ou |project| for usada, o padrão é |hidefc|.)
+%
+% \item \defmark|showapproval| \sep{} |hideapproval|
+%
+%   Habilita ou desabilita a geração da Folha de Aprovação.
+%
+% \item \defmark|showabstract| \sep{} |hideabstract|
+%
+%   Habilita ou desabilita a geração das páginas de resumo (\emph{abstract}).
+%
+% \item \defmark|showdedication| \sep{} |hidededication|
+%
+%   Habilita ou desabilita a geração da página de dedicatória.
+%
+% \item \defmark|showack| \sep{} |hideack|
+%
+%   Habilita ou desabilita a geração da página de agradecimentos.
+%
+% \item \defmark|showepigraph| \sep{} |hideepigraph|
+%
+%   Habilita ou desabilita a geração da página com a epígrafe.
+%
+% \item \defmark|showlof| \sep{} |hidelof|
+%
+%   Habilita ou desabilita a geração da Lista de Figuras.
+%
+% \item \defmark|showlot| \sep{} |hidelot|
+%
+%   Habilita ou desabilita a geração da Lista de Tabelas.
+%
+% \item \defmark|showtoc| \sep{} |hidetoc|
+%
+%   Habilita ou desabilita a geração do Sumário (\emph{Table of Contents}).
+%
+% \item \defmark|showall| \sep{} |hideall|
+%
+%   Habilita ou desabilita a geração de todas as páginas opcionais. Você pode
+%   usar a opção |hideall| para acelerar a compilação do documento enquanto ele
+%   está sendo construído e alterar para |showall| somente na geração das
+%   versões finais.
+%
+% \item |nomainmatter|
+%
+%   A classe \cls{ppgccufmg} chama automaticamente o comando |\mainmatter|
+%   depois da construção de todas as páginas introdutórias. (O comando
+%   |\mainmatter| reinicia a numeração das páginas e configura-as para o
+%   formato arábico: 1, 2, 3, etc.) Se você quiser inserir manualmente outras
+%   páginas antes do corpo principal do documento de modo a manter a numeração
+%   romana (i, ii, iii, etc.), então use esta opção. Neste caso, porém,
+%   \emph{não se esqueça} de colocar o comando |\mainmatter| antes do primeiro
+%   capítulo. Se você esquecer desse comando, todas as páginas do seu documento
+%   serão numerados conforme a formatação romana.
+%
+%   Note que esta opção \emph{não deve mais ser usada} para a inserção da Lista
+%   de Algoritmos ou outras listas. Para isso, consulte a opção |beforetoc| do
+%   comando |\ppgccufmg| (Seção~\ref{sec:ppgccufmg}) e o exemplo da
+%   Seção~\ref{sec:quickintro}.
+%
+% \end{itemize}
+%
+%
+% \subsection{O jeito muito fácil de usar a classe}
+% \label{sec:ppgccufmg}
+%
+% Todas as páginas introdutórias --- falsa folha de rosto, folha de rosto,
+% Folha de Aprovação, resumo, resumo estendido, \emph{abstract}, dedicatória,
+% agradecimentos, Sumário, lista de figuras e lista de tabelas --- podem ser
+% geradas por um único comando: |\ppgccufmg|, que recebe todas as informações
+% por meio de pares \meta{chave}|=|\meta{valor}. A chamada ao comando se parece
+% com algo como:
+%
+% \begin{quote}
+% \begin{raggedright}
+% |\ppgccufmg{|\\
+% |  title={O Título da Tese},|\\
+% |  authorrev={da Camara Neto, Vilar Fiuza},|\\
+% |  university={Universidade Federal de Minas Gerais},|\\
+% |  |\emph{demais informações\ldots}\\
+% |}|
+% \end{raggedright}
+% \end{quote}
+%
+% \emph{Para os impacientes:} cheque os exemplos no fim desta seção. Cheque
+% também o arquivo de exemplo, |exemplo.tex|, distribuído com este pacote.
+%
+% Bom, agora você precisa da lista de todas as chaves que podem ser fornecidas
+% como parâmetros para o comando |\ppgccufmg|. Eis a lista:
+%
+% \begin{itemize}
+%
+% \item |title|=\marg{título}
+%
+%   Define o título da dissertação ou da tese.
+%
+%   Ao compilar o texto, se você perceber que as quebras de linha que ocorrem
+%   na folha de rosto criam um efeito desbalanceado, marque manualmente os
+%   pontos de quebra de linha com duas contra-barras (|\\|). Para maiores
+%   informações, veja a descrição do comando |\title| na
+%   página~\pageref{macro:title}.
+%
+% \item |authorrev|=\marg{sobrenome,nome}
+%
+%   Define o nome do autor em ordem reversa (Sobrenome, Nome).
+%
+% \item |author|=\marg{nome}
+%
+%   Define o nome do autor. Se esta chave não for usada, o nome é montado
+%   automaticamente com base na chave |authorrev|: portanto, o ideal é usar
+%   apenas |authorrev|.
+%
+% \item |cutter|=\marg{cutter}
+%
+%   Define o código ``cutter'' do documento.
+%
+% \item |cdu|=\marg{CDU}
+%
+%   Define o identificador CDU do documento, fornecido pela Secretaria do Curso.
+%
+% \item |keywords|=\marg{chave,chave,\ldots}
+%
+%   Define as palavras-chave que deverão constar na Ficha Catalográfica,
+%   separadas por vírgulas.
+%
+% \item |indexkeys|=\marg{chaves para indexação}
+%
+%   Define o texto da Ficha Catalográfica com as informações para indexação.
+%   Esta informação é fornecida pela Secretaria do Curso ou pela biblioteca.
+%
+% \item |university|=\marg{nome}
+%
+%   Define o nome da universidade.
+%
+% \item |course|=\marg{nome}
+%
+%   Define o nome do curso.
+%
+% \item |portuguesetitle|=\marg{título}\\
+%   |portugueseuniversity|=\marg{nome}\\
+%   |portuguesecourse|=\marg{nome}
+%
+%   Se você está escrevendo o documento em língua estrangeira, você precisará
+%   fornecer também o título do documento e os nomes da universidade e do curso
+%   em português. Essas chaves servem para isso.
+%
+% \item |address|=\marg{endereço}
+%
+%   Não é o endereço completo: apenas a cidade e o estado, para constarem na
+%   folha de rosto.
+%
+% \item |date|=\marg{data}
+%
+%   Define a data do documento, \emph{sempre} no formato |aaaa-mm-dd| ou
+%   |aaaa-mm| (ou seja, o dia não é obrigatório). Note a ordem (ano-mês-dia), o
+%   hífen como separador e o uso de 4 dígitos para o ano.
+%
+% \item |approval|=\oarg{ajuste}\oarg{escala}\marg{arquivo gráfico}
+%
+%   Especifica o arquivo gráfico que contém a Folha de Aprovação digitalizada.
+%   Este gráfico é incluído no documento. O argumento \meta{ajuste} é uma
+%   distância para deslocar a imagem para baixo (por exemplo, |-2.5cm| desloca
+%   a imagem 25mm para cima), e \meta{escala} é um fator de escala para a
+%   imagem (por exemplo, |0.9| escala a imagem em 90\%).
+%
+% \item |advisor|=\marg{nome}
+%
+%   Define o nome do orientador.
+%
+% \item |abstract|=\marg{título}\marg{arquivo}
+%
+%   Define um arquivo \texttt{.tex} que contém o texto do resumo (ou
+%   \emph{abstract}). O argumento \meta{título} refere-se ao título a constar
+%   na página: geralmente ``Resumo'', ``Abstract'' ou ``Resumo Estendido''.
+%   \emph{Não use o comando} |\chapter| \emph{nesse arquivo.}
+%
+%   Você pode usar esta opção diversas vezes, para especificar versões
+%   diferentes do resumo. O mais comum é que sejam especificadas pelo menos uma
+%   versão em português e uma em inglês. Observe os exemplos descritos a seguir.
+%
+% \item |dedication|=\marg{arquivo}
+%
+%   Define um arquivo \texttt{.tex} que contém a dedicatória. \emph{Não use o
+%   comando} |\chapter| \emph{nesse arquivo}, inclusive porque páginas de
+%   dedicatória não apresentam título.
+%
+%   Você pode usar esta opção diversas vezes, geralmente se quiser apresentar
+%   dedicatórias em mais de uma linguagem.
+%
+% \item |ack|=\oarg{título}\marg{arquivo}
+%
+%   Define um arquivo \texttt{.tex} que contém os agradecimentos. Se o
+%   argumento \meta{título} for omitido, será adotado ``Agradecimentos'' na
+%   linguagem do documento. \emph{Não use o comando} |\chapter| \emph{nesse
+%   arquivo.}
+%
+%   Você pode usar esta opção diversas vezes, geralmente se quiser apresentar
+%   agradecimentos em mais de uma linguagem.
+%
+% \item |epigraphtext|=\marg{texto}\marg{autor}
+%
+%   Define a epígrafe, que será colocada em página própria.
+%
+% \item |beforetoc|=\marg{comandos}
+%
+%   Define um conjunto de comandos que deve ser executado imediatamente antes
+%   da composição do Sumário. Usado principalmente para a geração da Lista de
+%   Algoritmos ou outras listas (ex.: |beforetoc={\listofalgorithms}|).
+%
+% \end{itemize}
+%
+% Eis um exemplo completo, para um documento escrito em língua portuguesa:
+%
+% \begin{quote}
+% \begin{verbatim}
+% \ppgccufmg{
+%   title={Protocolo para Verificação de Erros\\em Redes Totalmente
+%     Confiáveis},
+%   authorrev={da Camara Neto, Vilar Fiuza},
+%   university={Universidade Federal de Minas Gerais},
+%   course={Ciência da Computação},
+%   address={Belo Horizonte},
+%   date={2005-01},
+%   advisor={Adamastor Pompeu Setúbal},
+%   approval={img/approvalsheet.eps},
+%   abstract={Resumo}{resumo},
+%   abstract=[english]{Abstract}{abstract},
+%   abstract={Resumo Estendido}{resumoest},
+%   dedication={dedicatoria},
+%   ack={agradecimentos},
+%   epigraphtext={A verdade é o contrário da mentira, \\
+%     e a mentira é o oposto da verdade.}{Autor desconhecido},
+% }
+%\end{verbatim}
+% \end{quote}
+%
+% Note que neste exemplo a chave |abstract| foi usada várias vezes para definir
+% versões diferentes do resumo.
+%
+% Eis um exemplo para ilustrar a estrutura do comando |\ppgccufmg| para um
+% documento escrito em língua estrangeira (note que é necessário definir também
+% as chaves |portuguesetitle|, |portugueseuniversity| e |portuguesecourse|):
+%
+% \begin{quote}
+% \begin{verbatim}
+% \ppgccufmg{
+%   title={Protocol for Error-Verification inside\\Totally Error-Free
+%     Networks},
+%   authorrev={da Camara Neto, Vilar Fiuza},
+%   university={Federal University of Minas Gerais},
+%   course={Computer Science},
+%   portuguesetitle={Protocolo para Verificação de Erros\\em Redes
+%     Totalmente Confiáveis},
+%   portugueseuniversity={Universidade Federal de Minas Gerais},
+%   portuguesecourse={Ciência da Computação},
+%   address={Belo Horizonte},
+%   date={2005-01},
+%   advisor={Adamastor Pompeu Setúbal},
+%   approval={img/approvalsheet.eps},
+%   abstract=[brazil]{Resumo}{resumo},
+%   abstract={Abstract}{abstract},
+%   dedication={dedicatoria},
+%   ack={agradecimentos},
+%   epigraphtext={Truth and lie are opposite things.}{Unknown},
+% }
+%\end{verbatim}
+% \end{quote}
+%
+%
+% \subsection{O jeito fácil de usar a classe}
+%
+% Há outra maneira de compor as páginas introdutórias: pode-se esquecer o
+% comando mágico |\ppgccufmg| e chamar vários comandos --- alguns para definir
+% as informações do documento, outros para construir cada página introdutória.
+% É um procedimento menos automatizado, mas você terá um controle mais preciso
+% da ordem das páginas que serão montadas.
+%
+% Os comandos para definir as informações do documento possuem os mesmos nomes
+% e argumentos das chaves descritas na seção anterior: você chama os comandos
+% |\title|\marg{título}, |\author|\marg{autorrev}, e assim por diante.
+%
+% Após definir todas as informações, você deve chamar comandos para construir
+% cada página. Esses comandos são descritos a seguir:
+%
+% \begin{itemize}
+%
+% \item |\makecoverpage|
+%
+%   Compõe a falsa folha de rosto, que contém somente o título da obra.
+%
+% \item |\maketitlepage|
+%
+%   Compõe a folha de rosto, onde constam os nomes do autor e do orientador, o
+%   título da obra, a descrição formal do documento, a localidade (cidade e
+%   estado) e a data.
+%
+% \item |\makefc|
+%
+%   Compõe a Ficha Catalográfica. Essa página apresenta algumas informações
+%   sobre o documento necessárias para a classificação em bases de dados
+%   bibliotecários. É necessária somente para a versão final de teses e
+%   dissertações (propostas e projetos não requerem essa folha).
+%
+% \item |\makeapproval|
+%
+%   Inclui a Folha de Aprovação. Essa folha é fornecida pela Secretaria do
+%   Curso após a aprovação do documento final. Ela deve ser digitalizada e
+%   armazenada em formato gráfico (preferencialmente em formato PNG ou EPS), e
+%   a opção |approval| (ou o comando |\approval|) deve especificar o nome do
+%   arquivo gráfico. Se o nome do arquivo não for especificado, o comando
+%   |\makeapproval| gera uma página com as instruções para digitalizar a Folha
+%   de Aprovação.
+%
+% \item |\includeabstract|\marg{título}\marg{arquivo}
+%
+%   Inclui um arquivo |.tex| com o texto do resumo. \meta{título} é o título do
+%   resumo. Pode ser usado para incluir um resumo alternativo escrito em língua
+%   estrangeira. \emph{Não use o comando} |\chapter| \emph{nesse arquivo.}
+%
+% \item |\includededication|\marg{arquivo}
+%
+%   Inclui um arquivo |.tex| com o texto da dedicatória. \emph{Não use o
+%   comando} |\chapter| \emph{nesse arquivo.}
+%
+% \item |\includeack|\oarg{título}\marg{arquivo}
+%
+%   Inclui um arquivo |.tex| com o texto dos agradecimentos. Se \meta{título}
+%   for omitido, será adotado ``Agradecimentos'' na linguagem do documento.
+%   \emph{Não use o comando} |\chapter| \emph{nesse arquivo.}
+%
+% \item |\makeepigraph|
+%
+%   Compõe a página com a Epígrafe. As informações necessárias (texto e autor)
+%   devem ser fornecidas pela opção |epigraphtext| (ou pelo comando
+%   |\epigraphtext|).
+%
+% \item |\listoffigures|
+%
+%   Compõe a Lista de Figuras.
+%
+% \item |\listoftables|
+%
+%   Compõe a Lista de Tabelas.
+%
+% \item |\tableofcontents|
+%
+%   Compõe o Sumário.
+%
+% \end{itemize}
+%
+% Após usar esses comandos, você deve usar o comando |\mainmatter|, que
+% reinicia a numeração das páginas e configura-as para a formatação arábica (1,
+% 2, 3, etc.).
+%
+%
+% \subsection{O jeito difícil de usar a classe}
+%
+% Ainda não foi implementado\ldots{} :-)
+%
+%
+% \subsection{As referências bibliográficas}
+%
+% Você pode usar qualquer sistema e estilo para as referências bibliográficas:
+% a classe \cls{ppgccufmg} não obriga a adoção de nada em particular.
+%
+% Entretanto, se você estiver usando o sistema Bib\TeX{} (que gerencia arquivos
+% |.bib|), você pode estar se perguntando sobre o estilo a ser adotado (ou
+% seja, qual deve ser o argumento para o comando |\bibliographystyle{}|?). Como
+% no momento não há nenhum estilo oficial adotado pelo PPGCC/UFMG, aqui nós
+% fornecemos um estilo fortemente baseado no tradicional |apalike|: o estilo
+% \bst{ppgccufmg} (arquivo |ppgccufmg.bst|). Se quiser adotá-lo, você deve
+% colocar o arquivo |ppgccufmg.bst| em um diretório visível ao sistema
+% Bib\TeX{} (pode ser no mesmo diretório que contém o seu arquivo |.bib|).
+%
+% Se você adotar o estilo \bst{ppgccufmg}, então a classe \cls{ppgccufmg} provê
+% um modo de gerar automaticamente a seção de referências bibliográficas.
+% Trata-se do comando |\ppgccbibliography|. É somente isso: não há necessidade
+% de usar os comandos |\bibliographystyle| ou |\bibliography|. A sintaxe é:
+%
+% \begin{quote}
+% |\ppgccbibliography|\oarg{opções}\marg{arquivo-de-bibliografia}
+% \end{quote}
+% onde \meta{arquivo-de-bibliografia} é o nome do seu arquivo |.bib| sem a
+% extensão. Assim, se o seu banco de dados bibliográfico está armazenado no
+% arquivo |referencias.bib|, você deve chamar |\ppgccbibliography{referencias}|.
+%
+% Há algumas \meta{opções} disponíveis, tratando em geral da formatação da
+% bibliografia. São elas:
+%
+% \begin{itemize}
+%
+% \item |noauthorrepeat|
+%
+%   Se você tiver uma série de itens bibliográficos de mesma autoria, essa
+%   opção faz com que os autores apareçam somente no primeiro item: nos demais
+%   itens, um travessão triplo (``---------'') aparece no lugar dos autores.
+%   (Isso pode ser alterado: veja a próxima opção.)
+%
+% \item |noauthorrepstring|
+%
+%   Ao usar a opção |noauthorrepeat|, você pode configurar o que aparece no
+%   lugar dos autores quando há repetição de autoria. O padrão é um travessão
+%   triplo (ou seja, uma seqüência de 9 hífens, pois o \LaTeX{} converte três
+%   hífens em um travessão). Exemplo: |noauthorrepstring={Idem}| apresenta o
+%   texto ``Idem'' no lugar dos autores repetidos.
+%
+% \item |nobreakitems|
+%
+%   Esta opção impede a ocorrência de quebra de página no meio de um item
+%   bibligráfico.
+%
+% \item |bibauthorand|
+%
+%   Define o texto que aparece antes do último autor em um item bibliográfico.
+%   O padrão é ``e'' (em português) ou ``and'' (em inglês). Exemplo: para
+%   especificar um ``e'' comercial, use |bibauthorand=\&|.
+%
+% \item |citeauthorand|
+%
+%   Define o texto que aparece antes do último autor em uma citação
+%   bibliográfica. O padrão é ``e'' (em português) ou ``and'' (em inglês).
+%   Exemplo: para especificar um ``e'' comercial, use |citeauthorand=\&|.
+%
+% \item |authorformat|
+%
+%   Define a formatação da lista de autores. O padrão é a formatação do texto
+%   padrão. Exemplo: para formatar a lista de autores em
+%   versalete\footnote{Versalete: ``O que é isso?'' ``É o famoso \emph{small
+%   caps}'', ou seja, as letras minúsculas são exibidas como maiúsculas de
+%   tamanho reduzido.}, use |authorformat=\scshape|.
+%
+% \item |titleformat|
+%
+%   Define a formatação do título. O padrão é a formatação do texto padrão.
+%   Exemplo: para colocar o título em itálico, use |titleformat=\itshape|.
+%
+% \item |btitleformat|
+%
+%   Define a formatação do \emph{booktitle} para itens do tipo |@incollection|
+%   e |@inproceedings|. O padrão é |\itshape| (itálico).
+%
+% \item |booktitleformat|
+%
+%   Define a formatação do \emph{booktitle} para itens do tipo |@book|,
+%   |@inbook|, |@manual|, |@phdthesis| e |@proceedings|. O padrão é |\itshape|
+%   (itálico).
+%
+% \item |journalformat|
+%
+%   Define a formatação do nome do periódico para itens do tipo |@article|. O
+%   padrão é |\itshape| (itálico).
+%
+% \end{itemize}
+%
+% Certas coisas são automaticamente traduzidas (atualmente para português e
+% inglês somente). Por exemplo, se você tem um artigo dos autores ``Michael J.
+% Brooks and Berthold K. P. Horn'', ele será citado como sendo de ``Brooks e
+% Horn'' se o seu documento estiver em português ou de ``Brooks and Horn'' se
+% estiver em inglês. Para ativar a tradução, você não precisa especificar
+% nenhuma opção: basta informar a linguagem correta para o pacote \pkg{babel},
+% ou seja:
+% \begin{quote}
+% |\usepackage[brazil]{babel}     % para documentos em português|
+% \end{quote}
+% ou
+% \begin{quote}
+% |\usepackage[english]{babel}    % para documentos em inglês|
+% \end{quote}
+%
+% Finalmente, recomanda-se \emph{fortemente} a adoção do pacote \pkg{natbib},
+% para que as referências tenham uma aparência mais profissional. Cheque a
+% documentação desse pacote para saber do que se trata e como usá-lo, em
+% particular sobre os comandos |\cite| e |\citep|.
+%
+%
+% \subsubsection{Apêndices e anexos}
+%
+% Há dois ambientes feitos para a criação de ambientes e anexos: |appendices| e
+% |attachments|, respectivamente. Ao usar apêndices no seu documento, encapsule
+% todos os capítulos que correspondem aos apêndices com os comandos
+% |\begin{appendices}| e |\end{appendices}|:
+%
+% \begin{quote}
+% \begin{verbatim}
+% \begin{appendices}
+%
+% \chapter{Um apêndice}
+% ...conteúdo do apêndice...
+%
+% \chapter{Outro apêndice}
+% ...conteúdo do apêndice...
+%
+% \end{appendices}
+%\end{verbatim}
+% \end{quote}
+%
+% Com isso, os apêndices são numerados com letras arábicas em maiúsculas e o
+% Sumário insere a palavra ``Apêndice'' antes de cada entrada.
+%
+% Os anexos seguem a mesma filosofia, porém os comandos são
+% |\begin{attachments}| e |\end{attachments}|. O Sumário lista os anexos
+% precedidos da palavra ``Anexo''.
+%
+%
+% \subsection{Dicas sobre a classe \cls{memoir}}
+% \label{sec:memoirtips}
+%
+% Como foi dito anteriormente, a classe \cls{ppgccufmg} baseia-se na classe
+% \cls{memoir}, que deve estar instalada no seu sistema. Caso contrário, o
+% compilador \LaTeX{} deverá reclamar da ausência do arquivo |memoir.cls| e
+% você deverá instalar essa classe. Se você estiver usando a distribuição
+% MiK\TeX{} para Windows, é bastante simples: basta executar o aplicativo
+% \emph{MiKTeX Package Manager} ou o \emph{Browse Packages}, selecionar
+% ``memoir'' da lista de pacotes e comandar a instalação do mesmo. Talvez você
+% precise de privilégios de administração na máquina para fazer isso: consulte
+% o administrador do computador ou da rede.
+%
+% Sob Linux, a instalação talvez não seja automatizada, mas não é difícil.
+% Antes de mais nada, verifique se a classe já está disponível no próprio
+% repositório da distribuição (por exemplo, através do |apt|, |aptitude| ou
+% |synaptic| do Debian/Ubuntu): desse jeito a instalação e as atualizações são
+% automatizadas.
+%
+% No caso de necessidade de instalação manual: Antes de mais nada, baixe todos
+% os arquivos do repositório CTAN: atualmente, o \emph{link} é
+% \begin{quote}
+% |http://www.ctan.org/tex-archive/macros/latex/contrib/memoir/|
+% \end{quote}
+%
+% Quando os arquivos estiverem no seu computador, abra um terminal, entre no
+% diretório que contém os arquivos baixados e execute o comando
+% \begin{quote}
+% |latex memoir.ins| \\
+% |latex mempatch.ins|
+% \end{quote}
+% que criará o arquivo |memoir.cls|. Opcionalmente, para gerar a documentação
+% da classe \cls{memoir}, execute:
+% \begin{quote}
+% |latex memoir.dtx|
+% \end{quote}
+% Agora crie um diretório local |texmf| no seu diretório \emph{home}:
+% \begin{quote}
+% |mkdir ~/texmf/tex/latex/memoir|
+% \end{quote}
+% e copie para lá todos os arquivos |*.cls|, |*.sty| e |*.clo|. Finalmente,
+% execute o comando |texhash|. Pronto, está terminado!
+%
+% De qualquer forma, dê uma lida no arquivo |README| que vem com a classe
+% \cls{memoir}.
+%
+% Esta seção foi escrita com base nas informações contidas no arquivo |README|
+% e nas instruções presentes em |http://www.tex.ac.uk/|
+% |cgi-bin/texfaq2html?label=instpackages|.
+%
+%
+% \subsection{Algumas dicas para acelerar o seu trabalho}
+%
+% \subsubsection{Pacotes essenciais}
+%
+% Provavelmente você vai querer os seguintes comandos no preâmbulo do seu
+% documento:
+%
+% \begin{quote}
+% \begin{verbatim}
+% \usepackage[brazil]{babel}
+% \usepackage[latin1]{inputenc}
+% \usepackage[T1]{fontenc}
+% \usepackage[square]{natbib}
+%\end{verbatim}
+% \end{quote}
+%
+% Se também quiser gráficos (quem não quer?):
+%
+% \begin{quote}
+% \begin{verbatim}
+% \usepackage{graphicx}
+%\end{verbatim}
+% \end{quote}
+%
+% \subsubsection{\emph{Links} clicáveis}
+%
+% Se você quiser que o arquivo |.pdf| gerado possua \emph{links} clicáveis em
+% todas as referências a seções, figuras, tabelas, páginas, citações, etc.:
+%
+% \begin{quote}
+% \begin{verbatim}
+% \usepackage[a4paper,
+%   portuguese,
+%   bookmarks=true,
+%   bookmarksnumbered=true,
+%   linktocpage,
+%   colorlinks=true,
+%   citecolor=black,
+%   urlcolor=black,
+%   linkcolor=black,
+%   filecolor=black,
+%   ]{hyperref}
+%\end{verbatim}
+% \end{quote}
+%
+% As opções \ldots|color| padronizam a cor preta para os \emph{links}
+% clicáveis, o que é a melhor alternativa para a impressão.
+%
+% \subsection{Possíveis problemas e suas soluções}
+%
+% \subsubsection{Pacote \pkg{algorithm}, ou ``Command \texttt{\textbackslash
+% newfloat} already defined''}
+%
+% Um problema freqüente é causado por uma incompatibilidade entre a classe
+% \cls{memoir} e o pacote \pkg{algorithm}. Esse problema é facilmente
+% identificado pela ocorrência do seguinte erro:
+% \begin{quote}
+% \begin{verbatim}
+% ! LaTeX Error: Command \newfloat already defined.
+%                Or name \end... illegal, see p.192 of the manual.
+%
+% See the LaTeX manual or LaTeX Companion for explanation.
+% Type  H <return>  for immediate help.
+%\end{verbatim}
+% \end{quote}
+%
+% A solução é simples: basta colocar o comando |\let\newfloat=\undefined| antes
+% de |\includepackage{algorithm}|. Dessa forma, o seu preâmbulo deve ficar mais
+% ou menos como segue:
+% \begin{quote}
+% \begin{verbatim}
+% \usepackage...
+% \usepackage...
+% \let\newfloat=\undefined
+% \usepackage{algorithm}
+% \usepackage...
+% \usepackage...
+%\end{verbatim}
+% \end{quote}
+%
+% Espero que esse ``bug'' na classe \cls{memoir} seja resolvido em breve. Por
+% enquanto, esse ``hack'' funciona bem e nunca ouvi falar de algum efeito
+% adverso. (Se você descobrir algum, por favor me avise!)
+%
+% \subsubsection{``\texttt{\textbackslash cftchapterformatpnum} undefined''}
+%
+% Se o seguinte erro ocorrer durante a compilação:
+% \begin{quote}
+% \begin{verbatim}
+% ppgccufmg.cls:xxxx:\cftchapterformatpnum undefined.
+% \renewcommand*{\cftchapterformatpnum}
+%\end{verbatim}
+% \end{quote}
+% \ldots então o seu sistema \LaTeX{} precisa ser atualizado, principalmente os
+% arquivos da classe \cls{memoir}. Verifique a Subseção~\ref{sec:memoirtips}
+% para maiores informações.
+%
+%
+% \section{Código-fonte}
+%
+% Esta seção documenta o código-fonte do arquivo |ppgccufmg.cls|. Você não
+% precisa ler esta seção: ela serve como referência para os desenvolvedores do
+% pacote.
+%
+%
+% \subsection*{Pré-requisitos e comandos gerais}
+%
+% A classe \cls{ppgccufmg} requer alguns pacotes, portanto eles serão
+% incluídos:
+%
+%    \begin{macrocode}
+\RequirePackage{keyval}
+\RequirePackage{setspace}
+\RequirePackage{textpos}
+%    \end{macrocode}
+
+
+% \DescribeMacro{\ppgcc@classname}%
+% Definição do nome da classe, usada em alguns pontos do código:
+%
+%    \begin{macrocode}
+\def\ppgcc@classname{ppgccufmg}
+%    \end{macrocode}
+
+% As opções de classe são gerenciadas por diretivas do tipo |\newif|, que são
+% declaradas e inicializadas a seguir:
+%
+%    \begin{macrocode}
+%% Opções gerais:
+
+\newif\ifppgcc@phd                 % Tese de doutorado?
+\newif\ifppgcc@msc                 % Dissertação de mestrado?
+\newif\ifppgcc@proposal            % Opção de proposta/projeto?
+\newif\ifppgcc@showcover           % Compor a falsa folha de rosto?
+\newif\ifppgcc@showtitle           % Compor a folha de rosto?
+\newif\ifppgcc@showfc              % Compor a Ficha Catalográfica?
+\newif\ifppgcc@showapproval        % Incluir a Folha de Aprovação?
+\newif\ifppgcc@showabstract        % Compor as páginas de resumo/abstract?
+\newif\ifppgcc@showdedication      % Compor a dedicatória?
+\newif\ifppgcc@showack             % Compor os agradecimentos?
+\newif\ifppgcc@showepigraph        % Compor a Epígrafe?
+\newif\ifppgcc@showlof             % Compor a Lista de Figuras?
+\newif\ifppgcc@showlot             % Compor a Lista de Tabelas?
+\newif\ifppgcc@showtoc             % Compor o Sumário?
+\newif\ifppgcc@extraporttitlepage  % Exibir também uma folha de título
+                                   % em português?
+\newif\ifppgcc@putmainmatter       % Chamar automaticamente \mainmatter depois
+                                   % das páginas introdutórias?
+
+\newif\if@selfdoc
+\ifx\ppgcc@selfdoc\undefined\else\@selfdoctrue\fi
+\if@selfdoc\input{ppgccufmgselfdoc}\fi
+
+\def\ppgcc@showall{%
+  \ppgcc@showcovertrue
+  \ppgcc@showtitletrue
+  \ifppgcc@proposal\ppgcc@showfcfalse\else\ppgcc@showfctrue\fi
+  \ppgcc@showapprovaltrue
+  \ppgcc@showabstracttrue
+  \ppgcc@showdedicationtrue
+  \ppgcc@showacktrue
+  \ppgcc@showepigraphtrue
+  \ppgcc@showloftrue
+  \ppgcc@showlottrue
+  \ppgcc@showtoctrue
+}
+
+\def\ppgcc@hideall{%
+  \ppgcc@showcoverfalse
+  \ppgcc@showtitlefalse
+  \ppgcc@showfcfalse
+  \ppgcc@showapprovalfalse
+  \ppgcc@showabstractfalse
+  \ppgcc@showdedicationfalse
+  \ppgcc@showackfalse
+  \ppgcc@showepigraphfalse
+  \ppgcc@showloffalse
+  \ppgcc@showlotfalse
+  \ppgcc@showtocfalse
+}
+
+\ppgcc@proposalfalse
+\ppgcc@showall
+\ppgcc@putmainmattertrue
+
+%% Opções das referências bibliográficas:
+
+\newif\if@bibnorepauthor  % Substituir autorias repetidas por linha comprida?
+\newif\if@nobreakitems    % Impedir quebra de página no meio de um item?
+
+\@bibnorepauthorfalse
+\@nobreakitemsfalse
+%    \end{macrocode}
+
+% \DescribeMacro{\ppgcc@gobblespaces}%
+% Esta é uma pequena macro auxiliar para remover os espaços iniciais de uma
+% string.
+%
+%    \begin{macrocode}
+\def\ppgcc@gobblespaces #1{#1}%
+%    \end{macrocode}
+
+% \DescribeMacro{\BreakableUppercase}%
+% |\BreakableUppercase| provê um ``hack'' para |\MakeUppercase| que permite a
+% ocorrência de quebras de linha (|\\|) em seu argumento. Assim como o comando
+% |\MakeUppercase|, este comando é chamado com um argumento obrigatório:
+% |\BreakableUppercase| \marg{título}.
+%
+%    \begin{macrocode}
+\def\BreakableUppercase#1{%
+  \bgroup
+  \let\ppgcc@prevdbs=\\%
+  \def\\{\protect\ppgcc@prevdbs}%
+  \MakeUppercase{#1}%
+  \egroup
+}
+%    \end{macrocode}
+
+% \DescribeMacro{\ppgcc@defspacing}%
+% Esta macro armazena o espaçamento padrão entre linhas, que pode ser escolhida
+% pelo usuário por meio de uma das seguintes opções de classe: |single|,
+% |onehalf| ou |double|.
+%
+%    \begin{macrocode}
+\newcommand{\ppgcc@defspacing}{\onehalfspace}
+%    \end{macrocode}
+
+% \DescribeMacro{\ppgcc@redefchaptitlefont}%
+% Esta macro redefine a formatação do texto produzido pelo comando |\chapter|.
+% O único objetivo é redefinir |\chaptitlefont| (consulte o manual do
+% \cls{memoir}) para incluir o comando |\centering| se a opção de classe
+% |centertitles| for especificada.
+%
+%    \begin{macrocode}
+\def\ppgcc@redefchaptitlefont{}
+%    \end{macrocode}
+
+% \DescribeMacro{\authorrev}%
+% \DescribeMacro{\advisor}%
+% \DescribeMacro{\university}%
+% \DescribeMacro{\course}%
+% \DescribeMacro{\date}%
+% \DescribeMacro{\address}%
+% \DescribeMacro{\cutter}%
+% \DescribeMacro{\cdu}%
+% \DescribeMacro{\indexkeys}%
+% Este conjunto de comandos define algumas informações sobre o documento. Cada
+% comando recebe um argumento obrigatório, que é a informação associada ao
+% comando.
+%
+%    \begin{macrocode}
+\newcommand*{\authorrev}[1]{\gdef\ppgcc@authorrev{#1}} % Nome rev. do autor
+\newcommand*{\advisor}[1]{\gdef\ppgcc@advisorname{#1}} % Nome do orientador
+\newcommand*{\university}[1]{\gdef\@university{#1}}    % Nome da universidade
+\newcommand*{\course}[1]{\gdef\@course{#1}}            % Nome do curso
+\newcommand*{\address}[1]{\gdef\@address{#1}}          % Endereço (cidade/UF)
+\newcommand*{\cutter}[1]{\gdef\ppgcc@cutter{#1}}       % Código "cutter"
+\newcommand*{\cdu}[1]{\gdef\ppgcc@cdu{#1}}             % Código CDU
+\newcommand*{\indexkeys}[1]{\gdef\ppgcc@indexkeys{#1}} % Chaves para indexação
+
+\let\ppgcc@origdatecmd=\date
+\renewcommand{\date}[1]{%                              % Data (aaaa-mm ou aaaa-mm-dd)
+  \ppgcc@origdatecmd{#1}\ppgcc@parsedate#1---\relax}
+%    \end{macrocode}
+
+% \DescribeMacro{\coursedegree}%
+% Este comando define a titulação buscada pelo autor. Não é obrigatório chamar
+% este comando, pois um padrão é automaticamente configurado --- ``Mestre'',
+% ``Doutor'' ou uma tradução correspondente --- de acordo com a opção de classe
+% (|msc| ou |phd|) e a linguagem corrente (selecionada por meio do pacote
+% |babel|).
+%
+%    \begin{macrocode}
+\newcommand*{\coursedegree}[1]{\gdef\@degree{#1}}      % Titulação
+%    \end{macrocode}
+%
+% \DescribeMacro{\title}%
+% \label{macro:title}%
+% Este comando define o título do documento, que nas folhas de rosto e na Ficha
+% Catalográfica.
+%
+% Quando o título do documento é longo e não cabe em uma única linha (nas
+% folhas de rosto), a quebra automática de linha pode causar um
+% desbalanceamento do texto entre as linhas. Por exemplo, se o título for
+% ``Este é o título comprido da minha tese'', o texto pode ser quebrado da
+% seguinte maneira:
+% \begin{center}
+% Este é o título comprido da minha\\tese
+% \end{center}
+%
+% Nesses casos, pode-se especificar manualmente as quebras de linha com duas
+% contra-barras. Por exemplo: |\title{Este é o título comprido\\da minha tese}|
+% gera uma quebra mais balanceada:
+%
+% \begin{center}
+% Este é o título comprido\\da minha tese
+% \end{center}
+%
+% O uso do comando de quebra de linha (|\\|) não é necessário se o autor
+% estiver satisfeito com o balanceamento gerado automaticamente.
+%
+%    \begin{macrocode}
+\renewcommand*{\title}[1]                             % Título
+  {\gdef\@title{#1}}
+%    \end{macrocode}
+
+% \DescribeMacro{\portuguesetitle}%
+% \DescribeMacro{\portugueseuniversity}%
+% \DescribeMacro{\portuguesecourse}%
+% Para documentos não escritos em português, esses comandos especificam as
+% informações correspondentes em língua portuguesa:
+%    \begin{macrocode}
+\newcommand*{\portuguesetitle}[1]                     % Título em português
+  {\gdef\@portuguesetitle{#1}}
+\newcommand*{\portugueseuniversity}[1]                % Nome da univers. em pt.
+  {\gdef\@portugueseuniversity{#1}}
+\newcommand*{\portuguesecourse}[1]                    % Nome do curso em port.
+  {\gdef\@portuguesecourse{#1}}
+%    \end{macrocode}
+
+% \DescribeMacro{\fckeywords}%
+% Este comando define a lista de palavras-chave que aparece na Ficha
+% Catalográfica, separadas por vírgulas. Exemplo:
+% \begin{quote}
+%   |\fckeywords{Visão Computacional, Computação Gráfica, Renderização}|
+% \end{quote}
+%    \begin{macrocode}
+\newcounter{ppgcc@c@keywords}
+
+\def\ppgcc@keywords#1,#2\@{%
+  \def\ppgcc@temp{#1}%
+  \ifx\ppgcc@temp\empty\else
+    \edef\ppgcc@temp{%
+      \arabic{ppgcc@c@keywords}.\noexpand~\ppgcc@gobblespaces #1. }%
+    \expandafter\expandafter\expandafter\def
+      \expandafter\expandafter\expandafter\ppgcc@fc@keywords
+      \expandafter\expandafter\expandafter{%
+      \expandafter\ppgcc@fc@keywords\ppgcc@temp}%
+    \stepcounter{ppgcc@c@keywords}%
+    \expandafter\ppgcc@keywords#2\@
+  \fi
+}
+
+\newcommand{\fckeywords}[1]{%
+  \setcounter{ppgcc@c@keywords}{1}%
+  \gdef\ppgcc@fc@keywords{}%
+  \ppgcc@keywords#1,,\@
+}
+%    \end{macrocode}
+%
+% \DescribeMacro{\approval}%
+% Este comando define o arquivo gráfico que contém a Folha de Aprovação
+% digitalizada. (A Folha de Aprovação é fornecida pela Secretaria do Curso após
+% a aprovação da versão final do documento.) Pode-se especificar o diretório
+% e/ou a extensão do arquivo. Se o comando não for usado, uma página com as
+% instruções de digitalização será incluída no documento. Lembre-se de que o
+% formato do arquivo (dado por sua extensão) deve ser compatível com o sistema
+% \LaTeX{} em uso: por exemplo, o formato de arquivo |.eps| não é compatível
+% com a geração de arquivos |.pdf| pelo |pdflatex|.
+%
+%    \begin{macrocode}
+\newlength{\ppgcc@approvalwidth}
+\newlength{\ppgcc@approvalvertadjust}
+
+\newcommand*{\approval@opt}[1][0pt]{%
+  \setlength{\ppgcc@approvalvertadjust}{#1}%
+  \approval@opt@}
+\newcommand{\approval@opt@}[1][1]{%
+  \setlength{\ppgcc@approvalwidth}{#1\textwidth}%
+  \approval@opt@@}
+\def\approval@opt@@#1\@{%
+  \gdef\ppgcc@approval{#1}}                           % Arquivo com a F.A.
+\newcommand*{\approval}[1][0pt]{%
+  \setlength{\ppgcc@approvalvertadjust}{#1}%
+  \approval@}
+\newcommand{\approval@}[2][1]{%
+  \setlength{\ppgcc@approvalwidth}{#1\textwidth}%
+  \gdef\ppgcc@approval{#2}}                           % Arquivo com a F.A.
+%    \end{macrocode}
+%
+% \DescribeMacro{\epigraphtext}%
+% Este comando define o texto da epígrafe, que será inserido em uma página
+% própria. Recebe dois argumentos: |\epigraphtext|\marg{texto}\marg{autor}.
+%
+%    \begin{macrocode}
+\newcommand*{\epigraphtext}[2]{%
+  \gdef\ppgcc@epigraphtext{#1}\gdef\ppgcc@epigraphauthor{#2}%
+}
+%    \end{macrocode}
+
+% Vários comandos são criados para lidar com as opções de classe:
+%
+%    \begin{macrocode}
+\DeclareOption{msc}{\ppgcc@phdfalse\ppgcc@msctrue}
+\DeclareOption{phd}{\ppgcc@phdtrue\ppgcc@mscfalse}
+\DeclareOption{proposal}{%
+  \ppgcc@proposaltrue\ppgcc@showfcfalse\ppgcc@showapprovalfalse}
+\DeclareOption{project}{%
+  \ppgcc@proposaltrue\ppgcc@showfcfalse\ppgcc@showapprovalfalse}
+
+\DeclareOption{single}{\renewcommand{\ppgcc@defspacing}{\singlespace}}
+\DeclareOption{onehalf}{\renewcommand{\ppgcc@defspacing}{\onehalfspace}}
+\DeclareOption{double}{\renewcommand{\ppgcc@defspacing}{\doublespace}}
+
+\DeclareOption{hideall}{\ppgcc@hideall}
+\DeclareOption{hidecover}{\ppgcc@showcoverfalse}
+\DeclareOption{hidetitle}{\ppgcc@showtitlefalse}
+\DeclareOption{hidefc}{\ppgcc@showfcfalse}
+\DeclareOption{hideapproval}{\ppgcc@showapprovalfalse}
+\DeclareOption{hideabstract}{\ppgcc@showabstractfalse}
+\DeclareOption{hidededication}{\ppgcc@showdedicationfalse}
+\DeclareOption{hideack}{\ppgcc@showackfalse}
+\DeclareOption{hideepigraph}{\ppgcc@showepigraphfalse}
+\DeclareOption{hidelof}{\ppgcc@showloffalse}
+\DeclareOption{hidelot}{\ppgcc@showlotfalse}
+\DeclareOption{hidetoc}{\ppgcc@showtocfalse}
+
+\DeclareOption{showall}{\ppgcc@showall}
+\DeclareOption{showcover}{\ppgcc@showcovertrue}
+\DeclareOption{showtitle}{\ppgcc@showtitletrue}
+\DeclareOption{showfc}{\ppgcc@showfctrue}
+\DeclareOption{showapproval}{\ppgcc@showapprovaltrue}
+\DeclareOption{showabstract}{\ppgcc@showabstracttrue}
+\DeclareOption{showdedication}{\ppgcc@showdedicationtrue}
+\DeclareOption{showack}{\ppgcc@showacktrue}
+\DeclareOption{showepigraph}{\ppgcc@showepigraphtrue}
+\DeclareOption{showlof}{\ppgcc@showloftrue}
+\DeclareOption{showlot}{\ppgcc@showlottrue}
+\DeclareOption{showtoc}{\ppgcc@showtoctrue}
+
+\DeclareOption{a4paper}{\def\ppgcc@papersize{a4paper}}
+\DeclareOption{letterpaper}{\def\ppgcc@papersize{letterpaper}}
+
+\DeclareOption{9pt}{\def\ppgcc@ptsize{9pt}}
+\DeclareOption{10pt}{\def\ppgcc@ptsize{10pt}}
+\DeclareOption{11pt}{\def\ppgcc@ptsize{11pt}}
+\DeclareOption{12pt}{\def\ppgcc@ptsize{12pt}}
+\DeclareOption{14pt}{\def\ppgcc@ptsize{14pt}}
+\DeclareOption{17pt}{\def\ppgcc@ptsize{17pt}}
+
+\DeclareOption{nomainmatter}{\ppgcc@putmainmatterfalse}
+
+\DeclareOption{centertitles}{%
+   \def\ppgcc@redefchaptitlefont{%
+    \expandafter\renewcommand\expandafter{\expandafter\chaptitlefont
+    \expandafter}\expandafter{\chaptitlefont\centering}%
+  }%
+}
+
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{memoir}}
+%    \end{macrocode}
+
+% As opções padrão são configuradas a seguir:
+%
+%    \begin{macrocode}
+\ExecuteOptions{a4paper,12pt,phd,onehalf,showall}
+\ProcessOptions
+%    \end{macrocode}
+
+% \DescribeMacro{\ppgcc@setdoctype}%
+% Esta macro checa algumas opções do documento e ajusta os registros internos
+% |\@degree| e |\@documenttype|. Esta macro é chamada pela macro
+% |\ppgcc@selectlanguage|, que é chamada durante o comando |\begin{document}|.
+%
+%    \begin{macrocode}
+\def\ppgcc@setdoctype{%
+  \ifppgcc@phd
+    % Esta é uma tese de doutorado
+    \coursedegree{\ppgcc@phd}
+    \ifppgcc@proposal
+      \gdef\@documenttype{\ppgcc@phddocproj}%
+      \ppgcc@set@phddocproj
+    \else
+      \gdef\@documenttype{\ppgcc@phddoc}%
+      \ppgcc@set@phddoc
+    \fi
+  \else
+    % Esta é uma dissertação de mestrado
+    \coursedegree{\ppgcc@msc}
+    \ifppgcc@proposal
+      \gdef\@documenttype{\ppgcc@mscdocprop}%
+      \ppgcc@set@mscdocprop
+    \else
+      \gdef\@documenttype{\ppgcc@mscdoc}%
+      \ppgcc@set@mscdoc
+    \fi
+  \fi
+}
+%    \end{macrocode}
+
+% Agora a página é formatada. Aqui estão as opções sobre o tamanho da página,
+% tamanho padrão da fonte, paginação, margens da página, etc. Todo o trabalho é
+% feito pela classe \cls{memoir}, o que simplifica bastante o gerenciamento do
+% \emph{layout}. Consulte a Seção~\ref{sec:memoirtips} sobre o uso da classe
+% \cls{memoir}.
+%
+%    \begin{macrocode}
+\LoadClass[\ppgcc@papersize,\ppgcc@ptsize]{memoir}
+
+\def\ppgcc@outermargin{2.5cm}
+\def\ppgcc@innermargin{3.0cm}
+\def\ppgcc@topmargin{2.0cm}
+\def\ppgcc@bottommargin{2.0cm}
+\def\ppgcc@toptextmargin{3.5cm}
+\def\ppgcc@bottomtextmargin{3.0cm}
+\def\ppgcc@headerheight{1.5cm}
+\def\ppgcc@footerheight{1.0cm}
+
+\setlrmarginsandblock{\ppgcc@innermargin}{\ppgcc@outermargin}{*}
+\setulmarginsandblock{\ppgcc@toptextmargin}{\ppgcc@bottomtextmargin}{*}
+\setheadfoot{\baselineskip}{\ppgcc@footerheight}
+\setheaderspaces{\ppgcc@topmargin}{*}{*}
+\checkandfixthelayout[fixed]
+%    \end{macrocode}
+
+% Configuração da profundidade do Sumário e da numeração de seções:
+%
+%    \begin{macrocode}
+\maxsecnumdepth{subsubsection}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{3}
+%    \end{macrocode}
+
+% Remove a definição de |\@author|, para que seja detectada a falta de
+% definição do autor:
+%
+%    \begin{macrocode}
+\let\@author=\undefined
+%    \end{macrocode}
+
+
+% \subsection*{Rotinas auxiliares e de checagem}
+
+
+% \DescribeMacro{\ppgcc@deflanguage}%
+% Checa a sintaxe do campo |authorrev|.
+%
+%    \begin{macrocode}
+\def\ppgcc@@checkauthorrev#1,#2,#3,#4\@{%
+  \def\ppgcc@temp{#2}\ifx\ppgcc@temp\empty
+    \ClassError{\ppgcc@classname}{O texto de authorrev deve
+      obrigatoriamente\MessageBreak
+      ser fornecido no formato `Sobrenome, Nome'}{\@ehd}%
+    \expandafter\endinput
+  \fi
+  \@ifundefined{@author}{%
+    \edef\@author{\ppgcc@gobblespaces#2\space\ppgcc@gobblespaces#1}%
+  }{}%
+}
+\def\ppgcc@checkauthor{%
+  \ifx\@author\undefined
+    \ifx\ppgcc@authorrev\undefined\else
+      \expandafter\ppgcc@@checkauthorrev\ppgcc@authorrev,,,\@\relax
+    \fi
+  \fi
+  \ifx\@author\undefined
+    \ClassError{\ppgcc@classname}{O autor nao foi informado (use a chave
+      authorrev ou author)}{\@ehd}%
+    \expandafter\endinput
+  \fi
+}
+
+%%%\ppgcc@checkauthorrev\ppgcc@authorrev,,,\@
+%    \end{macrocode}
+
+
+% \subsection*{Rotinas de tradução}
+%
+% \DescribeMacro{\ppgcc@langgroup}%
+% Agora são definidas as rotinas de tradução. Tenta-se usar a linguagem
+% configurada para o pacote \pkg{babel}; se esse pacote não for usado, a
+% linguagem padrão é |brazil|.
+%
+%    \begin{macrocode}
+\def\ppgcc@langgroup{\@ifundefined{languagename}{brazil}{\languagename}}
+%    \end{macrocode}
+
+% \DescribeMacro{\ppgcc@deflanguage}%
+% \DescribeMacro{\ppgcc@selectlanguage}%
+% O par de comandos |\ppgcc@deflanguage|\marg{linguagem} e
+% |\ppgcc@selectlanguage| trabalham em conjunto para configurar a tabela de
+% traduções a ser usada na composição do texto. O primeiro comando recebe o
+% nome da linguagem como argumento; o segundo efetivamente configura o sistema.
+% Atualmente, somente as linguagens |brazil| e |english| são reconhecidas. Caso
+% uma outra linguagem seja especificada, uma advertência é disparada e o padrão
+% |brazil| é adotado.
+%
+%    \begin{macrocode}
+\def\ppgcc@deflanguage#1{%
+  \@ifundefined{ppgcc@lang@#1}{%
+    \ClassWarning{\ppgcc@classname}{Linguagem nao definida: #1^^J
+    Adotando a linguagem padrao `brazil'.^^J}%
+    \def\ppgcc@langgroup{brazil}}
+    {\def\ppgcc@langgroup{#1}}%
+}
+\def\ppgcc@selectlanguage{%
+  \csname ppgcc@lang@\ppgcc@langgroup\endcsname\ppgcc@setdoctype
+}
+%    \end{macrocode}
+
+% Os seguintes comandos e |\newif|s auxiliares são definidos para ajudar nas
+% rotinas de tradução.
+%
+%    \begin{macrocode}
+\newif\ifppgcc@dateerror\ppgcc@dateerrortrue
+
+\newcommand{\ppgcc@formatdate}[1][]{%
+  \begingroup
+    \def\ppgcc@templang{#1}%
+    \ifx\ppgcc@templang\empty\let\ppgcc@templang\ppgcc@langgroup\fi
+    \@ifundefined{ppgcc@year}{??}{\csname ppgcc@expanddate@\ppgcc@templang\endcsname}%
+  \endgroup
+}
+\def\ppgcc@parsedate#1-#2-#3-#4\relax{%
+  \ppgcc@dateerrortrue
+  \gdef\ppgcc@year{\number#1}\gdef\ppgcc@month{\number#2}%
+  \gdef\ppgcc@day{#3}\ifx\ppgcc@day\empty\else\gdef\ppgcc@day{\number#3}\fi
+  \ifx\ppgcc@month\empty\else\ifnum#1>99\relax
+    \ppgcc@dateerrorfalse
+  \fi\fi
+  \ifppgcc@dateerror
+    \ClassError{\ppgcc@classname}{Formato invalido de data.^^J%
+    Ao usar a opcao `date=' para o comando \string\ppgccufmg\space ou o
+    comando \string\date\string{...\string},^^J%
+    sempre forneca a data no formato aaaa-mm-dd ou aaaa-mm^^J%
+    (note a ordem ano-mes-dia e o hifen como separador)}{\@ehd}%
+    \expandafter\endinput
+  \fi
+}
+%    \end{macrocode}
+
+% \DescribeMacro{\ppgcc@lang@brazil}%
+% \DescribeMacro{\ppgcc@lang@english}%
+% Agora são definidas as tabelas de tradução. Você pode melhorar a classe e
+% adicionar novas tabelas, desde que \emph{todos} os dados sejam traduzidos!
+%
+%    \begin{macrocode}
+\def\ppgcc@expandmonth@brazil#1{%
+  \ifcase\ppgcc@month\or
+  janeiro\or fevereiro\or mar\c{c}o\or abril\or maio\or junho\or
+  julho\or agosto\or setembro\or outubro\or novembro\or dezembro\fi
+}
+\def\ppgcc@expanddate@brazil{%
+  \edef\text@month{\ppgcc@expandmonth@brazil{\ppgcc@month}}%
+  \ifx\ppgcc@day\empty\expandafter\MakeUppercase\text@month
+    \else \two@digits\ppgcc@day\ de\ \text@month\fi
+  \ de\ \ppgcc@year
+}
+\def\ppgcc@lang@brazil{%
+  \ppgcc@extraporttitlepagefalse
+
+  \def\@deflang@title{%
+    \@ifundefined{@portuguesetitle}{\@title}{\@portuguesetitle}}
+  \def\@deflang@university{%
+    \@ifundefined{@portugueseuniversity}{\@university}%
+    {\@portugueseuniversity}}
+  \def\@deflang@course{%
+    \@ifundefined{@portuguesecourse}{\@course}{\@portuguesecourse}}
+
+  \def\ppgcc@msc{Mestre}
+  \def\ppgcc@phd{Doutor}
+  \def\ppgcc@mscdoc{Disserta\c{c}\~{a}o}
+  \def\ppgcc@mscdocprop{Proposta de disserta\c{c}\~{a}o}
+  \def\ppgcc@phddoc{Tese}
+  \def\ppgcc@phddocproj{Projeto de tese}
+  \def\ppgcc@advisor{Orientador}
+  \def\ppgcc@docdescription{%
+    \@documenttype{} apresentad\ppgcc@doctype@gender{} ao Programa de
+    P\'{o}s\discretionary{-}{-}{-}Gradua\c{c}\~{a}o em \@deflang@course{} do
+    Instituto de Ci\^{e}ncias Exatas da \@deflang@university{} como requisito
+    parcial para a obten\c{c}\~{a}o do grau de \@degree{} em \@deflang@course.}
+  \def\ppgcc@acknowledgments{Agradecimentos}
+  \def\ppgcc@keywordsname{Palavras-chave}
+  \def\ppgcc@indexkeys{\ppgcc@fc@keywords{} I.~Título.}
+
+  \def\ppgcc@set@phddocproj{\def\ppgcc@doctype@gender{o}}
+  \def\ppgcc@set@phddoc{\def\ppgcc@doctype@gender{a}}
+  \def\ppgcc@set@mscdocprop{\def\ppgcc@doctype@gender{a}}
+  \def\ppgcc@set@mscdoc{\def\ppgcc@doctype@gender{a}}
+
+  \def\ppgccbibauthorsep{;}
+  \def\ppgccbibauthorlastsep{}
+  \def\ppgccbibauthorand{\&}
+  \def\ppgccciteauthorand{\&}
+  \def\ppgccbibinstring{Em}
+  \def\ppgccbibpagestring{p.\@}
+  \def\ppgccbibpagesstring{pp.\@}
+  \def\ppgccbibeditorstring{editor}
+  \def\ppgccbibeditorsstring{editores}
+  \def\ppgccbibeditionstring{edi\c{c}\~{a}o}
+  \def\ppgccbibchapterstring{cap\'{i}tulo}
+  \def\ppgccbibtechreportstring{Relat\'{o}rio t\'{e}cnico}
+  \def\ppgccbibmscstring{Disserta\c{c}\~{a}o de mestrado}
+  \def\ppgccbibphdstring{Tese de doutorado}
+
+  \def\ppgcc@appendixname{Ap\^{e}ndice}
+  \def\ppgcc@attachmentname{Anexo}
+}
+
+\def\ppgcc@expandmonth@english#1{%
+  \ifcase\ppgcc@month\or
+  january\or february\or march\or april\or may\or june\or
+  july\or august\or september\or october\or november\or december\fi
+}
+\def\ppgcc@expanddate@english{%
+  \edef\text@month{\ppgcc@expandmonth@english{\ppgcc@month}}%
+  \expandafter\MakeUppercase\text@month
+  \ifx\ppgcc@day\empty\else\ \ppgcc@day,\fi
+  \ \ppgcc@year
+}
+\def\ppgcc@lang@english{%
+  \ppgcc@extraporttitlepagetrue
+
+  \def\@deflang@title{\@title}
+  \def\@deflang@university{\@university}
+  \def\@deflang@course{\@course}
+
+  \def\ppgcc@msc{Master}
+  \def\ppgcc@phd{Doctor}
+  \def\ppgcc@mscdoc{Dissertation}
+  \def\ppgcc@mscdocprop{Dissertation proposal}
+  \def\ppgcc@phddoc{Thesis}
+  \def\ppgcc@phddocproj{Thesis project}
+  \def\ppgcc@advisor{Advisor}
+  \def\ppgcc@docdescription{%
+    \@documenttype{} presented to the Graduate Program in \@course{} of the
+    \@university{} in partial fulfillment of the requirements for the
+    degree of \@degree{} in \@course.}
+  \def\ppgcc@acknowledgments{Acknowledgments}
+  \def\ppgcc@keywordsname{Keywords}
+  \def\ppgcc@indexkeys{\ppgcc@fc@keywords{} I.~Title.}
+
+  \let\ppgcc@set@phddocproj\relax
+  \let\ppgcc@set@phddoc\relax
+  \let\ppgcc@set@mscdocprop\relax
+  \let\ppgcc@set@mscdoc\relax
+
+  \def\ppgccbibauthorsep{,}
+  \def\ppgccbibauthorlastsep{,}
+  \def\ppgccbibauthorand{and}
+  \def\ppgccciteauthorand{and}
+  \def\ppgccbibinstring{In}
+  \def\ppgccbibpagestring{page}
+  \def\ppgccbibpagesstring{pages}
+  \def\ppgccbibeditorstring{editor}
+  \def\ppgccbibeditorsstring{editors}
+  \def\ppgccbibeditionstring{edition}
+  \def\ppgccbibchapterstring{chapter}
+  \def\ppgccbibtechreportstring{Technical report}
+  \def\ppgccbibmscstring{Master's thesis}
+  \def\ppgccbibphdstring{PhD thesis}
+
+  \def\ppgcc@appendixname{Appendix}
+  \def\ppgcc@attachmentname{Attachment}
+}
+%    \end{macrocode}
+% \subsection*{Folhas de rosto}
+%
+% \DescribeMacro{\makecoverpage}%
+% \DescribeMacro{\maketitlepage}%
+% Em geral, o documento possui duas folhas de apresentação: a \emph{falsa folha
+% de rosto}, que contém somente o título da obra; e a \emph{folha de rosto},
+% que inclui os nomes do autor e do orientador, a descrição formal do
+% documento, a localidade (cidade e estado) e a data.
+%
+% Se o documento não for escrito em português, o comando |\maketitlepage|
+% compõe duas folhas de rosto: uma em português e outra na linguagem do
+% documento.
+%
+%    \begin{macrocode}
+\newcommand{\makecoverpage}{%
+  \ifppgcc@showcover\begingroup
+    \ppgcc@deflanguage{brazil}\ppgcc@selectlanguage
+    \ppgcc@maketitlepage{\z@}
+  \endgroup\fi
+}
+\newcommand{\maketitlepage}{%
+  \ifppgcc@showtitle
+    \ifppgcc@extraporttitlepage\begingroup
+      \ppgcc@deflanguage{brazil}\ppgcc@selectlanguage
+      \ppgcc@maketitlepage{\@ne}%
+    \endgroup\fi
+    \ppgcc@maketitlepage{\@ne}%
+  \fi
+}
+%    \end{macrocode}
+
+% \DescribeMacro{\ppgcc@docdescriptionwidth}%
+% Esta é a largura do bloco com a descrição formal do texto.
+%    \begin{macrocode}
+\def\ppgcc@docdescriptionwidth{0.5\textwidth}
+%    \end{macrocode}
+
+% \DescribeMacro{\ppgcc@makedocdescription}%
+% Este comando compõe o texto com a descrição formal do documento, que é parte
+% da folha de título.
+%
+%    \begin{macrocode}
+\def\ppgcc@makedocdescription{%
+  \begin{minipage}{\ppgcc@docdescriptionwidth}
+    \ppgcc@docdescription
+  \end{minipage}%
+}
+%    \end{macrocode}
+
+% \DescribeMacro{\ppgcc@titpag@fmtauthor}%
+% \DescribeMacro{\ppgcc@titpag@fmtadvisor}%
+% \DescribeMacro{\ppgcc@titpag@fmttitle}%
+% \DescribeMacro{\ppgcc@titpag@fmtaddress}%
+% \DescribeMacro{\ppgcc@titpag@fmtdate}%
+% Essas macros armazenam a formatação de cada segmento das folhas de rosto. Se
+% for necessário alterar a formatação, altere estas macros e \emph{não} a
+% estrutura do comando |\ppgcc@maketitlepage|!
+%
+%    \begin{macrocode}
+\def\ppgcc@titpag@fmtauthor#1{\large\BreakableUppercase{#1}}
+\def\ppgcc@titpag@fmtadvisor{\large\scshape}
+\def\ppgcc@titpag@fmttitle#1{\Large\bfseries\BreakableUppercase{#1}}
+\def\ppgcc@titpag@fmtaddress{\large}
+\def\ppgcc@titpag@fmtdate{\large}
+%    \end{macrocode}
+
+% \DescribeMacro{\ppgcc@maketitlepage}%
+% Este comando compõe as folhas de rosto. É chamado com um argumento
+% obrigatório, que é |\z@| para compor a falsa folha de rosto ou |\@ne| para
+% compor a folha de rosto.
+%
+%    \begin{macrocode}
+
+\newenvironment{ppgcctitlingpageany}%
+  {%
+    \clearpage
+    \thispagestyle{titlingpage}%
+  }{%
+    \thispagestyle{titlingpage}%
+    \clearpage
+  }
+
+\newenvironment{ppgcctitlingpageodd}%
+  {%
+    \cleardoublepage
+    \thispagestyle{titlingpage}%
+  }{%
+    \thispagestyle{titlingpage}%
+    \clearpage
+  }
+
+\def\ppgcc@maketitlepageoptionalpart{%
+  \ppgcc@makedocdescription\par
+  \vspace{1.5cm}%
+  {\ppgcc@titpag@fmtadvisor{\ppgcc@advisor: \ppgcc@advisorname}\par}%
+}
+
+\def\ppgcc@maketitlepage#1{%
+  \ppgcc@checkauthor
+  \begin{ppgcctitlingpageodd}
+  \begin{singlespace}
+  {\centering
+    \vbox to3\baselineskip{%
+      \ifx#1\z@
+      \else
+        {\ppgcc@titpag@fmtauthor{\@author}\par}%
+        \vfil
+      \fi
+    }
+
+    \vspace{\stretch{1}}
+
+    \setbox0=\vbox{\ppgcc@maketitlepageoptionalpart}%
+    \edef\ppgcc@textvspace{%
+      \noexpand\vrule
+      height\the\ht0
+      depth\the\dp0
+      width0pt\noexpand\par}
+    \ppgcc@textvspace
+
+    \vspace{1.5cm}
+
+    \if@selfdoc
+      \setbox0=\vbox{%
+    \fi
+    {\DoubleSpacing\ppgcc@titpag@fmttitle{\@deflang@title}\par}%
+    \if@selfdoc
+      }%
+      \begin{tikzpicture}[overlay,remember picture]
+        \node (tltitle) at (0,\ht0) {};
+        \node (brtitle) at (\wd0,-\dp0) {};
+      \end{tikzpicture}\box0
+    \fi
+
+    \vspace{1.5cm}
+
+    \ifx#1\z@
+      \ppgcc@textvspace
+    \else
+      \hspace*{\stretch{1}}%
+      \if@selfdoc
+        \setbox0=\hbox{%
+      \fi
+      \ppgcc@makedocdescription
+      \if@selfdoc
+        }%
+        \begin{tikzpicture}[overlay,remember picture]
+          \node (tldescr) at (0,\ht0) {};
+          \node (brdescr) at (\wd0,-\dp0) {};
+          \node (trdescr) at (tldescr -| brdescr) {};
+          \node (bldescr) at (tldescr |- brdescr) {};
+          %\draw [area] (trdescr) -- (tldescr) -- (bldescr) -- (brdescr);
+          \draw [area] (trdescr) -- (tldescr -| left);
+          \draw [area] (brdescr) -- (bldescr -| left);
+          \draw [area] (tldescr) -- (bldescr);
+          \node (bseparrow) at ([xshift=-1cm] tldescr) {};
+          \draw [marrow] (bseparrow.center)
+            -- node [left] {1,5cm} (bseparrow |- brtitle);
+          \draw [marrow] (bldescr) ++(0,-.5cm)
+            -- node [below] {Metade da largura}
+            ($(brdescr) +(0,-.5cm)$);
+          \draw [marrow] (bldescr) ++(-1cm,0)
+            -- node [left] {1,5cm} ++(0,-1.5cm);
+        \end{tikzpicture}%
+        \box0\relax
+      \fi
+
+      \vspace{1.5cm}
+
+      {\ppgcc@titpag@fmtadvisor{\ppgcc@advisor: \ppgcc@advisorname}\par}%
+    \fi
+
+    \vspace{\stretch{1}}
+
+    \vbox to3\baselineskip{%
+      \ifx#1\z@
+      \else
+        \vfil
+        {\ppgcc@titpag@fmtaddress{\@address}\par}%
+        \medskip
+        {\ppgcc@titpag@fmtdate{\ppgcc@formatdate\par}}%
+      \fi
+    }\par
+  }
+  \if@selfdoc\global\let\ppgcc@selfdoc@fg\ppgcc@selfdoc@drawtitlepage\fi
+  \end{singlespace}
+  \end{ppgcctitlingpageodd}
+}
+%    \end{macrocode}
+
+
+% \subsection*{Ficha Catalográfica}
+%
+% A composição da Ficha Catalográfica é dividida em alguns assuntos distintos,
+% para organizar o código-fonte.
+%
+%
+% \subsubsection*{Ocorrência de ilustrações}
+%
+% Determinar se há ou não ilustrações no documento é um pouco mais complicado
+% do que parece à primeira vista. O problema é que o \LaTeX{} processa as
+% informações à medida em que o documento é processado; no entanto, a ficha
+% catalográfica aparece muito antes de qualquer ilustração. Portanto,
+% determinar se a partícula ``il.'' aparece ou não na ficha requer duas
+% compilações: uma para varrer a ocorrência de comandos ou ambientes que
+% incluem ilustrações (por exemplo, |\begin{figure}|\ldots|\end{figure}|) e
+% armazenar o resultado da procura em um arquivo auxiliar (|.aux|); e outra
+% para ler essa informação logo no início do documento para inserir
+% condicionalmente a partícula ``il.''.
+%
+% \DescribeMacro{\if@fc@ilhookcalled}%
+% \DescribeMacro{\if@fc@hasil}%
+% Duas condicionais são definidas através de |\newif| para detectar a
+% ocorrência de ilustrações: |\if@fc@ilhookcalled|, que é ligada quando um
+% comando ou ambiente de ilustração é usado no documento, e |\if@fc@hasil|, que
+% é ligada para que a partícula ``il.'' efetivamente apareça na ficha
+% catalográfica. A checagem de ilustrações é feita em duas etapas (duas
+% compilações): a primeira é a verificação do uso de comandos ou ambientes (que
+% chama o comando |\ppgcc@fc@ilhook| e grava uma informação no arquivo |.aux|);
+% a segunda é o uso da informação do arquivo auxiliar para gerar a ficha
+% catalográfica (que ocorre antes de qualquer ilustração do documento).
+%
+%    \begin{macrocode}
+\newif\if@fc@ilhookcalled\@fc@ilhookcalledfalse
+\newif\if@fc@hasil\@fc@hasilfalse
+%    \end{macrocode}
+
+% \DescribeMacro{\ppgcc@fc@ilaux}%
+% Esee comando é chamado somente pelo arquivo |.aux|: indica que uma compilação
+% anterior detectou ilustrações no documento, portanto a partícula ``il.'' deve
+% aparecer na ficha catalográfica (ou seja, ativa a condicional
+% |\if@fc@hasil|).
+%
+%    \begin{macrocode}
+\def\ppgcc@fc@ilaux{\global\@fc@hasiltrue}
+%    \end{macrocode}
+%
+% \DescribeMacro{\ppgcc@fc@ilhook}%
+% Este comando é chamado por comandos e ambientes que inserem ilustrações no
+% texto. Grava no arquivo |.aux| a informação de que a próxima compilação deve
+% conter a partícula ``il.'' na ficha catalográfica.
+%
+%    \begin{macrocode}
+\def\ppgcc@fc@ilhook{%
+  \if@fc@ilhookcalled\else
+    \global\@fc@ilhookcalledtrue
+    \global\@fc@hasiltrue
+    \immediate\write\@auxout{%
+      \string\ppgcc@fc@ilaux{}^^J
+    }%
+    \typeout{* \ppgcc@classname: Pelo menos uma ilustracao encontrada.}%
+  \fi
+}
+%    \end{macrocode}
+
+% \DescribeMacro{\ppgccaddilcmd}%
+% \DescribeMacro{\ppgccaddilenv}%
+% Estes comandos permitem especificar comandos e ambientes que correspondem a
+% ilustrações do documento. Ambos possuem um argumento obrigatório:
+% |\ppgccaddilcmd|\marg{\textbackslash comando} ou
+% |\ppgccaddilenv|\marg{nome\_do\_ambiente}. \emph{Obs.:} Não é necessário
+% chamar |\ppgccaddilenv{figure}|.
+%
+%    \begin{macrocode}
+\newcommand{\ppgccaddilcmd}[1]{%
+  \begingroup
+  \let\ppgcc@temp#1
+  \expandafter\gdef\expandafter#1\expandafter{%
+    \expandafter\ppgcc@fc@ilhook\ppgcc@temp}%
+  \endgroup
+}
+\newcommand{\ppgccaddilenv}[1]{%
+  \expandafter\ppgccaddilcmd\expandafter{\csname#1\endcsname}%
+}
+%    \end{macrocode}
+
+% O ambiente |figure| é um dos ambientes de ilustração. É mais seguro definir
+% isso no escopo do comando |\AtBeginDocument|, já que o ambiente |figure| pode
+% ser redefinido por algum outro pacote incluído pelo usuário.
+%
+%    \begin{macrocode}
+\AtBeginDocument{\ppgccaddilenv{figure}}
+%    \end{macrocode}
+
+
+% \subsubsection*{Medidas da Ficha Catalográfica}
+%
+% Aqui são definidas várias medidas (dimensões, espaçamentos, etc.) para a
+% montagem da Ficha Catalográfica. São todas definidas como comandos (|\def|),
+% pois não há necessidade de consumir registros de dimensões do \TeX{}.
+%
+% \DescribeMacro{\ppgcc@fc@width}%
+% Largura do retângulo da ficha (pode-se citar |\textwidth| para adotar a mesma
+% largura do bloco de texto):
+%
+%    \begin{macrocode}
+\def\ppgcc@fc@width{12.5cm}
+%    \end{macrocode}
+
+% \DescribeMacro{\ppgcc@fc@sep}%
+% \DescribeMacro{\ppgcc@fc@rule}%
+% Grossura da linha e margem interna do retângulo da ficha:
+%
+%    \begin{macrocode}
+\def\ppgcc@fc@sep{1em}
+\def\ppgcc@fc@rule{.8pt}
+%    \end{macrocode}
+
+% \DescribeMacro{\ppgcc@fc@smallsep}%
+% \DescribeMacro{\ppgcc@fc@bigsep}%
+% Separação vertical entre os parágrafos próximos e distantes:
+%
+%    \begin{macrocode}
+\def\ppgcc@fc@smallsep{0cm}
+\def\ppgcc@fc@bigsep{1em}
+%    \end{macrocode}
+
+% \DescribeMacro{\ppgcc@fc@parindent}%
+% \DescribeMacro{\ppgcc@fc@colsep}%
+% Indentação dos parágrafos e separação entre as colunas:
+%
+%    \begin{macrocode}
+\def\ppgcc@fc@parindent{.5cm}
+\def\ppgcc@fc@colsep{1em}
+%    \end{macrocode}
+
+
+% \subsubsection*{Montagem da Ficha Catalográfica}
+%
+% Este trecho de código-fonte lida especificamente com os detalhes da montagem
+% da ficha catalográfica.
+%
+% Definição do contador para armazenar o número de páginas introdutórias (a
+% informação é colhida automaticamente):
+%
+%    \begin{macrocode}
+\newcounter{ppgcc@fc@frontpages}
+%    \end{macrocode}
+
+% Reprogramação do |\mainmatter| para registrar o número de páginas
+% introdutórias (desde a última ocorrência de |\frontmatter|), para constar na
+% Ficha Catalográfica:
+%
+%    \begin{macrocode}
+\let\ppgcc@mainmatter=\mainmatter
+\def\mainmatter{
+  \clearpage
+  \setcounter{ppgcc@fc@frontpages}{\c@page}%
+  \addtocounter{ppgcc@fc@frontpages}{-1}%
+  \immediate\write\@auxout{%
+    \string\setcounter{ppgcc@fc@frontpages}{\the\c@ppgcc@fc@frontpages}^^J
+  }%
+  \ppgcc@mainmatter
+}
+%    \end{macrocode}
+
+% Comandos auxiliares para checar definições obrigatórias e disparar erros se
+% as definições não tiverem sido feitas:
+%
+%    \begin{macrocode}
+\def\ppgcc@fc@checkerr#1#2#3{%
+  \ClassError{\ppgcc@classname}{%
+    Para a montagem da Ficha Catalografica e' necessario\MessageBreak
+    definir #1 (chave `#2'\MessageBreak
+    ou comando \noexpand#3)}{\@ehd}
+    \endinput
+}
+\def\ppgcc@fc@checkwarn#1#2#3{%
+  \ClassWarning{\ppgcc@classname}{%
+    Para a montagem da Ficha Catalografica e' necessario\MessageBreak
+    definir #1 (chave `#2'\MessageBreak
+    ou comando \noexpand#3)}
+}
+\def\ppgcc@fc@checkparamerr#1#2#3#4{%
+  \@ifundefined{#1}
+    {\ppgcc@fc@checkerr{#2}{#3}{#4}}{}
+}
+\def\ppgcc@fc@checkparamwarn#1#2#3#4{%
+  \@ifundefined{#1}
+    {\ppgcc@fc@checkwarn{#2}{#3}{#4}}{}
+}
+\def\ppgcc@fc@check{%
+  \ppgcc@fc@checkparamerr{ppgcc@authorrev}{o nome reverso do autor}{authorrev}
+    {\authorrev}
+  \ppgcc@fc@checkparamwarn{ppgcc@cutter}{o código ``cutter''}{cutter}{\cutter}
+  \ppgcc@fc@checkparamwarn{ppgcc@cdu}{o código CDU}{cdu}{\cdu}
+}
+%    \end{macrocode}
+
+% Comando para converter as quebras de linha (|\\|) do título em espaços:
+%
+%    \begin{macrocode}
+\def\ppgcc@titlenobreak{%
+  \begingroup
+    \let\\=\space
+    \@title
+  \endgroup
+}
+%    \end{macrocode}
+
+% Definição e cálculo de algumas dimensões auxiliares para a composição da
+% ficha:
+%
+%    \begin{macrocode}
+\newlength{\ppgcc@l@fc@width}
+\newlength{\ppgcc@l@fc@seccolwidth}
+\newlength{\ppgcc@l@fc@firstcolwidth}
+
+\def\ppgcc@fc@calc{%
+  \ppgcc@fc@check
+
+  \@ifundefined{ppgcc@cutter}{%
+    \setlength{\ppgcc@l@fc@firstcolwidth}{0pt}
+    \def\ppgcc@fc@realcolsep{0pt}
+  }{%
+    \settowidth{\ppgcc@l@fc@firstcolwidth}{\ppgcc@cutter}
+    \let\ppgcc@fc@realcolsep=\ppgcc@fc@colsep
+  }
+
+  \setlength{\ppgcc@l@fc@width}{\ppgcc@fc@width}
+  \addtolength{\ppgcc@l@fc@width}{-\ppgcc@fc@rule}
+  \addtolength{\ppgcc@l@fc@width}{-\ppgcc@fc@rule}
+  \addtolength{\ppgcc@l@fc@width}{-\ppgcc@fc@sep}
+  \addtolength{\ppgcc@l@fc@width}{-\ppgcc@fc@sep}
+
+  \setlength{\ppgcc@l@fc@seccolwidth}{\ppgcc@l@fc@width}
+  \addtolength{\ppgcc@l@fc@seccolwidth}{-\ppgcc@l@fc@firstcolwidth}
+  \addtolength{\ppgcc@l@fc@seccolwidth}{-\ppgcc@fc@realcolsep}
+}
+%    \end{macrocode}
+
+% \DescribeMacro{\ppgcc@makefc}%
+% Comando que compõe a página com a Ficha Catalográfica:
+%
+%    \begin{macrocode}
+\def\ppgcc@makefc{%
+  \begin{ppgcctitlingpageany}%
+  \begin{singlespace}%
+
+  \ppgcc@checkauthor
+  \ppgcc@fc@calc
+
+  \hyphenpenalty=10000
+  \flushbottom
+
+  \noindent
+  \begin{tabular}{@{}ll@{}}
+    \copyright & \ppgcc@year, \@author. \\
+    & Todos os direitos reservados.
+  \end{tabular}
+
+  \leavevmode\vfill
+
+  \fboxsep=\ppgcc@fc@sep
+  \fboxrule=\ppgcc@fc@rule
+  \centering\noindent
+  \if@selfdoc
+    \setbox0=\hbox{%
+  \fi
+  \fbox{%
+  \begin{minipage}{\ppgcc@l@fc@width}
+    \begin{tabular}%
+      {@{}p{\ppgcc@l@fc@firstcolwidth}%
+      @{\hspace{\ppgcc@fc@realcolsep}}%
+      >{\raggedright\arraybackslash}%
+      p{\ppgcc@l@fc@seccolwidth}@{}}
+      & \ppgcc@authorrev
+        \\[\ppgcc@fc@smallsep]
+      \@ifundefined{ppgcc@cutter}{}{\ppgcc@cutter}%
+      & \hspace*{\ppgcc@fc@parindent}%
+        \ppgcc@titlenobreak{} / \@author.\space --- \@address, \ppgcc@year
+        \\[\ppgcc@fc@smallsep]
+      & \hspace*{\ppgcc@fc@parindent}%
+        \roman{ppgcc@fc@frontpages}, \arabic{lastpage} f.~%
+        \if@fc@hasil : il.~\fi
+        ; 29cm
+        \\[\ppgcc@fc@bigsep]
+      & \hspace*{\ppgcc@fc@parindent}%
+        \ifppgcc@phd
+          Tese (doutorado)
+        \else
+          Disserta\c{c}\~{a}o (mestrado)
+        \fi
+        --- \@university
+        \\[\ppgcc@fc@smallsep]
+      & \hspace*{\ppgcc@fc@parindent}%
+        Orientador: \ppgcc@advisorname
+        \\[\ppgcc@fc@bigsep]
+      & \hspace*{\ppgcc@fc@parindent}%
+        \ppgcc@indexkeys
+    \end{tabular}
+    \@ifundefined{ppgcc@cdu}{}{%
+      \vspace{\ppgcc@fc@bigsep}\par
+      {\centering
+        CDU \ppgcc@cdu
+      \par}%
+    }%
+  \end{minipage}}%
+  \if@selfdoc
+    }\begingroup
+      \edef\@ht{\the\ht0}\edef\@dp{\the\dp0}%
+      \box0\relax
+      \ppgcc@selfdoc@begin
+      \ppgcc@selfdoc@drawfc
+      \ppgcc@selfdoc@end
+    \endgroup
+  \fi
+  \end{singlespace}
+  \end{ppgcctitlingpageany}
+  \clearpage
+}
+%    \end{macrocode}
+
+% \DescribeMacro{\makefc}%
+% Finalmente, o comando de usuário para disparar condicionalmente a composição
+% da página com a Ficha Catalográfica:
+%
+%    \begin{macrocode}
+\newcommand{\makefc}{%
+  \ifppgcc@showfc\ppgcc@makefc\fi
+}
+%    \end{macrocode}
+
+
+% \subsection*{A Folha de Aprovação}
+%
+% A Folha de Aprovação é fornecida pela Secretaria do Curso. Ela deve ser
+% digitalizada para a inclusão na versão final do documento. Cheque a opção
+% |approval| (ou o comando |\approval|) para maiores informações.
+%
+% \DescribeMacro{\makeapproval}%
+% Esta macro compõe a Folha de Aprovação. Se a opção |approval| (ou o comando
+% |\approval|) tiver sido usada, o documento digitalizado será incluído; caso
+% contrário, será gerada uma página com as instruções para digitalizar a Folha
+% de Aprovação.
+%
+%    \begin{macrocode}
+\newcommand{\makeapproval}{%
+  \ifppgcc@showapproval
+    \begin{ppgcctitlingpageodd}
+    \begin{singlespace}
+
+    \ifx\ppgcc@approval\undefined
+      \leavevmode\vfil
+      {\centering
+        {\huge [Folha de Aprova\c{c}\~ao]\par}
+        \bigskip
+        Quando a secretaria do Curso fornecer esta folha,\par
+        ela deve ser digitalizada e armazenada no disco em formato
+          gr\'afico.\par
+        \medskip
+        Se voc\^e estiver usando o \texttt{pdflatex},\par
+        armazene o arquivo preferencialmente em formato PNG\par
+        (o formato JPEG \'e pior neste caso).\par
+        \medskip
+        Se voc\^e estiver usando o \texttt{latex} (n\~ao o
+          \texttt{pdflatex}),\par
+        ter\'a que converter o arquivo gr\'afico para o formato EPS.\par
+        \medskip
+        Em seguida, acrescente a op\c{c}\~ao
+        \texttt{approval=\{}\emph{nome do arquivo}\texttt{\}}\par
+        ao comando \texttt{\textbackslash ppgccufmg}.\par
+        \medskip
+        Se a imagem da folha de aprova\c{c}\~ao precisar ser ajustada, use:\par
+        \texttt{approval=[}\emph{ajuste}\texttt{][}\emph{escala}\texttt{]\{}%
+        \emph{nome do arquivo}\texttt{\}}\par
+        onde \emph{ajuste} é uma dist\^ancia para deslocar a imagem para baixo\par
+        e \emph{escala} \'e um fator de escala para a imagem. Por exemplo:\par
+        \texttt{approval=[-2cm][0.9]\{}\emph{nome do arquivo}\texttt{\}}\par
+        desloca a imagem 2cm para cima e a escala em 90\%.\par
+      }
+    \else
+      \begingroup
+        \setlength{\TPHorizModule}{\ppgcc@approvalwidth}%
+        \begin{textblock}{1}(0,0)
+          \vspace*{\ppgcc@approvalvertadjust}%
+          \noindent\includegraphics[width=\ppgcc@approvalwidth]{\ppgcc@approval}
+        \end{textblock}
+      \endgroup
+    \fi
+
+    \end{singlespace}
+    \end{ppgcctitlingpageodd}
+  \fi
+}
+%    \end{macrocode}
+
+
+% \subsection*{Resumos e \emph{Abstracts}}
+%
+% O trabalho pode incluir uma ou mais versões de resumos (\emph{abstracts}):
+% tradicionalmente há uma versão em português e outra em inglês, mas podem ser
+% exigidas duas versões em uma mesma língua (``Resumo'' e ``Resumo Estendido'',
+% por exemplo).
+%
+% Para comportar a variedade de possibilidades, a classe \cls{ppgccufmg}
+% permite a definição de um número arbitrário de resumos. Para cada um,
+% especifica-se o título (``Resumo'', ``Abstract'', etc.) e um arquivo |.tex|
+% com o texto do resumo em questão.
+%
+% O arquivo |.tex| especificado pode vir com a especificação de um diretório,
+% mas cuidado: os compiladores \LaTeX{} não gostam muito de nomes de arquivos
+% (ou diretórios) com espaços ou letras acentuadas. Portanto, não use nomes de
+% arquivo como ``\texttt{Capítulo 1.tex}''. Além disso, ao especificar
+% diretórios use barras (|/|) ao invés de contra-barras (|\|), mesmo que você
+% esteja trabalhando no Microsoft Windows.
+%
+% Nenhum desses arquivos |.tex| especificados deve conter o comando |\chapter|.
+% Ele é chamado automaticamente. Além disso, se for necessário usar |\section|,
+% |\subsection|, etc., coloque um asterisco depois do comando (ou seja,
+% |\section*|, |\subsection*|, etc.), para que as seções não apareçam no
+% Conteúdo.
+%
+% \DescribeMacro{\includeabstract}%
+% Este comando inclui uma página de resumo. A forma de uso é:
+% |\includeabstract| \marg{título} \marg{arquivo}. \meta{título} é o título do
+% resumo, conforme explicado anteriormente.
+%
+%    \begin{macrocode}
+\newcommand{\includeabstract}[3][]{%
+  \ifppgcc@showabstract
+    \cleardoublepage
+    \begingroup
+      \def\ppgcc@temp{#1}%
+      \ifx\ppgcc@temp\empty\else
+        \ppgcc@deflanguage{#1}\ppgcc@selectlanguage
+      \fi
+      \ppgcc@redefchaptitlefont
+      \chapter{#2}
+      \input{#3}
+    \endgroup
+    \clearpage
+  \fi
+}
+%    \end{macrocode}
+
+% Para a inclusão de vários arquivos de resumo, é necessário um contador para
+% armazenar o número de resumos definidos:
+%
+%    \begin{macrocode}
+\newcounter{ppgcc@c@abstract}
+%    \end{macrocode}
+
+% \DescribeMacro{\addabstract}%
+% Agora o comando que registra um arquivo de resumo: |\addabstract|
+% \marg{título} \marg{arquivo}.
+%
+%    \begin{macrocode}
+\newcommand{\addabstract}[3][]{%
+  \stepcounter{ppgcc@c@abstract}%
+  \expandafter\gdef
+    \csname ppgcc@abstract@\theppgcc@c@abstract lang\endcsname{#1}%
+  \expandafter\gdef
+    \csname ppgcc@abstract@\theppgcc@c@abstract title\endcsname{#2}%
+  \expandafter\gdef
+    \csname ppgcc@abstract@\theppgcc@c@abstract filename\endcsname{#3}%
+}
+%    \end{macrocode}
+
+% \DescribeMacro{\ppgcc@includeabstractlist}%
+% Este comando inclui todos os resumos previamente definidos pelo comando
+% |\addabstract|.
+%
+%    \begin{macrocode}
+\newcommand{\ppgcc@includeabstractlist}{%
+  \ifppgcc@showabstract
+    \setcounter{ppgcc@c@abstract}{1}
+    \loop\expandafter\ifx
+      \csname ppgcc@abstract@\theppgcc@c@abstract title\endcsname
+      \relax
+      \else
+      \includeabstract
+        [\csname ppgcc@abstract@\theppgcc@c@abstract lang\endcsname]
+        {\csname ppgcc@abstract@\theppgcc@c@abstract title\endcsname}
+        {\csname ppgcc@abstract@\theppgcc@c@abstract filename\endcsname}
+      \stepcounter{ppgcc@c@abstract}
+    \repeat
+  \fi
+}
+%    \end{macrocode}
+
+% \DescribeMacro{\keywords}%
+% Este comando deve ser usado no fim dos arquivos de resumo para especificar as
+% palavras-chave do documento. A forma de uso é: \cmd{\includeabstract}
+% \marg{chave, chave, \ldots}.
+%
+%    \begin{macrocode}
+\newcommand{\keywords}[1]{%
+  \bigskip
+  \noindent\textbf{\ppgcc@keywordsname:} #1.%
+}
+%    \end{macrocode}
+
+
+% \subsection*{Dedicatória e agradecimentos}
+%
+% As páginas de dedicatória e agradecimentos são baseadas em arquivos |.tex|
+% externos, já que não há maneira de compô-las automaticamente :-) . Todos os
+% comandos recebem como argumento obrigatório o nome do arquivo |.tex| (que
+% pode incluir o diretório), mas valem as mesmas regras descritas para os
+% resumos: nomes de arquivos não podem ter espaços ou letras acentuadas; sempre
+% especifique diretórios com barras (|/|) ao invés de contra-barras (|\|); não
+% use o comando |\chapter|; e coloque asterisco nos comandos |\section*|,
+% |\subsection*|, etc.
+%
+% Embora o mais comum seja a inclusão de somente uma página de cada
+% (dedicatória e agradecimentos), há autores que preferem fornecer mais de uma
+% versão de cada (em português e em língua estrangeira). Portanto, é possível
+% citar várias dedicatórias e/ou agradecimentos pelo uso repetido dos comandos
+% |\includededication| e |\includeack| (ou das opções |dedication| e |ack| do
+% comando |\ppgccufmg|).
+%
+% Para a inclusão de vários arquivos de cada, é necessário um contador para
+% armazenar o número de arquivos definidos:
+%
+%    \begin{macrocode}
+\newcounter{ppgcc@c@dedication}
+\newcounter{ppgcc@c@ack}
+%    \end{macrocode}
+
+% \DescribeMacro{\adddedication}%
+% \ldots e o comando que registra um arquivo de agradecimentos:
+% |\adddedication| \marg{arquivo} (note que a dedicatória não requer um
+% título).
+%
+%    \begin{macrocode}
+\newcommand{\adddedication}[1]{%
+  \stepcounter{ppgcc@c@dedication}
+  \expandafter\def\csname ppgcc@dedication@\theppgcc@c@dedication
+    filename\endcsname{#1}
+}
+%    \end{macrocode}
+
+% \DescribeMacro{\addack}%
+% Agora o comando que registra um arquivo de agradecimentos: |\addack|
+% \oarg{título} \marg{arquivo}. Se \meta{título} for omitido, será adotado
+% ``Agradecimentos'' (ou a tradução correspondente à linguagem configurada).
+%
+%    \begin{macrocode}
+\newcommand{\addack}[2][]{%
+  \stepcounter{ppgcc@c@ack}
+  \def\ppgcc@tempack{#1}
+  \ifx\ppgcc@tempack\empty
+    \expandafter\addack@\expandafter{\ppgcc@acknowledgments}
+  \else
+    \addack@{#1}
+  \fi
+  \expandafter\def\csname ppgcc@ack@\theppgcc@c@ack filename\endcsname{#2}
+}
+\def\addack@#1{
+  \expandafter\def\csname ppgcc@ack@\theppgcc@c@ack title\endcsname{#1}
+}
+%    \end{macrocode}
+
+% \DescribeMacro{\includededication}%
+% Este comando inclui a dedicatória. A forma de uso é: |\includededication|
+% \marg{arquivo}.
+%
+%    \begin{macrocode}
+\newcommand{\includededication}[1]{%
+  \ifppgcc@showdedication
+    \cleardoublepage
+    \vspace*{\stretch{1}}
+    \textit{\input{#1}}
+    \vspace*{\stretch{1}}
+    \clearpage
+  \fi
+}
+%    \end{macrocode}
+
+% \DescribeMacro{\includeack}%
+% Este comando inclui os agradecimentos. A forma de uso é: |\includeack|
+% \oarg{título} \marg{arquivo}.
+%
+%    \begin{macrocode}
+\newcommand{\includeack}[2][]{%
+  \ifppgcc@showack
+    \edef\ppgcc@tempack{#1}%
+    \ifx\ppgcc@tempack\empty\let\ppgcc@tempack\ppgcc@acknowledgments\fi
+    \ppgcc@redefchaptitlefont
+    \chapter{\ppgcc@tempack}
+    \input{#2}
+    \clearpage
+  \fi
+}
+%    \end{macrocode}
+
+% \DescribeMacro{\ppgcc@includededicationlist}%
+% Este comando inclui todos os resumos previamente definidos pelo comando
+% |\adddedication|.
+%
+%    \begin{macrocode}
+\newcommand{\ppgcc@includededicationlist}{%
+  \ifppgcc@showdedication
+    \setcounter{ppgcc@c@dedication}{1}
+    \loop
+    \expandafter\ifx
+      \csname ppgcc@dedication@\theppgcc@c@dedication filename\endcsname
+      \relax
+    \else
+      \includededication
+        {\csname ppgcc@dedication@\theppgcc@c@dedication filename\endcsname}
+      \stepcounter{ppgcc@c@dedication}
+    \repeat
+  \fi
+}
+%    \end{macrocode}
+% \DescribeMacro{\ppgcc@includeacklist}%
+% Este comando inclui todos os resumos previamente definidos pelo comando
+% |\addack|.
+%
+%    \begin{macrocode}
+\newcommand{\ppgcc@includeacklist}{%
+  \ifppgcc@showack
+    \setcounter{ppgcc@c@ack}{1}
+    \loop
+    \expandafter\ifx\csname ppgcc@ack@\theppgcc@c@ack filename\endcsname\relax
+    \else
+      \includeack
+        [\csname ppgcc@ack@\theppgcc@c@ack title\endcsname]
+        {\csname ppgcc@ack@\theppgcc@c@ack filename\endcsname}
+      \stepcounter{ppgcc@c@ack}
+    \repeat
+  \fi
+}
+%    \end{macrocode}
+
+
+% \subsection*{Epígrafe}
+%
+% \DescribeMacro{\ppgcc@epigraph@fmttext}%
+% \DescribeMacro{\ppgcc@epigraph@fmtauthor}%
+% Essas macros armazenam a formatação de cada segmento da epígrafe. Se for
+% necessário alterar a formatação, altere estas macros e \emph{não} a
+% estrutura do comando |\makeepigraph|!
+%
+%    \begin{macrocode}
+\def\ppgcc@epigraph@fmttext#1{\textit{``#1''}}
+\def\ppgcc@epigraph@fmtauthor#1{(#1)}
+%    \end{macrocode}
+%
+% \DescribeMacro{\ppgcc@epigraph@fmtvspace}%
+% O espaço vertical entre o texto e o autor da epígrafe é definido pela macro
+% |\ppgcc@epigraph@fmtvspace|. Note que esta é apenas uma macro, não uma
+% dimensão.
+%
+%    \begin{macrocode}
+\def\ppgcc@epigraph@fmtvspace{0em}
+%    \end{macrocode}
+
+% \DescribeMacro{\makeepigraph}%
+% Compõe a página com o texto da epígrafe. A página é composta somente se a
+% opção |epigraphtext| ou o comando |\epigraphtext| forem usados.
+%
+%    \begin{macrocode}
+\newcommand{\makeepigraph}{%
+  \ifppgcc@showepigraph
+    \@ifundefined{ppgcc@epigraphtext}{}{%
+      \cleardoublepage
+      \vspace*{\stretch{1}}
+      \begingroup
+        \raggedleft
+        {\ppgcc@epigraph@fmttext{\ppgcc@epigraphtext}\par}%
+        \vspace{\ppgcc@epigraph@fmtvspace}
+        {\ppgcc@epigraph@fmtauthor{\ppgcc@epigraphauthor}\par}%
+      \endgroup
+      \clearpage
+    }%
+  \fi
+}
+%    \end{macrocode}
+
+
+% \subsection*{Cabeçalhos e rodapés}
+%
+% O código a seguir lida com todo o necessário para configurar os cabeçalhos e
+% rodapés das páginas.
+%
+%    \begin{macrocode}
+\if@twoside
+  \makeheadrule{headings}{\textwidth}{0pt}
+  \makeoddhead{headings}{\textsc{\rightmark}}{}{\thepage}
+  \makeevenhead{headings}{\thepage}{}{\textsc{\leftmark}}
+
+  \copypagestyle{contents}{plain}
+
+  \copypagestyle{listoffigures}{plain}
+
+  \copypagestyle{listoftables}{plain}
+
+  \copypagestyle{bibliography}{headings}
+  \makeoddhead{bibliography}{\textsc{\bibname}}{}{\thepage}
+  \makeevenhead{bibliography}{\thepage}{}{\textsc{\bibname}}
+\else
+  \makeheadrule{headings}{\textwidth}{0pt}
+  \makeoddhead{headings}{\textsc{\leftmark}}{}{\thepage}
+
+  \copypagestyle{contents}{plain}
+
+  \copypagestyle{listoffigures}{plain}
+
+  \copypagestyle{listoftables}{plain}
+
+  \copypagestyle{bibliography}{headings}
+  \makeoddhead{bibliography}{\textsc{\bibname}}{}{\thepage}
+\fi
+
+\def\ppgcc@chaptermark#1{%
+  \markboth{%
+    \ifnum\c@secnumdepth>\m@ne
+      \if@mainmatter
+        \if@twoside\@chapapp\ \fi
+        \thechapter.
+      \fi
+    \fi
+    #1}{}}%
+
+\def\ppgcc@sectionmark#1{%
+  \markright{%
+    \ifnum\c@secnumdepth>\z@\thesection. \ \fi
+    #1}}%
+
+\def\ppgccrestoremarks{%
+  \let\chaptermark=\ppgcc@chaptermark
+  \let\sectionmark=\ppgcc@sectionmark
+}
+
+\ppgccrestoremarks
+\g@addto@macro\mainmatter{\pagestyle{headings}\ppgccrestoremarks}
+%    \end{macrocode}
+
+
+% \subsection*{Sumário, Lista de Figuras e Lista de Tabelas}
+%
+% \DescribeMacro{\ppgcclistoffigures}%
+% \DescribeMacro{\ppgcclistoftables}%
+% \DescribeMacro{\ppgcctableofcontents}%
+% Estes comandos compõem a Lista de Figuras, a Lista de Tabelas e o Sumário. Os
+% comandos originais são modificados para lidar corretamente com a formatação
+% dos cabeçalhos e rodapés das páginas.
+%
+%    \begin{macrocode}
+\let\ppgcc@orig@listoffigures=\listoffigures
+\renewcommand{\listoffigures}{{%
+  \ifppgcc@showlof\begingroup
+    \cleardoublepage
+    \ppgcc@redefchaptitlefont
+    \let\ppgcc@save@listoffigures=\listoffigures
+    \let\listoffigures=\ppgcc@orig@listoffigures
+    \pagestyle{listoffigures}
+    \listoffigures
+    \clearpage
+  \endgroup\fi
+}}
+
+\let\ppgcc@orig@listoftables=\listoftables
+\renewcommand{\listoftables}{{%
+  \ifppgcc@showlot\begingroup
+    \cleardoublepage
+    \ppgcc@redefchaptitlefont
+    \let\ppgcc@save@listoftables=\listoftables
+    \let\listoftables=\ppgcc@orig@listoftables
+    \pagestyle{listoftables}
+    \listoftables
+    \clearpage
+  \endgroup\fi
+}}
+
+\let\ppgcc@orig@tableofcontents=\tableofcontents
+\renewcommand{\tableofcontents}{{%
+  \ifppgcc@showtoc\begingroup
+    \cleardoublepage
+    \ppgcc@redefchaptitlefont
+    \let\ppgcc@save@tableofcontents=\tableofcontents
+    \let\tableofcontents=\ppgcc@orig@tableofcontents
+    \pagestyle{contents}
+    \tableofcontents*
+    \clearpage
+  \endgroup\fi
+}}
+%    \end{macrocode}
+
+
+% \subsection*{O comando ``deixe que eu faço tudo''}
+%
+% \DescribeMacro{\ppgccufmg}%
+% Este é o ``comando mágico'' que compõe todas as páginas introdutórias. Ele
+% recebe como argumento uma série de pares do tipo \meta{chave}|=|\meta{valor},
+% descritos na Seção~\ref{sec:ppgccufmg}. Leia essa seção!
+%
+%    \begin{macrocode}
+
+\let\ppgcc@beforetoc\empty
+
+\newcommand\ppgcc@addabstract[3][]{\addabstract[#1]{#2}{#3}}
+\def\ppgcc@adddedication#1{\adddedication{#1}}
+\def\ppgcc@addack{\@ifnextchar[{\addack}{\ppgcc@addack@}}
+\def\ppgcc@addack@#1\relax{\addack[]{#1}}
+\def\ppgcc@addbeforetoc#1{\g@addto@macro\ppgcc@beforetoc{#1}}
+
+\define@key{ppgcc}{title}{\title{#1}}
+\define@key{ppgcc}{author}{\author{#1}}
+\define@key{ppgcc}{authorrev}{\authorrev{#1}}
+\define@key{ppgcc}{cutter}{\cutter{#1}}
+\define@key{ppgcc}{cdu}{\cdu{#1}}
+\define@key{ppgcc}{indexkeys}{\indexkeys{#1}}
+\define@key{ppgcc}{university}{\university{#1}}
+\define@key{ppgcc}{course}{\course{#1}}
+\define@key{ppgcc}{portuguesetitle}{\portuguesetitle{#1}}
+\define@key{ppgcc}{portugueseuniversity}{\portugueseuniversity{#1}}
+\define@key{ppgcc}{portuguesecourse}{\portuguesecourse{#1}}
+\define@key{ppgcc}{keywords}{\fckeywords{#1}}
+\define@key{ppgcc}{address}{\address{#1}}
+\define@key{ppgcc}{date}{\date{#1}}
+\define@key{ppgcc}{approval}{\approval@opt#1\@}
+\define@key{ppgcc}{epigraphtext}{\epigraphtext#1}
+\define@key{ppgcc}{advisor}{\advisor{#1}}
+\define@key{ppgcc}{abstract}{\ppgcc@addabstract#1}
+\define@key{ppgcc}{dedication}{\ppgcc@adddedication{#1}}
+\define@key{ppgcc}{ack}{\ppgcc@addack#1\relax}
+\define@key{ppgcc}{beforetoc}{\ppgcc@addbeforetoc{#1}}
+
+\newcommand{\ppgccufmg}[1]{%
+  \setkeys{ppgcc}{#1}
+
+  \pagestyle{plain}
+
+  \frontmatter
+
+  % Falsa folha de rosto
+  \makecoverpage
+  % Folha(s) de rosto
+  \maketitlepage
+  % Ficha Catalográfica
+  \makefc
+  % Folha de aprovação
+  \makeapproval
+  % Dedicatória
+  \ppgcc@includededicationlist
+  % Agradecimentos
+  \ppgcc@includeacklist
+  % Epígrafe
+  \makeepigraph
+  % Resumo, Abstract, etc.
+  \ppgcc@includeabstractlist
+
+  % Sumário e lista de figuras e de tabelas
+  \listoffigures
+  \listoftables
+  \ppgcc@beforetoc
+  \tableofcontents
+
+  % ***** ATENÇÃO *****
+  %
+  % Se precisar incluir outras listas, como a Lista de Algoritmos ou de
+  % Símbolos, NÃO ALTERE ESTE ARQUIVO PARA COLOCAR O COMANDO AQUI, senão o
+  % documento será gerado com problemas! Veja o exemplo da seção "Para os
+  % impacientes", que descreve esse caso.
+
+  \ifppgcc@putmainmatter\mainmatter\fi
+}
+%    \end{macrocode}
+
+%
+% \subsection*{Referências bibliográficas}
+%
+% Aqui estão todos os comandos, opções e processamentos relacionados à
+% composição das referências bibliográficas (caso se queira adotar o estilo
+% \bst{ppgccufmg} de bibliografia para o Bib\TeX).
+%
+% A seguir, as macros que definem as opções configuráveis:
+%
+%    \begin{macrocode}
+\def\ppgcc@bibauthorformat{}
+\def\ppgcc@bibtitleformat{}
+\def\ppgcc@bibbtitleformat{\itshape}
+\def\ppgcc@bibbooktitleformat{\itshape}
+\def\ppgcc@bibjournalformat{\itshape}
+
+\def\ppgcc@norepstring{---------}
+%    \end{macrocode}
+
+% As macros a seguir devem ser usadas de maneira automática e somente dentro do
+% arquivo |.bbl| file (que é gerado pelo sistema Bib\TeX):
+%
+%    \begin{macrocode}
+\newcommand{\ppgccbibauthordoformat}[1]{%
+  \if@bibnorepauthor
+    \def\ppgcc@currentauthor{#1}%
+    \ifx\ppgcc@lastauthor\ppgcc@currentauthor\ppgcc@norepstring
+      \else{\ppgcc@bibauthorformat#1}\fi
+    \def\ppgcc@lastauthor{#1}%
+  \else
+    {\ppgcc@bibauthorformat#1}%
+  \fi
+}
+\newcommand{\ppgccbibtitledoformat}[1]{{\ppgcc@bibtitleformat#1}}
+\newcommand{\ppgccbibbtitledoformat}[1]{{\ppgcc@bibbtitleformat#1}}
+\newcommand{\ppgccbibbooktitledoformat}[1]{{\ppgcc@bibbooktitleformat#1}}
+\newcommand{\ppgccbibjournaldoformat}[1]{{\ppgcc@bibjournalformat#1}}
+\let\ppgccyeardoformat\empty
+\let\ppgccpagedoformat\empty
+\let\ppgccnumberdoformat\empty
+\let\ppgccvolumedoformat\empty
+%    \end{macrocode}
+
+% Eis a declaração das opções para o comando |\ppgccbibliography|:
+%
+%    \begin{macrocode}
+\define@key{ufmgbib}{noauthorrepeat}[true]{\@bibnorepauthortrue}
+\define@key{ufmgbib}{noauthorrepstring}{\def\ppgcc@norepstring{#1}}
+\define@key{ufmgbib}{nobreakitems}[true]{\@nobreakitemstrue}
+\define@key{ufmgbib}{bibauthorand}{\def\ppgccbibauthorand{#1}}
+\define@key{ufmgbib}{citeauthorand}{\def\ppgccciteauthorand{#1}}
+\define@key{ufmgbib}{authorformat}{\def\ppgcc@bibauthorformat{#1}}
+\define@key{ufmgbib}{titleformat}{\def\ppgcc@bibtitleformat{#1}}
+\define@key{ufmgbib}{btitleformat}{\def\ppgcc@bibbtitleformat{#1}}
+\define@key{ufmgbib}{booktitleformat}{\def\ppgcc@bibbooktitleformat{#1}}
+\define@key{ufmgbib}{journalformat}{\def\ppgcc@bibjournalformat{#1}}
+%    \end{macrocode}
+
+% \DescribeMacro{\ppgccbibliography}%
+% Finalmente, eis o comando mágico. O argumento obrigatório é o nome do arquivo
+% de banco de dados bibliográfico (o arquivo |.bib|), sem a extensão.
+%
+%    \begin{macrocode}
+\newcommand{\ppgccbibliography}[2][]{%
+  \setkeys{ufmgbib}{#1}
+
+  \cleardoublepage
+  \pagestyle{bibliography}
+  \bibliographystyle{ppgccufmg}
+  \begingroup
+    \ppgcc@redefchaptitlefont
+    \if@nobreakitems\raggedbottom\interlinepenalty=10000\relax\fi
+    \bibliography{#2}
+  \endgroup
+
+  \clearpage
+  \pagestyle{headings}
+  \ppgccrestoremarks
+}
+%    \end{macrocode}
+
+%
+% \subsection*{Apêndices e anexos}
+%
+% \DescribeEnv{appendices}%
+% \DescribeEnv{attachments}%
+% Esses comandos auxiliam a criação de apêndices e anexos, configurando a
+% numeração em seqüência arábica maiúscula (A, B, etc.) e acrescentando o
+% indicador ``Apêndice'' ou ``Anexo'' no Sumário.
+%
+%    \begin{macrocode}
+\def\ppgcc@toc@switchto#1{%
+  \ifx\ppgcc@chapternumberline\undefined
+    \let\ppgcc@chapternumberline\chapternumberline
+  \fi
+  \def\chapternumberline{#1\space\ppgcc@chapternumberline}%
+}
+\def\ppgcc@toc@recover{%
+  \let\chapternumberline\ppgcc@chapternumberline
+  \let\ppgcc@chapternumberline\undefined
+}
+
+\let\ppgcc@appendices\appendices\let\appendices\undefined
+\let\ppgcc@endappendices\endappendices\let\endappendices\undefined
+\newenvironment{appendices}{%
+    \cleardoublepage
+    \ppgcc@appendices
+    \appendix
+    \let\appendixname\ppgcc@appendixname
+    \immediate\write\@auxout{%
+      \string\@writefile{toc}{%
+      \string\ppgcc@toc@switchto\string\ppgcc@appendixname}}%
+  }{%
+    \ppgcc@endappendices
+    \immediate\write\@auxout{%
+      \string\@writefile{toc}{\string\ppgcc@toc@recover}}
+  }
+
+\newenvironment{attachments}{%
+    \cleardoublepage
+    \ppgcc@appendices
+    \appendix
+    \let\appendixname\ppgcc@attachmentname
+    \def\Hy@appendixstring{attachment}%
+    \immediate\write\@auxout{%
+      \string\@writefile{toc}{%
+      \string\ppgcc@toc@switchto\string\ppgcc@attachmentname}}%
+    % Para o hyperref:
+    \def\Hy@chapapp{attachment}%
+  }{%
+    \ppgcc@endappendices
+    \immediate\write\@auxout{%
+      \string\@writefile{toc}{\string\ppgcc@toc@recover}}
+  }
+%    \end{macrocode}
+
+
+% \subsection*{Comandos de formatação padrão}
+%
+% O comando |\sloppy| é disparado para forçar a obediência à margem direita do
+% texto.
+%
+%    \begin{macrocode}
+\sloppy
+%    \end{macrocode}
+
+% Definição do recuo padrão de parágrafo.
+%
+%    \begin{macrocode}
+\setlength{\parindent}{1cm}
+%    \end{macrocode}
+
+% Definição dos estilos de títulos de capítulos, seções, subseções, etc.
+
+%    \begin{macrocode}
+\makechapterstyle{ppgccufmgsf}{%
+  \chapterstyle{default}%
+  \expandafter\def\expandafter\chapnumfont\expandafter{%
+    \chapnumfont\sffamily}%
+  \expandafter\def\expandafter\chapnamefont\expandafter{%
+    \chapnamefont\sffamily}%
+  \expandafter\def\expandafter\chaptitlefont\expandafter{%
+    \chaptitlefont\sffamily}%
+  \expandafter\def\expandafter\secheadstyle\expandafter{%
+    \secheadstyle\sffamily}%
+  \expandafter\def\expandafter\subsecheadstyle\expandafter{%
+    \subsecheadstyle\sffamily}%
+  \expandafter\def\expandafter\subsubsecheadstyle\expandafter{%
+    \subsubsecheadstyle\sffamily}%
+  \expandafter\def\expandafter\paraheadstyle\expandafter{%
+    \paraheadstyle\sffamily}%
+  \expandafter\def\expandafter\subparaheadstyle\expandafter{%
+    \subparaheadstyle\sffamily}%
+  \setlength{\beforechapskip}{20mm}%
+  \setlength{\midchapskip}{7mm}%
+  \setlength{\afterchapskip}{15mm}%
+}
+\chapterstyle{ppgccufmgsf}
+%    \end{macrocode}
+
+% Aqui é definida a formatação da identificação (\emph{caption}) de figuras,
+% tabelas e outros elementos flutuantes (algoritmos, etc.).
+%
+%    \begin{macrocode}
+\captionnamefont{\bfseries\small}
+\captiondelim{. }
+\captiontitlefont{\small}
+\newlength{\ppgcc@captionwidth}
+\setlength{\ppgcc@captionwidth}{\textwidth}
+\addtolength{\ppgcc@captionwidth}{-2cm}
+\captionwidth{\ppgcc@captionwidth}
+\changecaptionwidth
+%    \end{macrocode}
+
+% A seguir será reprogramado o comando que apresenta os números de página de
+% capítulos no Sumário. Esta reprogramação evita que qualquer indicação
+% numérica invada a margem direita do corpo do texto.
+%
+%    \begin{macrocode}
+\renewcommand*{\cftchapterformatpnum}[1]{%
+  \hb@xt@\@pnumwidth{\hss\cftchapterpagefont #1}}
+%    \end{macrocode}
+
+
+%
+% \subsection*{Rotina de pós-processamento}
+%
+% \DescribeMacro{\AtBeginDocument}%
+% Finalmente, a rotina atrelada ao comando |\AtBeginDocument|: aqui são
+% chamados os comandos para configurar a linguagem e o espaçamento padrão entre
+% linhas. O pacote \pkg{graphicx} também é carregado automaticamente, embora
+% seja melhor que o usuário inclua manualmente esse pacote: dessa maneira, o
+% usuário poderá carregá-lo com as opções que desejar.
+%
+%    \begin{macrocode}
+\AtBeginDocument{%
+  \ppgcc@selectlanguage\ppgcc@defspacing
+  \@ifpackageloaded{graphicx}{}{\RequirePackage{graphicx}}%
+  \@ifpackageloaded{hyperref}{\RequirePackage{memhfixc}}{}%
+}
+%    \end{macrocode}
+%
+% \PrintIndex
+%
+% \Finale

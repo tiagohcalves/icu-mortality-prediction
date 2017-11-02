@@ -1,0 +1,13 @@
+\select@language {english}
+\addvspace {10pt}
+\addvspace {10pt}
+\addvspace {10pt}
+\addvspace {10pt}
+\addvspace {10pt}
+\addvspace {10pt}
+\addvspace {10pt}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Average patient physiological data. Mean, first and third quartiles within each physiological parameter. Mortality rate is concentrated in the Medical ICU (49.6\% of all the deaths).}}{12}{table.3.1}
+\addvspace {10pt}
+\contentsline {table}{\numberline {4.1}{\ignorespaces AUC numbers for shallow and deep models. Numbers in bold indicate the best models for each ICU domain.}}{20}{table.4.1}
+\contentsline {table}{\numberline {4.2}{\ignorespaces AUC numbers for different feature transference approaches. Numbers in bold indicate the best transference approach for each target ICU domain.}}{20}{table.4.2}
+\addvspace {10pt}
