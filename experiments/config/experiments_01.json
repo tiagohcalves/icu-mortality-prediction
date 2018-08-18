@@ -1,0 +1,12 @@
+{
+    "01":{
+        "model_ids": ["m3rsl", "m_conv_lstm_switch", "m_conv_switch", "m_conv_switch_regl1_input_selu_bn_do"],
+        "aggregation_ids": ["15", "30", "60"],
+        "max_patient_per_icu": [9999],
+        "mode_ids": ["general_training_target_test", "train_on_target", "domain_adaptation"],
+        "shuffle": [true],
+        "use_target": [true],
+        "n_epochs": 100,
+        "k_fold": 5
+    }
+}

@@ -1,4 +1,0 @@
-Os arquivos ".csv" contem os dados utilizados para criar os heatmaps, com os valores já normalizados. 
-As linhas são as horas (de 0 a 47) e as colunas são as features (na ordem: 
-Albumin, ALP, ALT, AST,	Bilirubin,	BUN,	Cholesterol,	Creatinine,	DiasABP,	FiO2,	GCS,	Glucose,	HCO3,	HCT,	HR,	K,	Lactate,	MAP,	MechVent,	Mg,	Na,	NIDiasABP,	NIMAP,	NISysABP,	PaCO2,	PaO2,	pH,	Platelets,	RespRate,	SaO2,	SysABP,	Temp,	TroponinI,	TroponinT,	Urine,	WBC,	Weight)
-
