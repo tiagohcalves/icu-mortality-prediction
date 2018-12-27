@@ -13,3 +13,9 @@ python create_dataset.py --mimic_dir path/to/data/set-a/ --outcome_file path/to/
 cd experiments
 python conv_lstm.py --data_path path/to/data/ --output_dir path/to/save/output --config_file config/experiments_01.json
 ```
+
+## Publications
+
+Master Thesis: /publications/ufmg-master-thesis.pdf
+
+Big Data 2018: /publications/bigdata2018.pdf
