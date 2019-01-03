@@ -1,21 +1,21 @@
 # ICU Mortality Prediction
 
-1. Download the data:
+## Download the data:
 The data for this project comes from the PhysioNet challenge, found on the link:
 https://physionet.org/challenge/2012/
 
-1.1 [Patient time series](https://physionet.org/challenge/2012/set-a/)
+### [Patient time series](https://physionet.org/challenge/2012/set-a/)
 
-1.2 [Patient outcomes](https://physionet.org/challenge/2012/Outcomes-a.txt)
+### [Patient outcomes](https://physionet.org/challenge/2012/Outcomes-a.txt)
 
-2. Building the dataset:
+## Building the dataset:
 
 ```
 cd data
 python create_dataset.py --mimic_dir path/to/data/set-a/ --outcome_file path/to/data/Outcomes-a.txt --output_dir directory/to/save/output/ --agg_times 15 30 60
 ```
 
-3. Running experiments:
+## Running experiments:
 
 ```
 cd experiments
