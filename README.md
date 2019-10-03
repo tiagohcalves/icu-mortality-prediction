@@ -4,9 +4,9 @@
 The data for this project comes from the PhysioNet challenge, found on the link:
 https://physionet.org/challenge/2012/
 
-### [Patient time series](https://physionet.org/challenge/2012/set-a/)
+### [Patient time series](https://archive.physionet.org/challenge/2012/set-a/)
 
-### [Patient outcomes](https://physionet.org/challenge/2012/Outcomes-a.txt)
+### [Patient outcomes](https://archive.physionet.org/challenge/2012/Outcomes-a.txt)
 
 ## Building the dataset:
 
